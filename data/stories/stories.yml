@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+
+- story: positive reaction
+  steps:
+  - intent: react_positive
+  - action: utter_react_positive
+
+- story: negative reaction
+  steps:
+  - intent: react_negative
+  - action: utter_react_negative
+
+- story: thanks
+  steps:
+  - intent: thank
+  - action: utter_noworries
+  - action: utter_anything_else
+
+- story: bye
+  steps:
+  - intent: bye
+  - action: utter_bye
+
+- story: neither options
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: deny
+  - action: utter_nohelp
+
+- story: anything else? - no
+  steps:
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_thumbsup
+
+- story: anything else?
+  steps:
+  - action: utter_anything_else
+  - intent: enter_data
+  - action: utter_not_sure
+  - action: utter_possibilities
+
+- story: explain -> can't explain
+  steps:
+  - intent: explain
+  - action: utter_no_further_info
+  wait_for_user_input: false
+
+- story: explain -> can't explain (at conversation start)
+  conversation_start: true
+  steps:
+  - intent: explain
+  - action: utter_no_further_info
+  - action: utter_possibilities
