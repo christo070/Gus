@@ -1,13 +1,9 @@
 version: "3.1"
 
 rules:
+
 - rule: Show Bot Introduction
   steps:
     - intent: show_bot_intro
     - action: utter_intro
     - action: utter_possibilities
-
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye

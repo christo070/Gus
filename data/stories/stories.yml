@@ -23,13 +23,6 @@ stories:
   - intent: bye
   - action: utter_bye
 
-- story: neither options
-  steps:
-  - intent: greet
-  - action: action_greet_user
-  - intent: deny
-  - action: utter_nohelp
-
 - story: anything else? - no
   steps:
   - action: utter_anything_else
@@ -47,11 +40,3 @@ stories:
   steps:
   - intent: explain
   - action: utter_no_further_info
-  wait_for_user_input: false
-
-- story: explain -> can't explain (at conversation start)
-  conversation_start: true
-  steps:
-  - intent: explain
-  - action: utter_no_further_info
-  - action: utter_possibilities
