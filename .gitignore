@@ -1,4 +1,4 @@
 # Ignore directories
 .rasa/
 models/
-actions/__pycache__
+actions/__pycache__/
