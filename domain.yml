@@ -9,6 +9,7 @@ session_config:
 
 intents:
 # General Intents
+  - show_bot_intro
   - affirm
   - deny
   - greet
@@ -60,6 +61,9 @@ actions:
   - action_pause
 
 responses:
+
+  utter_intro:
+  - text: I am Gus, a Restaurant Chatbot.
 
   utter_anything_else:
   - text: Is there anything else I can help you with?
