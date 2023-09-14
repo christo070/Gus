@@ -737,5 +737,9 @@ nlu:
     - thanks for your information
     - thanks f
 
+- intent: exit
+  examples: |
+   - I want to exit
+   - exit
 
 

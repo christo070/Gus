@@ -22,3 +22,8 @@ stories:
   steps:
   - intent: bye
   - action: utter_bye
+
+- story: exit
+  steps:
+  - intent: exit
+  - action: utter_exit

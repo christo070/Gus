@@ -6,9 +6,3 @@ stories:
   - intent: chitchat
   - action: utter_chitchat
 
-- story: more chitchat
-  steps:
-  - intent: chitchat
-  - action: utter_chitchat
-  - intent: chitchat
-  - action: utter_chitchat

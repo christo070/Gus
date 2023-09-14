@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+
+- synonym: exit
+  examples: |
+    - exit
+    - quit
+    - end
+    - discontinue
+    - close
+    - stop
+    - cease
+    - wrap up
+    - terminate
+    - conclude
+
+- synonym: intro
+  examples: |
+    - Intro
+    - Introduction
+    - intro
+    - introduction
+
+- synonym: restart
+  examples: |
+    - Restart
+    - reboot
+    - Reboot
+    - start over
+    - Start Over
+    - Start over
+    - start Over

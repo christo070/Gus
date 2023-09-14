@@ -81,26 +81,9 @@ nlu:
     - restart session pls
     - restart ps
 
-- synonym: restart
-  examples: |
-    - Restart
-    - reboot
-    - Reboot
-    - start over
-    - Start Over
-    - Start over
-    - start Over
-
 - intent: show_bot_intro
   examples: |
     - show bot intro
-
-- synonym: intro
-  examples: |
-    - Intro
-    - Introduction
-    - intro
-    - introduction
 
 - regex: greet
   examples: |
