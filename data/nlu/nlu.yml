@@ -100,7 +100,3 @@ nlu:
     - hi[^\s]*
     - hello[^\s]*
 
-- intent: dummy_intent_for_oov
-  examples: |
-    - oov
-
