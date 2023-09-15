@@ -46,12 +46,13 @@ pipeline:
 - name: DIETClassifier
   epochs: 100
   ranking_length: 5
-  constrain_similarities: True
+  constrain_similarities: true
 - name: EntitySynonymMapper
 - name: ResponseSelector
   retrieval_intent: out_of_scope
   scale_loss: false
   epochs: 100
+  constrain_similarities: true
 - name: ResponseSelector
   retrieval_intent: faq
   scale_loss: false
@@ -89,7 +90,7 @@ policies:
 - max_history: 6
   name: AugmentedMemoizationPolicy
 - name: TEDPolicy
-  constrain_similarities: True
+  constrain_similarities: true
   max_history: 10
   epochs: 20
   batch_size:

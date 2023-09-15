@@ -84,9 +84,23 @@ nlu:
 - intent: show_bot_intro
   examples: |
     - show bot intro
+    - can you introduce yourself?
+    - I want to see the bot's introduction.
+    - give me a brief about this bot
+    - introduce yourself, bot
+    - display your introduction
+    - what's this bot about?
+    - tell me about this bot
+    - can I get an intro of this bot?
+    - I'd like to see the bot's intro
 
 - regex: greet
   examples: |
     - hey[^\s]*
     - hi[^\s]*
     - hello[^\s]*
+
+
+- intent: dummy_intent_for_oov
+  examples: |
+    - oov

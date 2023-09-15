@@ -24,6 +24,8 @@ intents:
     use_entities: []
 - out_of_scope
 - nlu_fallback
+- dummy_intent_for_oov
+- exit
 
 entities:
 - name
