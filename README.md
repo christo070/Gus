@@ -1,5 +1,5 @@
 # Introduction
-Gus is an Restaurant Chatbot made using Rasa Open Source. It can handle General Queries, enqueries regarding Menu, Specials & Promotions, Operating Hours & Location Details, Dietery & Allergen Information, FAQs.
+Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding Menu, Specials & Promotions, Operating Hours & Location Details, Dietery & Allergen Information, FAQs.
 
 ---
 ### Layout
