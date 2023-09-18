@@ -1,0 +1,43 @@
+version: "3.1"
+
+responses:
+  utter_menu:
+  - text: |
+      We provide Four-Course Meal. Here are the Details
+      - Starters
+      - Mains
+      - Desserts
+      - Beverages
+  
+  utter_dishes_starters:
+  - text: |
+      - French Onion Soup : Caramelized onions in a rich beef broth with croutons and melted cheese
+      - Vietnamese Spring Rolls : Fresh rolls with shrimp, lettuce, mint, and vermicelli. Served with peanut sauce
+      - Mexican Guacamole & Chips : Creamy avocado, tomatoes, onions, and cilantro. Served with tortilla chips
+      - Greek Tzatziki with Pita : Yogurt, cucumber, and garlic dip. Served with warm pita bread
+      - Chinese Dim Sum Assortment : Variety of steamed dumplings including shrimp, pork, and vegetable
+
+  utter_dishes_mains:
+  - text: |
+      - Italian Margherita Pizza : Tomatoes, mozzarella cheese, basil, and olive oil
+      - Indian Chicken Curry : Chicken in a spicy gravy. Served with steamed basmati rice
+      - Japanese Sushi Platter : Assortment of fresh sushi. Served with wasabi, ginger, and soy sauce
+      - American Cheeseburger : Beef patty with lettuce, tomato, cheese, and pickles. Served with fries
+      - Spanish Paella : Rice dish with chicken, rabbit, and vegetables, cooked with saffron
+      - Thai Green Curry : Spicy green curry with vegetables and choice of protein. Served with jasmine rice
+
+  utter_dishes_desserts:
+  - text: |
+      - British Sticky Toffee Pudding : Sponge cake with toffee sauce. Served with vanilla ice cream
+      - Turkish Baklava : Sweet pastry with chopped nuts and honey
+      - Peruvian Tres Leches Cake : Sponge cake soaked in three kinds of milk
+      - Belgian Chocolate Mousse : Rich and creamy chocolate dessert
+      - Italian Tiramisu : Coffee-flavored dessert with layers of mascarpone cheese and cocoa
+
+  utter_dishes_beverages:
+  - text: |
+      - Spanish Sangria : Wine punch with chopped fruit
+      - Moroccan Mint Tea : Green tea with mint leaves
+      - Brazilian Caipirinha : Cocktail made with cachaça, sugar, and lime
+      - Australian Flat White Coffee : Espresso with steamed milk
+      - Egyptian Hibiscus Tea : Refreshing cold tea made from hibiscus petals
