@@ -2,7 +2,7 @@
 Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding Menu, Specials & Promotions, Operating Hours & Location Details, Dietery & Allergen Information, FAQs.
 
 ---
-### Layout
+<!-- ### Layout
 - actions/
     - actions.py
 - data/
@@ -31,8 +31,12 @@ Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding
 - config.yml
 - domain.yml
 - endpoints.yml
-- credentials.yml
+- credentials.yml -->
 ---
+
+
+### Features to Implement
+![User Expectation Table](image.png)
 
 # References
 

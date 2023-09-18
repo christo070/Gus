@@ -27,8 +27,3 @@ stories:
   steps:
   - intent: exit
   - action: utter_exit
-
-- story: unrecognized input using oov
-  steps:
-  - intent: dummy_intent_for_oov
-  - action: action_default_ask_rephrase
