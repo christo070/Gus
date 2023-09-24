@@ -41,3 +41,4 @@ Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding
 # References
 
 - [Sara - Rasa Demo Bot](https://github.com/RasaHQ/rasa-demo/)
+- https://medium.com/@AlexanderObregon/json-streaming-how-to-work-with-large-json-files-efficiently-c7203de60ac2#:~:text=JSON%20streaming%20is%20a%20technique,might%20not%20fit%20into%20memory.
