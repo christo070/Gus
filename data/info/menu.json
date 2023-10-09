@@ -10,24 +10,7 @@
                     "Beef broth",
                     "Bread croutons",
                     "Melted cheese (typically Gruyère or Swiss)"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Vietnamese Spring Rolls",
@@ -40,24 +23,7 @@
                     "Fresh mint",
                     "Vermicelli noodles",
                     "Peanut sauce (for dipping: peanuts, soy sauce, garlic, and other seasonings)"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": false,
-                "seafood": true,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Mexican Guacamole & Chips",
@@ -71,24 +37,7 @@
                     "Lime juice",
                     "Salt",
                     "Tortilla chips"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Greek Tzatziki with Pita",
@@ -102,24 +51,7 @@
                     "Lemon juice",
                     "Dill or mint",
                     "Pita bread"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Chinese Dim Sum Assortment",
@@ -129,24 +61,7 @@
                     "Flour wrappers",
                     "Fillings: shrimp, pork, vegetables, seasonings",
                     "Soy sauce (for dipping)"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": true,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             }
         ],
         "mains": [
@@ -161,24 +76,7 @@
                     "Fresh basil",
                     "Olive oil",
                     "Salt"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Indian Chicken Curry",
@@ -193,24 +91,7 @@
                     "Spices: turmeric, cumin, coriander, garam masala",
                     "Yogurt or cream",
                     "Cilantro"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Japanese Sushi Platter",
@@ -221,24 +102,7 @@
                     "Nori (seaweed sheets)",
                     "Fillings: salmon, tuna, vegetables (like cucumber or avocado)",
                     "Wasabi, pickled ginger, and soy sauce (for serving)"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": true,
-                "seafood": true,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "American Cheeseburger",
@@ -253,24 +117,7 @@
                     "Pickles",
                     "Condiments: mustard, ketchup, mayonnaise",
                     "French fries"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Spanish Paella",
@@ -284,24 +131,7 @@
                     "Saffron",
                     "Olive oil",
                     "Chicken or vegetable stock"
-                ],
-                "veg": false,
-                "non-veg": true,
-                "vegan": false,
-                "dairy": true,
-                "seafood": true,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Thai Green Curry",
@@ -315,24 +145,7 @@
                     "Fish sauce or soy sauce",
                     "Basil",
                     "Lime leaves"
-                ],
-                "veg": false,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             }
         ],
         "desserts": [
@@ -348,24 +161,7 @@
                     "Baking powder",
                     "Toffee sauce (brown sugar, butter, cream)",
                     "Vanilla ice cream (for serving)"
-                ],
-                "veg": false,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Turkish Baklava",
@@ -376,24 +172,7 @@
                     "Mixed nuts (like pistachios, walnuts)",
                     "Butter",
                     "Sugar syrup or honey"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Peruvian Tres Leches Cake",
@@ -405,24 +184,7 @@
                     "Eggs",
                     "Three kinds of milk: evaporated milk, condensed milk, and heavy cream",
                     "Vanilla extract"
-                ],
-                "veg": false,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Belgian Chocolate Mousse",
@@ -433,24 +195,7 @@
                     "Eggs",
                     "Sugar",
                     "Heavy cream"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Italian Tiramisu",
@@ -463,24 +208,7 @@
                     "Eggs",
                     "Sugar",
                     "Cocoa powder"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": true,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             }
         ],
         "beverages": [
@@ -494,24 +222,7 @@
                     "Brandy or rum",
                     "Sugar or syrup",
                     "Carbonated water or lemon-lime soda"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Moroccan Mint Tea",
@@ -521,24 +232,7 @@
                     "Green tea leaves",
                     "Fresh mint leaves",
                     "Sugar"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Brazilian Caipirinha",
@@ -548,24 +242,7 @@
                     "Cachaça",
                     "Lime",
                     "Sugar"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Australian Flat White Coffee",
@@ -574,24 +251,7 @@
                 "ingredients": [
                     "Espresso",
                     "Steamed milk"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": false,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             },
             {
                 "name": "Egyptian Hibiscus Tea",
@@ -600,24 +260,7 @@
                 "ingredients": [
                     "Dried hibiscus petals",
                     "Sugar or honey"
-                ],
-                "veg": true,
-                "non-veg": false,
-                "vegan": true,
-                "dairy": false,
-                "seafood": false,
-                "fish": false,
-                "shellfish":false,
-                "tree-nuts": false,
-                "peanuts": false,
-                "soy": false,
-                "wheat": false,
-                "seasame": false,
-                "mustard": false,
-                "sulfites": false,
-                "lupin": false,
-                "celery": false,
-                "mollusks": false
+                ]
             }
         ]
     }
