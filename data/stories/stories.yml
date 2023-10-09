@@ -27,3 +27,47 @@ stories:
   steps:
   - intent: exit
   - action: utter_exit
+
+
+# Yet to implement
+- story: customer asking menu
+  steps:
+  - intent: ask_menu
+  - action: utter_menu
+  - action: utter_anything_else
+
+- story: customer asking starters
+  steps:
+  - intent: ask_dishes_starters
+  - action: utter_dishes_starters
+  - action: utter_anything_else
+
+- story: customer asking mains
+  steps:
+  - intent: ask_dishes_mains
+  - action: utter_dishes_mains
+  - action: utter_anything_else
+
+- story: customer asking desserts
+  steps:
+  - intent: ask_dishes_desserts
+  - action: utter_dishes_desserts
+  - action: utter_anything_else
+
+- story: customer asking beverages
+  steps:
+  - intent: ask_dishes_beverages
+  - action: utter_dishes_beverages
+  - action: utter_anything_else
+
+- story: customer asking for help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+  - action: utter_anything_else
+
+- story: customer asking for help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+  - action: utter_anything_else
