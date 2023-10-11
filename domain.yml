@@ -8,7 +8,7 @@ session_config:
   carry_over_slots_to_new_session: false
 
 intents:
-- show_bot_intro
+- show_intro
 - affirm
 - deny
 - greet
@@ -20,6 +20,8 @@ intents:
 - explain
 - human_handoff
 - restart
+- book_table
+
 - chitchat:
     use_entities: []
 - out_of_scope
@@ -31,6 +33,10 @@ entities:
 - name
 - email
 - language
+- date
+- time
+- people_count
+- category
 
 slots:
   name:
@@ -43,8 +49,25 @@ slots:
     mappings:
     - type: from_entity
       entity: email
+  date:
+    type: text
+  time:
+    type: text
+  people_count:
+    type: text
   
-# actions:
-# - action_default_ask_affirmation
-# - action_default_fallback
+actions:
+  - action_check_availability
+  - action_confirm_booking
 
+forms:
+  table_reservation_form:
+    date:
+      - type: from_entity
+        entity: date
+    time:
+      - type: from_entity
+        entity: time
+    people_count:
+      - type: from_entity
+        entity: people_count

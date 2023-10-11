@@ -4,6 +4,6 @@ rules:
 
 - rule: Show Bot Introduction
   steps:
-    - intent: show_bot_intro
+    - intent: show_intro
     - action: utter_intro
     - action: utter_possibilities

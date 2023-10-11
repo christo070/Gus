@@ -81,7 +81,7 @@ nlu:
     - restart session pls
     - restart ps
 
-- intent: show_bot_intro
+- intent: show_intro
   examples: |
     - show bot intro
     - can you introduce yourself?
