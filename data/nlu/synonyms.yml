@@ -31,3 +31,12 @@ nlu:
     - Start Over
     - Start over
     - start Over
+
+- synonym: book
+  examples: |
+    - Book
+    - book
+    - reserve
+    - Reserve
+    - reservation
+    - Reservation

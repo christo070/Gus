@@ -8,6 +8,9 @@ responses:
   utter_anything_else:
   - text: Is there anything else I can help you with?
 
+  utter_help:
+  - text: "Thank you for reaching out. How may I assist you?"
+
   utter_ask_problem_description:
   - text: Can you describe the problem you're having?
 

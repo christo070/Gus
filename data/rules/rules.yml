@@ -2,7 +2,7 @@ version: "3.1"
 
 rules:
 
-- rule: Show Bot Introduction
+- rule: Bot Introduction
   steps:
     - intent: show_intro
     - action: utter_intro

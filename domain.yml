@@ -14,13 +14,17 @@ intents:
 - greet
 - bye
 - thank
+- ask_help
 - canthelp
 - react_positive
 - react_negative
 - explain
 - human_handoff
 - restart
+# Customer Queries
 - book_table
+- ask_menu
+- ask_dishes
 
 - chitchat:
     use_entities: []
@@ -34,9 +38,11 @@ entities:
 - email
 - language
 - date
+- day
 - time
 - people_count
-- category
+- menu_category
+- menu_item
 
 slots:
   name:
@@ -59,6 +65,9 @@ slots:
 actions:
   - action_check_availability
   - action_confirm_booking
+  - action_show_menu 
+  - action_get_datetime
+  - action_tell_menu_items
 
 forms:
   table_reservation_form:
