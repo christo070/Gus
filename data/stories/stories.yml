@@ -27,4 +27,9 @@ stories:
   steps:
   - intent: exit
   - action: utter_exit
+
+- story: asking help
+  steps:
+  - intent: ask_help
+  - action: utter_help
   

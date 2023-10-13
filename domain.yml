@@ -40,7 +40,7 @@ entities:
 - date
 - day
 - time
-- people_count
+- number
 - menu_category
 - menu_item
 
@@ -56,18 +56,27 @@ slots:
     - type: from_entity
       entity: email
   date:
-    type: text
+    type: any
+    mappings:
+    - type: from_entity
+      entity: date
   time:
-    type: text
+    type: any
+    mappings:
+    - type: from_entity
+      entity: time
   people_count:
-    type: text
+    type: any
+    mappings:
+    - type: from_entity
+      entity: number
   
 actions:
   - action_check_availability
   - action_confirm_booking
-  - action_show_menu 
   - action_get_datetime
-  - action_tell_menu_items
+  - action_display_menu 
+  - action_recommend_dishes
 
 forms:
   table_reservation_form:

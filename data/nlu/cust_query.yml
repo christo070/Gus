@@ -4,17 +4,20 @@ nlu:
 - intent: book_table
   examples: |
     - I want to book a table.
-    - I want to book a table for [2](people_count)
-    - I would like to book a table for [2](people_count) people on [Friday](date)
-    - Can I reserve a table for [4](people_count) on [September 10th](date)?
-    - I'm looking to book a spot for [5](people_count) this [evening](date).
-    - Is it possible to reserve seating for [3](people_count) on [next Sunday](date)?
-    - I'd like to make a reservation for [6](people_count) people on [March 15th](date) at [7 pm](time)
-    - Please book a table for [two](people_count) this [Saturday night](date).
-    - Could I get a reservation for [eight](people_count) on [April 5th](date) around [30 pm](time)?
-    - We need a table booked for [10](people_count) on [July 21st](date)
-    - I'm planning a dinner for [4](people_count) and want to book for [next Wednesday](date) evening.
+    - I want to book a table for [2](number)
+    - I would like to book a table for [2](number) people on [Friday](date)
+    - Can I reserve a table for [4](number) on [September 10th](date)?
+    - I'm looking to book a spot for [5](number) this [evening](date).
+    - Is it possible to reserve seating for [3](number) on [next Sunday](date)?
+    - I'd like to make a reservation for [6](number) people on [March 15th](date) at [7 pm](time)
+    - Please book a table for [2](number) this [Saturday night](date).
+    - Could I get a reservation for [eight](number) on [April 5th](date) around [30 pm](time)?
+    - We need a table booked for [10](number) on [July 21st](date)
+    - I'm planning a dinner for [4](number) and want to book for [next Wednesday](date) evening.
 
 - intent: select_category
   examples: |
     - I want to see the [main course](menu_category) menu
+    - I want to see the [dessert](menu_category) menu
+    - I want to see the [drinks](menu_category) menu
+    - I want to see the [appetizers](menu_category) menu

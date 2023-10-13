@@ -2,16 +2,33 @@ version: "3.1"
 
 stories:
 
+- story: 
+
+
+
+
+
 - story: Show Menu
   steps:
   - intent: ask_menu
-  - action: action_show_menu
+  - action: action_display_menu
   - intent: select_menu_category
   - action: action_tell_menu_items
 
-- story: customer asking for help
+- story: Recommend Dishes 1
   steps:
-  - intent: ask_help
-  - action: utter_help
+  - intent: get_recommendations
+  - action: action_display_menu
+  - intent: select_menu_category
+  - action: action_recommend_dishes
+
+- story: Recommend Dishes 2
+  steps:
+  - intent: ask_menu
+  - action: action_display_menu
+  - intent: get_recommendations
+  - action: action_recommend_dishes
+
+
 
 
