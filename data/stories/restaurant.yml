@@ -13,7 +13,7 @@ stories:
   - intent: affirm
   - action: action_reserve_table
 
-- story: Table Reservation 2 - Abort Process
+- story: Table Reservation 2 - Abort Reservation Process
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
