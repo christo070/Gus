@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: Table Reservation 1 - Form Activate
+- story: Table Reservation 1 - Book Table
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
@@ -12,6 +12,28 @@ stories:
   - action: utter_ask_confirmation
   - intent: affirm
   - action: action_reserve_table
+
+- story: Table Reservation 2 - Abort Process
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - availability: true
+  - action: utter_ask_confirmation
+  - intent: deny
+  - active_loop: null
+  - action: action_abort_reservation_process # unset people_count, availability slots
+
+- story: Table Reservation 3 - Reservation Unavailable
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - availability: false
+  - action: utter_reservation_not_possible
+  
 
 
 
