@@ -1,9 +1,16 @@
 version: "3.1"
 
 rules:
-rules:
-- rule: Activate Table Reservation Form
-  steps:
-  - intent: book_table
-  - action: table_reservation_form
+
+- rule: Submit Table Reservation form
+  condition:
+  # Condition that form is active.
   - active_loop: table_reservation_form
+  steps:
+  # Form is deactivated
+  - action: table_reservation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_check_availability

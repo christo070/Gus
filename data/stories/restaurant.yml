@@ -2,8 +2,16 @@ version: "3.1"
 
 stories:
 
-- story: 
-
+- story: Table Reservation 1 - Form Activate
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - availability: true
+  - action: utter_ask_confirmation
+  - intent: affirm
+  - action: action_reserve_table
 
 
 

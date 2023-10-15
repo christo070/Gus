@@ -235,7 +235,6 @@ nlu:
     - I don't want to give it to you
     - I don't want to say
     - I dont want to tell
-    - I'm not giving you my email address
     - I'm not going to give it to you
     - NEIN
     - NO
@@ -260,7 +259,6 @@ nlu:
     - i don't think so
     - i don't want either of those
     - i don't want to
-    - i don't want to give you my email
     - i dont want to
     - i dont want to accept :P lol
     - i guess it means - no
@@ -326,7 +324,6 @@ nlu:
     - this sucks
     - very bad
     - I do not need help installing
-    - I don't wanna tell the name of my company
     - no stop
     - stop it, i do not care!!!
     - none of them

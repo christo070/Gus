@@ -246,7 +246,7 @@ nlu:
     - is that any of your business
     - isn't the newsletter just spam?
     - it's a pity
-    - i´m hungry
+    - i'm hungry
     - license
     - ljljl
     - lunch
@@ -260,7 +260,6 @@ nlu:
     - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
     - offer me lunch
     - oh my god, not again!
-    - oh wait i gave you my work email address can i change it?
     - ok one then
     - on wiche nlp based system are you build?
     - only that?
@@ -341,8 +340,6 @@ nlu:
     - where is mexico?
     - wheres the party?
     - which city are you talking about?
-    - which email
-    - which email should i send to ?
     - which file is created first while developing chat bot
     - which is the LNU asynchronism ?
     - which kind
@@ -354,7 +351,6 @@ nlu:
     - who is your favourite robot?
     - who let the dog out
     - who was hitler
-    - who will anser my email?
     - who's Bill Gates?
     - whta you think about gdpr?
     - why do you need that?
@@ -373,7 +369,7 @@ nlu:
     - you should learn to count
     - you will know it from the single red rose it carries between its teeth
     - you're a woman
-    - ı am learning python
+    - I am learning python
     - CALL THE POLICE
     - tertyryutyi
     - wsdrcftvgybhnj

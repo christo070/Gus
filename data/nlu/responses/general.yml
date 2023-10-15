@@ -28,12 +28,6 @@ responses:
   utter_ask_if_problem:
   - text: Did you encounter any problems?
 
-  utter_ask_name:
-  - text: What's your name?
-
-  utter_ask_email:
-  - text: What's your email address?
-
   utter_awesome:
   - text: Awesome, thanks! 👍
   - text: Sweet, thank you! 😄
@@ -48,20 +42,11 @@ responses:
   utter_canthelp:
   - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our [website](https://restaurant.com/), otherwise contact us at [hi@restaurant.com](mailto:hi@restaurant.com) for anything else.
   
-  utter_cantsignup:
-  - text: I can't sign you up if you don't provide your email 😉
-  
   utter_change_mind:
   - text: You can still change your mind below though.
 
-  utter_confirmationemail:
-  - text: We sent a confirmation email to {email}.
-
   utter_could_not_subscribe:
   - text: Something went wrong, I couldn't subscribe you to the Rasa newsletter 😞
-
-  utter_contact_email:
-  - text: You can't speak to a human directly in this chat, but you can email us at hi@mail.com.
 
   utter_default:
   - text: Sorry, I didn't get that 🤷. Could you please rephrase?
@@ -84,16 +69,6 @@ responses:
   - text: Hey there, my name is Gus.
   - text: Hi, I'm Gus!
   - text: Hi! My name's Gus.
-
-  utter_greet_name:
-  - text: Hi, {name}!
-  - text: Hello, {name}!
-  - text: Hey, {name}!
-
-  utter_greet_noname:
-  - text: Hey!
-  - text: Hi!
-  - text: Hey there!
 
   utter_bye:
   - text: Goodbye!

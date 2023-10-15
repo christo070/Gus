@@ -34,42 +34,36 @@ intents:
 - exit
 
 entities:
-- name
-- email
-- language
-- date
-- day
-- time
+# - date
+# - time
 - number
-- menu_category
 - menu_item
 
 slots:
-  name:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: name
-  email:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: email
-  date:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: date
-  time:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: time
+  # date:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: date
+  # time:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: time
   people_count:
     type: any
     mappings:
     - type: from_entity
       entity: number
+      conditions:
+      - active_loop: table_reservation_form
+        requested_slot: people_count
+  availability:
+    type: bool
+    mappings:
+    - type: custom
+      conditions:
+      - active_loop: table_reservation_form
   
 actions:
   - action_check_availability
@@ -80,12 +74,6 @@ actions:
 
 forms:
   table_reservation_form:
-    date:
-      - type: from_entity
-        entity: date
-    time:
-      - type: from_entity
-        entity: time
-    people_count:
-      - type: from_entity
-        entity: people_count
+    required_slots:
+      - people_count
+    
