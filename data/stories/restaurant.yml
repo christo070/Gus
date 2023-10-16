@@ -4,9 +4,6 @@ stories:
 
 - story: Table Reservation 1 - Book Table
   steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
   - slot_was_set:
     - availability: true
   - action: utter_ask_confirmation
@@ -15,9 +12,6 @@ stories:
 
 - story: Table Reservation 2 - Abort Reservation Process
   steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
   - slot_was_set:
     - availability: true
   - action: utter_ask_confirmation
@@ -27,9 +21,6 @@ stories:
 
 - story: Table Reservation 3 - Reservation Unavailable
   steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
   - slot_was_set:
     - availability: false
   - action: utter_reservation_not_possible

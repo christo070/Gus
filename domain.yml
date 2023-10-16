@@ -21,23 +21,18 @@ intents:
 - explain
 - human_handoff
 - restart
-# Customer Queries
-- book_table
-- ask_menu
-- ask_dishes
-
 - chitchat:
     use_entities: []
 - out_of_scope
 - nlu_fallback
-- dummy_intent_for_oov
 - exit
+# Customer Queries
+- request_table_reservation
 
 entities:
 # - date
 # - time
 - number
-- menu_item
 
 slots:
   # date:
@@ -52,6 +47,7 @@ slots:
   #     entity: time
   people_count:
     type: any
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: number

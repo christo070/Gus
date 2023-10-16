@@ -1,7 +1,15 @@
 version: "3.1"
 
 responses:
-  utter_apologise_for_no_datetime_detect:
-  - text: "I am sorry, I couldn't correctly understand date or time in your message. Could you please select using this DatePicker?"
+  utter_ask_confirmation:
+  - text: "A suitable spot for you is available. Do you want me to go ahead and book the spot for you?"
+
+  utter_reservation_not_possible:
+  - text: "Sorry, we don't have any spots available at the moment. Please try again later."
+
+  utter_ask_people_count:
+  - text: "How many people are you booking the table for?"
+
+  
 
     
