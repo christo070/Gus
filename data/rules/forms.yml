@@ -10,13 +10,10 @@ rules:
 
 - rule: Submit Table Reservation form
   condition:
-  # Condition that form is active.
   - active_loop: table_reservation_form
   steps:
   - slot_was_set:
     - requested_slot: null
-  # Form is deactivated
   - action: table_reservation_form
   - active_loop: null
-  # The actions we want to run when the form is submitted.
   - action: action_check_availability

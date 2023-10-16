@@ -17,7 +17,7 @@ stories:
   - action: utter_ask_confirmation
   - intent: deny
   - active_loop: null
-  - action: action_abort_reservation_process # unset people_count, availability slots
+  - action: action_abort_reservation_process # unset people_count, availability slots, stop form
 
 - story: Table Reservation 3 - Reservation Unavailable
   steps:

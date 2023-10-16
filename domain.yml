@@ -63,10 +63,9 @@ slots:
   
 actions:
   - action_check_availability
-  - action_confirm_booking
-  - action_get_datetime
-  - action_display_menu 
-  - action_recommend_dishes
+  - action_reserve_table
+  - action_abort_reservation_process
+  
 
 forms:
   table_reservation_form:
