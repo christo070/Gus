@@ -26,10 +26,10 @@ from rasa_sdk.executor import CollectingDispatcher
 #
 #         return []
 
-class Action(Action):
+class ActionCheckAvailability(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_check_availability"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
