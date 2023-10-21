@@ -4,14 +4,20 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-#
+
+import ijson
+
+try:
+    with open('../data/info/table_reservation.json', 'r') as f:
+        reservation = ijson.items(f, 'table_reservation.item')
+except Exception as e:
+    print(e)
+    reservation = {}
+
 #
 # class ActionHelloWorld(Action):
 #
@@ -34,7 +40,11 @@ class ActionCheckAvailability(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        with open('../data/info/table_reservation.json', 'r') as f:
+            table_reservation = ijson.items(f, 'table_reservation.item')
 
+            for item in table_reservation:
+                print(item)
         dispatcher.utter_message(text="Hello World!")
 
         return []

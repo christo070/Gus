@@ -1,0 +1,17 @@
+{
+    "reservation_details": {
+        "customer_name": "John Doe",
+        "customer_email": "john.doe@example.com",
+        "reservation_date": "2023-10-12",
+        "reservation_time": "19:00",
+        "people_count": 4,
+        "special_request": "Window side table"
+    },
+    "tables" : {
+        "table_1": {
+            "capacity": 4,
+            "status": "available",
+            "location": "window side"
+        }
+    }
+}
