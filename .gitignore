@@ -1,4 +1,5 @@
 # Ignore directories
 .rasa/
+.vscode/
 models/
 actions/__pycache__/

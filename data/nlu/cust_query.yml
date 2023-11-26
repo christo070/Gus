@@ -3,15 +3,15 @@ version: "3.1"
 nlu:
 - intent: request_table_reservation
   examples: |
-    - I want to book a table.
-    - I want to book a table for [2](number).
-    - I would like to book a table for [2](number) people.
+    - I want to book a table
+    - I want to book a table for [2](number)
+    - I would like to book a table for [2](number) people
     - Can I reserve a table for [4](number)?
-    - I'm looking to book a spot for [5](number).
+    - I'm looking to book a spot for [5](number)
     - Is it possible to reserve seating for [3](number)?
-    - I'd like to make a reservation for [6](number) people.
-    - Please book a table for [2](number).
+    - I'd like to make a reservation for [6](number) people
+    - Please book a table for [2](number)
     - Could I get a reservation for [eight](number)?
-    - We need a table booked for [10](number).
-    - I'm planning a dinner for [4](number).
+    - We need a table booked for [10](number)
+    - I'm planning a dinner for [4](number)
 

@@ -1,15 +1,17 @@
 version: "3.1"
 
 responses:
-  utter_ask_confirmation:
+  utter_ask_reserve_confirmation:
   - text: "A suitable spot for you is available. Do you want me to go ahead and book the spot for you?"
 
-  utter_reservation_not_possible:
+  utter_reservation_housefull:
   - text: "Sorry, we don't have any spots available at the moment. Please try again later."
 
   utter_ask_people_count:
   - text: "How many people are you booking the table for?"
 
-  
+  utter_ask_customer_email:
+  - text: "Please provide your email address"
+
 
     

@@ -2,30 +2,25 @@ version: "3.1"
 
 stories:
 
-- story: Table Reservation 1 - Book Table
+# found 1 table and wish to reserve
+- story: Table Reservation 1
   steps:
   - slot_was_set:
     - availability: true
-  - action: utter_ask_confirmation
+  - action: utter_ask_reserve_confirmation
   - intent: affirm
   - action: action_reserve_table
 
-- story: Table Reservation 2 - Abort Reservation Process
+# found 1 table, but does not wish to reserve
+- story: Table Reservation 2
   steps:
   - slot_was_set:
     - availability: true
-  - action: utter_ask_confirmation
+  - action: utter_ask_reserve_confirmation
   - intent: deny
   - active_loop: null
   - action: action_abort_reservation_process # unset people_count, availability slots, stop form
-
-- story: Table Reservation 3 - Reservation Unavailable
-  steps:
-  - slot_was_set:
-    - availability: false
-  - action: utter_reservation_not_possible
   
-
 
 
 

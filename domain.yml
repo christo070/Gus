@@ -30,45 +30,68 @@ intents:
 - request_table_reservation
 
 entities:
-# - date
-# - time
+- date
+- time
 - number
+- email
 
 slots:
-  # date:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: date
-  # time:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: time
+  date:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: date
+
+  time:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: time
+
+  customer_email:
+    type: any
+    # influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+      conditions:
+      - active_loop: table_reservation_form
+        requested_slot: customer_email
+
   people_count:
     type: any
-    influence_conversation: true
+    # influence_conversation: true
     mappings:
     - type: from_entity
       entity: number
       conditions:
       - active_loop: table_reservation_form
         requested_slot: people_count
+
   availability:
     type: bool
+    initial_value: null
+    influence_conversation: true
     mappings:
     - type: custom
       conditions:
       - active_loop: table_reservation_form
-  
+
+  available_tables:
+    type: any
+    mappings:
+    - type: custom
+      conditions:
+      - active_loop: table_reservation_form
+
 actions:
-  - action_check_availability
+  - action_check_table_availability
   - action_reserve_table
   - action_abort_reservation_process
   
-
 forms:
   table_reservation_form:
     required_slots:
+      - customer_email
       - people_count
     

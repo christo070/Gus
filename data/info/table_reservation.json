@@ -1,17 +1,40 @@
 {
-    "reservation_details": {
-        "customer_name": "John Doe",
-        "customer_email": "john.doe@example.com",
-        "reservation_date": "2023-10-12",
-        "reservation_time": "19:00",
-        "people_count": 4,
-        "special_request": "Window side table"
-    },
+    "details": [
+        {
+            "customer_email": "john.doe@example.com",
+            "table_id": "t1",
+            "people_count": 3
+        },
+        {
+            "customer_email": "jane.doe@example.com",
+            "table_id": "t4",
+            "people_count": 2
+        }
+    ],
     "tables" : {
-        "table_1": {
+        "t1": {
+            "capacity": 3,
+            "status": "available"
+        },
+        "t2": {
+            "capacity": 5,
+            "status": "available"
+        },
+        "t3": {
             "capacity": 4,
-            "status": "available",
-            "location": "window side"
+            "status": "available"
+        },
+        "t4": {
+            "capacity": 2,
+            "status": "reserved"
+        },
+        "t5": {
+            "capacity": 6,
+            "status": "available"
+        },
+        "t6": {
+            "capacity": 2,
+            "status": "available"
         }
     }
 }
