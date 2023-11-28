@@ -1,3 +1,5 @@
+# https://rasa.com/docs/rasa/domain/
+
 version: "3.1"
 
 config:
@@ -21,21 +23,23 @@ intents:
 - explain
 - human_handoff
 - restart
-- chitchat:
-    use_entities: []
+- chitchat
 - out_of_scope
 - nlu_fallback
 - exit
 # Customer Queries
 - request_table_reservation
+- inform_email
+- inform_reservation_people_count
 
 entities:
-- date
-- time
-- number
-- email
+  # - date
+  # - time
+  - number
+  - email
 
 slots:
+
   date:
     type: any
     mappings:
@@ -50,44 +54,51 @@ slots:
 
   customer_email:
     type: any
-    # influence_conversation: true
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: email
-      conditions:
-      - active_loop: table_reservation_form
-        requested_slot: customer_email
+      intent: inform_email
 
   people_count:
     type: any
-    # influence_conversation: true
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: number
+      intent: [inform_reservation_people_count, request_table_reservation]
       conditions:
       - active_loop: table_reservation_form
-        requested_slot: people_count
+      - requested_slot: people_count
 
-  availability:
-    type: bool
-    initial_value: null
+  table_availability:
+    type: categorical
+    values:
+      - yes
+      - no
     influence_conversation: true
     mappings:
     - type: custom
-      conditions:
-      - active_loop: table_reservation_form
 
   available_tables:
     type: any
     mappings:
     - type: custom
-      conditions:
-      - active_loop: table_reservation_form
+
+  requested_slot:
+    type: categorical
+    influence_conversation: true
+    values:
+      - customer_email
+      - people_count
+    mappings:
+    - type: custom
 
 actions:
   - action_check_table_availability
   - action_reserve_table
-  - action_abort_reservation_process
+  - action_reset_table_reservation_slots
+  - action_reset_slots
   
 forms:
   table_reservation_form:

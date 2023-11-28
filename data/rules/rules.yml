@@ -2,8 +2,42 @@ version: "3.1"
 
 rules:
 
-- rule: Bot Introduction
+- rule: conversation start
+  conversation_start: true
+  steps:
+    - action: utter_greet
+    - action: utter_intro
+    - action: utter_inform_privacypolicy
+    - action: utter_ask_howcanhelp
+    - action: utter_whatspossible
+
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_howcanhelp
+
+- rule: what can bot do?
   steps:
     - intent: show_intro
     - action: utter_intro
-    - action: utter_possibilities
+    - action: utter_whatspossible
+
+- rule: bye
+  steps:
+  - intent: bye
+  - action: utter_bye
+  - action: action_reset_slots
+
+- rule: exit
+  steps:
+  - intent: exit
+  - action: utter_exit
+  - action: action_reset_slots
+
+- rule: restart
+  steps:
+  - intent: restart
+  - action: action_reset_slots
+  - action: utter_restart
+  - action: action_restart

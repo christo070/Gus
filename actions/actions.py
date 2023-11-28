@@ -1,70 +1,38 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
 import json
-# import ijson
-
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
     SlotSet,
-    FollowupAction
+    FollowupAction,
+    AllSlotsReset
 )
 
-# try:
-#     with open('../data/info/table_reservation.json', 'r') as f:
-#         table_reservation = ijson.items(f, 'table_reservation.item')
-#         reservation_details = table_reservation["details"]
-#         tables = table_reservation["tables"]
-        
-# except Exception as e:
-#     print(e)
-#     reservation = {}
-
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
 class ActionCheckAvailability(Action):
-
     def name(self) -> Text:
         return "action_check_table_availability"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+
         available_tables = {}
-
         with open('../data/info/table_reservation.json', 'r') as f:
-                json_object = json.load(f)
-                tables = json_object["tables"]
-
-                for table_id in tables.keys():
-                    if tables[table_id]["status"] == "available" and tables[table_id]["capacity"] >= tracker.get_slot("people_count"):
-                        available_tables[table_id] = tables[table_id]["capacity"]
+            json_object = json.load(f)
+            tables = json_object["tables"]
+            for table_id in tables.keys():
+                if tables[table_id]["status"] == "available" and tables[table_id]["capacity"] >= tracker.get_slot("people_count"):
+                    available_tables[table_id] = tables[table_id]["capacity"]
 
         if len(available_tables) == 0:
-            return [SlotSet("availability", False)]
+            return [SlotSet("table_availability", 'no')]
         else:
-            return [SlotSet("availability", True), SlotSet("available_tables", available_tables)]
+            return [SlotSet("table_availability", 'yes'), SlotSet("available_tables", available_tables)]
     
-class ActionReserveTable(Action):
 
+class ActionReserveTable(Action):
     def name(self) -> Text:
         return "action_reserve_table"
 
@@ -85,7 +53,6 @@ class ActionReserveTable(Action):
         if table:
             with open('../data/info/table_reservation.json', 'r') as f:
                 json_object = json.load(f)
-                
                 json_object["details"].append(
                     {
                         "customer_email": tracker.get_slot("customer_email"),
@@ -93,9 +60,7 @@ class ActionReserveTable(Action):
                         "people_count": tracker.get_slot("people_count")
                     }
                 )
-
                 json_object["tables"][table]["status"] = "reserved"
-
                 with open('../data/info/table_reservation.json', 'w') as f:
                     json.dump(json_object, f)
         else:
@@ -107,12 +72,22 @@ class ActionReserveTable(Action):
 
         
 class ActionAbortReservation(Action):
-
     def name(self) -> Text:
-        return "action_abort_reservation_process"
+        return "action_reset_table_reservation_slots"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        return [SlotSet("availability", None), SlotSet("available_tables", {}), SlotSet("people_count", None)]
+        return [SlotSet("table_availability", None), SlotSet("available_tables", {}), SlotSet("people_count", None)]
+    
+
+class ActionReset(Action):
+     def name(self) -> Text:
+            return "action_reset_slots"
+
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [AllSlotsReset()]

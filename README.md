@@ -38,6 +38,11 @@ Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding
 ### Features to Implement
 ![User Expectation Table](image.png)
 
+### Upgrading Rasa in your python virtual environment
+```bash
+pip install rasa --upgrade
+```
+
 # References
 
 - [Sara - Rasa Demo Bot](https://github.com/RasaHQ/rasa-demo/)

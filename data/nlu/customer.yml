@@ -11,7 +11,9 @@ nlu:
     - Is it possible to reserve seating for [3](number)?
     - I'd like to make a reservation for [6](number) people
     - Please book a table for [2](number)
-    - Could I get a reservation for [eight](number)?
+    - Could I get a reservation for [8](number)?
     - We need a table booked for [10](number)
     - I'm planning a dinner for [4](number)
+    - book a table for
+    - reserve a table
 

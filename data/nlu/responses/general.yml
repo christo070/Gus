@@ -5,11 +5,20 @@ responses:
   utter_intro:
   - text: I am Gus, a Restaurant Chatbot.
 
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  - text: How can I be of assistance?
+  - text: What can I do for you?
+  - text: What can I help you with?
+  - text: What can I do for you today?
+  - text: What can I do for you now?
+  - text: What can I help you with today?
+
   utter_anything_else:
   - text: Is there anything else I can help you with?
 
-  utter_help:
-  - text: "Thank you for reaching out. How may I assist you?"
+  utter_ask_continue:
+  - text: "Do you want to continue?"
 
   utter_ask_problem_description:
   - text: Can you describe the problem you're having?
@@ -45,9 +54,6 @@ responses:
   utter_change_mind:
   - text: You can still change your mind below though.
 
-  utter_could_not_subscribe:
-  - text: Something went wrong, I couldn't subscribe you to the Rasa newsletter 😞
-
   utter_default:
   - text: Sorry, I didn't get that 🤷. Could you please rephrase?
   - text: I didn't understand, could you rephrase that?
@@ -66,9 +72,15 @@ responses:
   - text: Cool, let's do it 🚀
 
   utter_greet:
-  - text: Hey there, my name is Gus.
-  - text: Hi, I'm Gus!
-  - text: Hi! My name's Gus.
+  - text: Hey there
+  - text: Hi!
+  - text: Hello
+  - text: Hey
+  - text: Hi there!
+  - text: Hello there!
+  - text: Hi 👋
+  - text: Hello 👋
+  - text: Hey there 👋
 
   utter_bye:
   - text: Goodbye!
@@ -107,9 +119,10 @@ responses:
   - text: 😍
 
   utter_restart:
-  - text: Loading... And I've been restarted! 🤯
-  - text: Congrats you've restarted me! 😉
-
+  - text: Resarting...🤖
+  # - text: Loading... And I've been restarted! 🤯
+  # - text: Congrats you've restarted me! 😉
+  
   utter_restart_with_button:
   - buttons:
     - payload: /restart
@@ -126,6 +139,7 @@ responses:
 
   utter_what_help:
   - text: Ok, what can I help you with?
+  - text: Thank you for reaching out. How may I assist you?
 
   utter_ask_rephrase:
   - text: Can you rephrase the question?
@@ -155,18 +169,3 @@ responses:
   - text: "You're heading out? Don't worry, I'm not going anywhere... literally!"
   - text: "Until next time, may your WiFi be strong and your battery full!"
   - text: "Remember, I'm just a chat away. Farewell"
-
-  utter_possibilities:
-  - text: |
-      You can ask me about:
-      - Menu Information
-      - Specials & Promotions
-      - Operating Hours & Location Details
-      - Parking related Queries
-      - Dietary & Allergen Information
-      - FAQs & General Queries
-      - Immediate Human Assistance
-      - Reservation
-      - Order Food
-      - Feedback & Reviews
-      - Loyalty Programs & Membership Details

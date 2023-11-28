@@ -12,8 +12,8 @@ rules:
   condition:
   - active_loop: table_reservation_form
   steps:
-  - slot_was_set:
-    - requested_slot: null
   - action: table_reservation_form
   - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   - action: action_check_table_availability

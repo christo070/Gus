@@ -631,8 +631,6 @@ nlu:
     - and that's it?
     - and you call yourself bot company? pff
     - do you get anything?
-    - exit
-    - exit now
     - hey, you promised to contact me, but nobody did, I really need to finish that car insurance bot!!!!
     - hm i don't think you can do what i want
     - i guess you can't help me then
@@ -640,9 +638,6 @@ nlu:
     - ok i guess you can't help me
     - ok then you cant help me
     - ok, but that doesnt help me
-    - stop
-    - stop go back
-    - stop this conversation
     - that was shit, you're not helping
     - that's not what i want
     - this conversation is not really helpful
@@ -651,7 +646,6 @@ nlu:
     - you can't help me with what i need
     - you cannot help me with what I want
     - you cant help me
-    - quit
     - that does not help
 
 - intent: react_positive
@@ -834,8 +828,23 @@ nlu:
 
 - intent: exit
   examples: |
-   - I want to exit
-   - exit
+    - I want to exit
+    - I want to stop
+    - I want to stop talking
+    - I want to stop talking to you
+    - I want to stop talking to you now
+    - exit
+    - quit
+    - stop
+    - stop now
+    - stop go back
+    - stop this conversation
+    - stop this talk
+    - stop talking
+    - stop talking to me
+    - stop talking to me now
+    - stop talking to me please
+    - stop talking to me!
 
 - intent: inform_email
   examples: |

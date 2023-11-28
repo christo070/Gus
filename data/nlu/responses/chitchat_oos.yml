@@ -58,7 +58,7 @@ responses:
   - text: "You're the second person now to ask me that. Rihanna was the first."
 
   utter_chitchat/ask_whatspossible:
-  - text: "You can ask me about Menu Information, Specials & Promotions, Operating Hours & Location Details, Dietary & Allergen Information and other general queries about Restaurant, its policies, or services"
+  - text: "You can ask me about Table Reservation, Order Food, Menu Information, Specials & Promotions, Operating Hours & Location Details, Parking related Queries, FAQs & General Queries, Request for Immediate Human Assistance, Loyalty Programs & Membership Details and Provide Feedback"
 
   utter_chitchat/ask_wherefrom:
   - text: "My developers come from all over the world!"

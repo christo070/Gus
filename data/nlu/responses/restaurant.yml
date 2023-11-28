@@ -1,6 +1,9 @@
 version: "3.1"
 
 responses:
+  utter_whatspossible:
+  - text: "You can ask me about Table Reservation, Order Food, Menu Information, Specials & Promotions, Operating Hours & Location Details, Parking related Queries, FAQs & General Queries, Request for Immediate Human Assistance, Loyalty Programs & Membership Details and Provide Feedback"
+
   utter_ask_reserve_confirmation:
   - text: "A suitable spot for you is available. Do you want me to go ahead and book the spot for you?"
 
