@@ -7,7 +7,7 @@ config:
 
 session_config:
   session_expiration_time: 300
-  carry_over_slots_to_new_session: false
+  carry_over_slots_to_new_session: true
 
 intents:
 - show_intro
@@ -25,6 +25,7 @@ intents:
 - restart
 - chitchat
 - out_of_scope
+- faq
 - nlu_fallback
 - exit
 # Customer Queries
@@ -51,6 +52,18 @@ slots:
     mappings:
     - type: from_entity
       entity: time
+
+  opening_time:
+    type: any
+    initial_value: "09:00 AM"
+    mappings:
+    - type: custom
+
+  closing_time:
+    type: any
+    initial_value: "10:00 PM"
+    mappings:
+    - type: custom
 
   customer_email:
     type: any
@@ -79,11 +92,20 @@ slots:
     influence_conversation: true
     mappings:
     - type: custom
+      action: action_check_table_availability
+      conditions:
+      - active_loop: table_reservation_form
+      - requested_slot: table_availability
 
   available_tables:
     type: any
+    influence_conversation: false
     mappings:
     - type: custom
+      action: action_check_table_availability
+      conditions:
+      - active_loop: table_reservation_form
+      - requested_slot: available_tables
 
   requested_slot:
     type: categorical
@@ -91,13 +113,13 @@ slots:
     values:
       - customer_email
       - people_count
+      - table_availability
     mappings:
     - type: custom
 
 actions:
   - action_check_table_availability
   - action_reserve_table
-  - action_reset_table_reservation_slots
   - action_reset_slots
   
 forms:
@@ -105,4 +127,5 @@ forms:
     required_slots:
       - customer_email
       - people_count
-    
+      - table_availability
+      - available_tables

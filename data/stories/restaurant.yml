@@ -11,7 +11,6 @@ stories:
   - action: utter_ask_continue
   - intent: deny
   - action: action_deactivate_loop
-  - active_loop: null
 
 - story: stop table reservation form + continue
   steps:
@@ -33,20 +32,22 @@ stories:
   - active_loop: table_reservation_form
   - slot_was_set:
     - table_availability: yes
+  - active_loop: null
   - action: utter_ask_reserve_confirmation
   - intent: affirm
   - action: action_reserve_table
-  - active_loop: null
 
 # found 1 table, but does not wish to reserve
 - story: Table Reservation 2
   steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
   - slot_was_set:
     - table_availability: yes
   - action: utter_ask_reserve_confirmation
   - intent: deny
-  - active_loop: null
-  - action: action_reset_table_reservation_slots
+  - action: action_deactivate_loop
   
 
 

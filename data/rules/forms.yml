@@ -2,13 +2,13 @@ version: "3.1"
 
 rules:
 
-- rule: Activate Table Reservation Form
+- rule: activate table reservation form
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
   - active_loop: table_reservation_form
 
-- rule: Submit Table Reservation form
+- rule: submit table reservation form
   condition:
   - active_loop: table_reservation_form
   steps:

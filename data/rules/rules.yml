@@ -15,7 +15,6 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: utter_ask_howcanhelp
 
 - rule: what can bot do?
   steps:
@@ -27,17 +26,10 @@ rules:
   steps:
   - intent: bye
   - action: utter_bye
-  - action: action_reset_slots
+  - action: action_restart
 
-- rule: exit
-  steps:
-  - intent: exit
-  - action: utter_exit
-  - action: action_reset_slots
-
-- rule: restart
+- story: restart
   steps:
   - intent: restart
-  - action: action_reset_slots
-  - action: utter_restart
   - action: action_restart
+  - action: action_session_start

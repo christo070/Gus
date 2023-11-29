@@ -120,8 +120,6 @@ responses:
 
   utter_restart:
   - text: Resarting...🤖
-  # - text: Loading... And I've been restarted! 🤯
-  # - text: Congrats you've restarted me! 😉
   
   utter_restart_with_button:
   - buttons:

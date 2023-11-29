@@ -18,12 +18,12 @@ class ActionCheckAvailability(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        available_tables = {}
-        with open('../data/info/table_reservation.json', 'r') as f:
+        available_tables = {} 
+        with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
             json_object = json.load(f)
             tables = json_object["tables"]
             for table_id in tables.keys():
-                if tables[table_id]["status"] == "available" and tables[table_id]["capacity"] >= tracker.get_slot("people_count"):
+                if tables[table_id]["status"] == "available" and tables[table_id]["capacity"] >= int(tracker.get_slot("people_count")):
                     available_tables[table_id] = tables[table_id]["capacity"]
 
         if len(available_tables) == 0:
@@ -51,7 +51,7 @@ class ActionReserveTable(Action):
 
         # assign table to customer
         if table:
-            with open('../data/info/table_reservation.json', 'r') as f:
+            with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
                 json_object = json.load(f)
                 json_object["details"].append(
                     {
@@ -67,19 +67,20 @@ class ActionReserveTable(Action):
             dispatcher.utter_message(text="Error while reserving table. Please try again later.")
             return [FollowupAction("action_abort_reservation_process")]
 
+
         dispatcher.utter_message(text="Table reserved successfully!")
         return []
 
         
-class ActionAbortReservation(Action):
-    def name(self) -> Text:
-        return "action_reset_table_reservation_slots"
+# class ActionAbortReservation(Action):
+#     def name(self) -> Text:
+#         return "action_reset_table_reservation_slots"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        return [SlotSet("table_availability", None), SlotSet("available_tables", {}), SlotSet("people_count", None)]
+#         return [SlotSet("table_availability", None), SlotSet("available_tables", {}), SlotSet("people_count", None)]
     
 
 class ActionReset(Action):

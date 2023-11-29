@@ -16,5 +16,11 @@ responses:
   utter_ask_customer_email:
   - text: "Please provide your email address"
 
+  utter_table_reservation_successful:
+  - text: "Your table has been reserved. You will receive a confirmation email shortly."
+
+  utter_table_reservation_unsuccessful:
+  - text: "Sorry, we are unable to reserve a table for you at the moment. Please try again later."
+
 
     

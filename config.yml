@@ -16,6 +16,8 @@ pipeline:
 - name: WhitespaceTokenizer
   token_pattern: (?u)\b\w+\b
 - name: RegexFeaturizer
+  "case_sensitive": False
+  "use_word_boundaries": False
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
