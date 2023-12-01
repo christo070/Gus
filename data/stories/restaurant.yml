@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: stop table reservation form + stop
+- story: stop table reservation form + exit
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
@@ -11,8 +11,10 @@ stories:
   - action: utter_ask_continue
   - intent: deny
   - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_table_reservation_unsuccessful
 
-- story: stop table reservation form + continue
+- story: stop table reservation form + continue + table available
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
@@ -21,35 +23,34 @@ stories:
   - action: utter_ask_continue
   - intent: affirm
   - action: table_reservation_form
+  - slot_was_set:
+    - requested_slot: null
   - active_loop: null
   - action: action_check_table_availability
-
-# found 1 table and wish to reserve
-- story: Table Reservation 1
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
   - slot_was_set:
     - table_availability: yes
-  - active_loop: null
-  - action: utter_ask_reserve_confirmation
-  - intent: affirm
   - action: action_reserve_table
+  - or:
+    - intent: affirm
+    - intent: thanks
+  - action: 
 
-# found 1 table, but does not wish to reserve
-- story: Table Reservation 2
+- story: stop table reservation form + continue + table unavailable
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
   - active_loop: table_reservation_form
+  - intent: exit
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: table_reservation_form
   - slot_was_set:
-    - table_availability: yes
-  - action: utter_ask_reserve_confirmation
-  - intent: deny
-  - action: action_deactivate_loop
-  
-
+    - requested_slot: null
+  - active_loop: null
+  - action: action_check_table_availability
+  - slot_was_set:
+    - table_availability: no
+  - action: utter_reservation_housefull
 
 
 # - story: Show Menu

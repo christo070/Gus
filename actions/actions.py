@@ -44,13 +44,13 @@ class ActionReserveTable(Action):
         available_tables = tracker.get_slot("available_tables")
         m = min(available_tables.values())
         table = ""
-        for k,v in available_tables:
+        for k,v in available_tables.items():
             if v == m:
                 table = k
                 break
 
         # assign table to customer
-        if table:
+        if table != "":
             with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
                 json_object = json.load(f)
                 json_object["details"].append(
@@ -60,29 +60,15 @@ class ActionReserveTable(Action):
                         "people_count": tracker.get_slot("people_count")
                     }
                 )
-                json_object["tables"][table]["status"] = "reserved"
-                with open('../data/info/table_reservation.json', 'w') as f:
+                json_object["tables"][table]["status"] = "unavailable"
+                with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'w') as f:
                     json.dump(json_object, f)
+
+            return[SlotSet("table_availability", None), FollowupAction("utter_table_reservation_successful")]
         else:
-            dispatcher.utter_message(text="Error while reserving table. Please try again later.")
-            return [FollowupAction("action_abort_reservation_process")]
+            return [SlotSet("table_availability", None), FollowupAction("utter_table_reservation_unsuccessful")]
 
-
-        dispatcher.utter_message(text="Table reserved successfully!")
-        return []
-
-        
-# class ActionAbortReservation(Action):
-#     def name(self) -> Text:
-#         return "action_reset_table_reservation_slots"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-#         return [SlotSet("table_availability", None), SlotSet("available_tables", {}), SlotSet("people_count", None)]
     
-
 class ActionReset(Action):
      def name(self) -> Text:
             return "action_reset_slots"

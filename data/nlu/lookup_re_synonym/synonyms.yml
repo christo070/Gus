@@ -2,19 +2,6 @@ version: "3.1"
 
 nlu:
 
-- synonym: exit
-  examples: |
-    - exit
-    - quit
-    - end
-    - discontinue
-    - close
-    - stop
-    - cease
-    - wrap up
-    - terminate
-    - conclude
-
 - synonym: intro
   examples: |
     - Intro

@@ -40,18 +40,17 @@ entities:
   - email
 
 slots:
+  # date:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: date
 
-  date:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: date
-
-  time:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: time
+  # time:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: time
 
   opening_time:
     type: any
@@ -92,20 +91,20 @@ slots:
     influence_conversation: true
     mappings:
     - type: custom
-      action: action_check_table_availability
-      conditions:
-      - active_loop: table_reservation_form
-      - requested_slot: table_availability
+      # action: action_check_table_availability
+      # conditions:
+      # - active_loop: table_reservation_form
+      # - requested_slot: table_availability
 
   available_tables:
     type: any
     influence_conversation: false
     mappings:
     - type: custom
-      action: action_check_table_availability
-      conditions:
-      - active_loop: table_reservation_form
-      - requested_slot: available_tables
+      # action: action_check_table_availability
+      # conditions:
+      # - active_loop: table_reservation_form
+      # - requested_slot: available_tables
 
   requested_slot:
     type: categorical
@@ -127,5 +126,4 @@ forms:
     required_slots:
       - customer_email
       - people_count
-      - table_availability
-      - available_tables
+

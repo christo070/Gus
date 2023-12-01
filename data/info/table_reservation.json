@@ -1,40 +1,18 @@
 {
-    "details": [
-        {
-            "customer_email": "john.doe@example.com",
-            "table_id": "t1",
-            "people_count": 3
-        },
-        {
-            "customer_email": "jane.doe@example.com",
-            "table_id": "t4",
-            "people_count": 2
-        }
-    ],
-    "tables" : {
-        "t1": {
-            "capacity": 3,
-            "status": "available"
-        },
-        "t2": {
-            "capacity": 5,
-            "status": "available"
-        },
-        "t3": {
-            "capacity": 4,
-            "status": "available"
-        },
-        "t4": {
-            "capacity": 2,
-            "status": "reserved"
-        },
-        "t5": {
-            "capacity": 6,
-            "status": "available"
-        },
-        "t6": {
-            "capacity": 2,
-            "status": "available"
-        }
-    }
+  "details": [
+    { "customer_email": "joy@gmail.com", "table": "t4", "people_count": "2" },
+    { "customer_email": "joy@gmail.com", "table": "t6", "people_count": "2" },
+    { "customer_email": "joy@gmail.com", "table": "t1", "people_count": "2" },
+    { "customer_email": "joy@gmail.com", "table": "t3", "people_count": "2" },
+    { "customer_email": "joy@gmail.com", "table": "t2", "people_count": "2" },
+    { "customer_email": "joy@gmail.com", "table": "t5", "people_count": "2" }
+  ],
+  "tables": {
+    "t1": { "capacity": 3, "status": "unavailable" },
+    "t2": { "capacity": 5, "status": "unavailable" },
+    "t3": { "capacity": 4, "status": "unavailable" },
+    "t4": { "capacity": 2, "status": "unavailable" },
+    "t5": { "capacity": 6, "status": "unavailable" },
+    "t6": { "capacity": 2, "status": "unavailable" }
+  }
 }

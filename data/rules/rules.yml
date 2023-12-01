@@ -28,7 +28,7 @@ rules:
   - action: utter_bye
   - action: action_restart
 
-- story: restart
+- rule: restart
   steps:
   - intent: restart
   - action: action_restart
