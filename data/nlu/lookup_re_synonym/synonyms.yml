@@ -2,45 +2,9 @@ version: "3.1"
 
 nlu:
 
-- synonym: intro
-  examples: |
-    - Intro
-    - Introduction
-    - intro
-    - introduction
-    - about
-    - About
-
-- synonym: restart
-  examples: |
-    - Restart
-    - reboot
-    - Reboot
-    - start over
-    - Start Over
-    - Start over
-    - start Over
-
-- synonym: book
-  examples: |
-    - Book
-    - book
-    - reserve
-    - Reserve
-    - reservation
-    - Reservation
-
 - synonym: weekday
   examples: |
-    - weekday
     - weekdays
-    - Weekday
-    - Weekdays
-    - Monday
-    - Tuesday
-    - Wednesday
-    - Thursday
-    - Friday
     - monday
     - tuesday
     - wednesday
@@ -49,12 +13,7 @@ nlu:
 
 - synonym: weekend
   examples: |
-    - weekend
     - weekends
-    - Weekend
-    - Weekends
-    - Saturday
-    - Sunday
     - saturday
     - sunday
 
@@ -95,20 +54,20 @@ nlu:
     - drink
     - beverages
 
-- synonym: events
+- synonym: event
   examples: |
     - events
-    - parties
-    - weddings
-    - gatherings
-    - celebrations
-    - special occasions
-    - special events
-    - private events
-    - corporate events
-    - business events
-    - private parties
-    - private gatherings
-    - private celebrations
-    - private occasions
-    - private functions
+    - party
+    - wedding
+    - gathering
+    - celebration
+    - special occasion
+    - special event
+    - private event
+    - corporate event
+    - business event
+    - private party
+    - private gathering
+    - private celebration
+    - private occasion
+    - private function

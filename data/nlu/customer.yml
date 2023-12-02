@@ -3,34 +3,33 @@ version: "3.1"
 nlu:
 - intent: request_table_reservation
   examples: |
-    - I want to book a table
-    - I want to book a table for [2](number)
-    - I would like to book a table for [2](number) people
-    - Can I reserve a table for [4](number)?
-    - I'm looking to book a spot for [5](number)
-    - Is it possible to reserve seating for [3](number)?
-    - I'd like to make a reservation for [6](number) people
-    - Please book a table for [2](number)
-    - Could I get a reservation for [8](number)?
-    - We need a table booked for [10](number)
-    - I'm planning a dinner for [4](number)
-    - book a table for
+    - book a table
     - reserve a table
+    - reserve a table for [2](number)
+    - table reservation for [4](number)
+    - reserve seating for [3](number)
+    - make a reservation for [6](number) people
+    - book a spot for [5](number)
+    - reservation for [8](number)
+    - table for [10](number)
+    - planning a dinner for [4](number)
 
 - intent: inform_email
   examples: |
     - My email is [user@example.com](email)
-    - You can reach me at [jane.doe@email.com](email)
-    - Contact me at [john.doe@email.com](email)
+    - Contact me at [jane.doe@email.com](email)
+    - Reach me at [john.doe@email.com](email)
     - Email [info@domain.com](email)
-    - Here is my email address [customer@example.org](email)
-    - You can reach me at [jenny@emailprovider.com](email)
-    - My email for the reservation is [reservations@restaurant.com](email)
+    - [james.doe@hotmail.com](email)
+    - Here's my email address [customer@example.org](email)
+    - Contact me at [jenny@emailprovider.com](email)
+    - For the reservation, use [reservations@restaurant.com](email)
 
 - intent: inform_reservation_people_count
   examples: |
-    - I want to book a table for [5](number) people
-    - I would like to make a reservation for [12](number) people
-    - I'm planning for [3](number) people
+    - book a table for [5](number) people
+    - reservation for [12](number) people
+    - planning for [3](number) people
     - [2](number) people
+    - [4](number)
     - about [8](number) people

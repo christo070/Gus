@@ -1,18 +1,25 @@
 {
-  "details": [
-    { "customer_email": "joy@gmail.com", "table": "t4", "people_count": "2" },
-    { "customer_email": "joy@gmail.com", "table": "t6", "people_count": "2" },
-    { "customer_email": "joy@gmail.com", "table": "t1", "people_count": "2" },
-    { "customer_email": "joy@gmail.com", "table": "t3", "people_count": "2" },
-    { "customer_email": "joy@gmail.com", "table": "t2", "people_count": "2" },
-    { "customer_email": "joy@gmail.com", "table": "t5", "people_count": "2" }
-  ],
+  "details": [],
   "tables": {
-    "t1": { "capacity": 3, "status": "unavailable" },
-    "t2": { "capacity": 5, "status": "unavailable" },
-    "t3": { "capacity": 4, "status": "unavailable" },
-    "t4": { "capacity": 2, "status": "unavailable" },
-    "t5": { "capacity": 6, "status": "unavailable" },
-    "t6": { "capacity": 2, "status": "unavailable" }
+    "t01": { "capacity": 4, "status": "available" },
+    "t02": { "capacity": 4, "status": "available" },
+    "t03": { "capacity": 4, "status": "available" },
+    "t04": { "capacity": 4, "status": "available" },
+    "t05": { "capacity": 4, "status": "available" },
+    "t06": { "capacity": 4, "status": "available" },
+    "t07": { "capacity": 4, "status": "available" },
+    "t08": { "capacity": 4, "status": "available" },
+    "t09": { "capacity": 4, "status": "available" },
+    "t10": { "capacity": 4, "status": "available" },
+    "t11": { "capacity": 4, "status": "available" },
+    "t12": { "capacity": 4, "status": "available" },
+    "t13": { "capacity": 4, "status": "available" },
+    "t14": { "capacity": 4, "status": "available" },
+    "t15": { "capacity": 4, "status": "available" },
+    "t16": { "capacity": 4, "status": "available" },
+    "t17": { "capacity": 4, "status": "available" },
+    "t18": { "capacity": 4, "status": "available" },
+    "t19": { "capacity": 4, "status": "available" },
+    "t20": { "capacity": 4, "status": "available" }
   }
 }

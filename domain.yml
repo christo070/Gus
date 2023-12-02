@@ -38,6 +38,9 @@ entities:
   # - time
   - number
   - email
+  - weekday
+  - weekend
+  - event
 
 slots:
   # date:
@@ -52,20 +55,38 @@ slots:
   #   - type: from_entity
   #     entity: time
 
+  weekday:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: weekday
+
+  weekend:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: weekend
+
+  event:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: event
+
   opening_time:
-    type: any
+    type: text
     initial_value: "09:00 AM"
     mappings:
     - type: custom
 
   closing_time:
-    type: any
+    type: text
     initial_value: "10:00 PM"
     mappings:
     - type: custom
 
   customer_email:
-    type: any
+    type: text
     influence_conversation: false
     mappings:
     - type: from_entity
@@ -73,7 +94,7 @@ slots:
       intent: inform_email
 
   people_count:
-    type: any
+    type: text
     influence_conversation: false
     mappings:
     - type: from_entity
@@ -91,20 +112,14 @@ slots:
     influence_conversation: true
     mappings:
     - type: custom
-      # action: action_check_table_availability
-      # conditions:
-      # - active_loop: table_reservation_form
-      # - requested_slot: table_availability
+      action: action_check_table_availability
 
   available_tables:
     type: any
     influence_conversation: false
     mappings:
     - type: custom
-      # action: action_check_table_availability
-      # conditions:
-      # - active_loop: table_reservation_form
-      # - requested_slot: available_tables
+      action: action_check_table_availability
 
   requested_slot:
     type: categorical
@@ -112,7 +127,6 @@ slots:
     values:
       - customer_email
       - people_count
-      - table_availability
     mappings:
     - type: custom
 

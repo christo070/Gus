@@ -309,7 +309,6 @@ nlu:
     - cool beans
     - sweet
     - Cool
-    - cool
     - cool :)
     - cool!
     - coolio
@@ -318,11 +317,8 @@ nlu:
     - HAHA
     - I am happy
     - LOL
-    - Lol
-    - Lol thats funny
     - Looks nice
     - WOW
-    - Wow
     - You are great
     - You're cute.
     - You're nice.
@@ -335,8 +331,6 @@ nlu:
     - happy
     - i am feeling happy
     - i am happy
-    - i am happy today
-    - i am very happy with your response
     - i love you
     - it's pretty cool
     - lol
@@ -352,11 +346,9 @@ nlu:
     - you are a badass bot!
     - you are awesome
     - you are cool
-    - you are cool man
     - you are doin great
     - you are funny
     - you are great
-    - you are my new bestfriend
     - you seem pretty cool :D
     - I like you
     - I love you
@@ -367,78 +359,63 @@ nlu:
     - you are so smart
     - That's awesome.
     - Got it
-    - you good
     - Great information
-    - I mean to say that I liked the explanation
+    - I liked the explanation
     - Super! I love Gus
 
 - intent: react_negative
   examples: |
     - I am feeling bad
     - I am sad
-    - I am super sad
-    - I'm sad
-    - I'm super sad
-    - Now I'm sad
     - This is bad
     - You are quite bad
     - bad
-    - bad boy
     - crappy joke
     - i am angry over you
-    - i am feel sad
     - i am sad
-    - i am sad about that
-    - i am very sad
     - i feel sad
-    - i sad
     - i'm sad
     - gus is bad
     - sad
-    - so sad
     - so sad :(
     - super sad
     - u broke my heart
-    - very very sad
     - you are bad
     - you are bad bot
     - you make me sad
     - You are mad
     - You are rude
     - bots are bad
-    - i don't care!!!!
     - i dont like bots
     - this is a really frustrating experience
     - you're rather dull
-    - i am so worry
     - i will leave
     - Although I understand your still in development, I feel a little bit disappointed.
-    - Surely you're not so smart lik i thought
-    - iam not feeling good
+    - Surely you're not so smart like I thought
+    - I am not feeling good
     - not good
-    - Thats so rude
+    - That's so rude
     - sadly
-    - That tool here isnt good
+    - That tool here isn't good
     - boring
 
 - intent: explain
   examples: |
     - can you elaborate
-    - could you explain why you need that
+    - could you explain why
     - could you tell me more
     - explain it to me
-    - explain that
     - i want more information
-    - i would like to know why you need that
+    - i would like to know why
     - please elaborate
     - please explain
-    - why do you need to know that
+    - why do you need that
     - why is that necessary
     - give me more details
     - why
     - what do you mean
     - what does that mean
-    - how come?
+    - how come
 
 - intent: thank
   examples: |
@@ -447,26 +424,19 @@ nlu:
     - Thank you
     - Thank you Sara
     - Thank you so much
-    - Thank's!
-    - Thanks
+    - Thanks!
     - Thanks bot
     - Thanks for that
-    - Thanks!
     - amazing, thanks
     - cheers
     - cheers bro
     - cool thank you
     - cool thanks
-    - cool, thanks
     - danke
     - great thanks
     - ok thanks
-    - ok thanks sara
-    - ok thanks!
     - perfect thank you
     - thank u
-    - thank you
-    - thank you anyways
     - thanks
     - thanks a bunch for everything
     - thanks a lot
@@ -474,13 +444,11 @@ nlu:
     - thanks for the help
     - thanks this is great news
     - thanks you
-    - thanks!
     - thankyou
     - thnks
     - thx
     - yes thanks
     - thanks for your information
-    - thanks f
 
 - intent: exit
   examples: |
@@ -493,13 +461,9 @@ nlu:
     - I want to stop
     - I want to stop talking
     - stop this conversation
-    - stop this conversation now
     - end this conversation
-    - end now
     - discontinue this conversation
-    - discontinue now
     - close this conversation
-    - close now
     - quit
     - cease
     - wrap up this conversation

@@ -64,9 +64,9 @@ class ActionReserveTable(Action):
                 with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'w') as f:
                     json.dump(json_object, f)
 
-            return[SlotSet("table_availability", None), FollowupAction("utter_table_reservation_successful")]
+            return[FollowupAction("utter_table_reservation_successful")]
         else:
-            return [SlotSet("table_availability", None), FollowupAction("utter_table_reservation_unsuccessful")]
+            return [FollowupAction("utter_table_reservation_unsuccessful")]
 
     
 class ActionReset(Action):

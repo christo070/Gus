@@ -6,171 +6,111 @@ nlu:
   examples: |
     - what are your hours?
     - when are you open?
-    - when do you close
-    - what time do you close?
+    - when do you close?
     - what time do you close today?
     - what are your hours of operation?
     - hours of operation
-    - hours
     - what time are you open until?
-    - what time are you open until today?
-    - what time are you open until on the weekend?
-    - what time are you open until on the weekday?
-    - what time are you open until on weekend?
-    - what time are you open until on weekday?
+    - what time are you open until on the [weekday](weekday)?
+    - what time are you open until on the [weekend](weekend)?
 
 - intent: faq/ask_parking
   examples: |
     - do you have parking?
-    - is there parking?
-    - is there parking available?
-    - is there parking on site?
-    - is there parking on the premises?
-    - is there parking on site?
-    - is there parking on premises?
     - is there parking available on site?
-    - is there parking available on premises?
     - is there parking available on the premises?
-    - is there parking available on site?
-    - is there parking available on the weekend?
-    - is there parking available on the weekday?
-    - is there parking available on weekend?
-    - is there parking available on weekday?
+    - is there parking available on the [weekend](weekend)?
+    - is there parking available on the [weekday](weekday)?
 
 - intent: faq/ask_vegetarian_vegan
   examples: |
-    - Do you have vegetarian options?
-    - Are there vegan dishes on your menu?
-    - Tell me about your vegetarian and vegan offerings.
-    - Tell me about your vegetarian and vegan offerings.
-    - What are your vegetarian and vegan options?
-    - Do you have vegetarian and vegan options?
-    - Do you have vegetarian and vegan food?
+    - do you have vegetarian options?
+    - are there vegan dishes on your menu?
+    - tell me about your vegetarian and vegan offerings.
+    - what are your vegetarian and vegan options?
 
 - intent: faq/ask_dietary_accommodation
   examples: |
-    - Can you accommodate dietary restrictions?
-    - How do you handle allergies?
-    - Tell me about your dietary accommodation.
-    - Tell me about your allergy policy.
-    - Do you have options for people with allergies?
-    - Do you have options for people with dietary restrictions?
-    - Do you have options for people with food allergies?
-    - Do you have options for people with dietary restrictions?
+    - can you accommodate dietary restrictions?
+    - how do you handle allergies?
+    - tell me about your dietary accommodation.
+    - do you have options for people with dietary restrictions?
 
 - intent: faq/ask_catering
   examples: |
-    - Do you offer catering services?
-    - Can I get catering for events?
-    - Tell me about your catering options.
-    - Tell me about your catering services.
-    - Do you offer catering for events?
-    - Do you offer catering for private parties?
-    - Do you offer catering for private functions?
-    - Do you offer catering for private gatherings?
-    - Do you offer catering for private celebrations?
-    - Do you offer catering for private occasions?
+    - do you offer catering services?
+    - can I get catering for [event](event)?
+    - tell me about your catering options.
+    - do you offer catering for private parties?
 
 - intent: faq/ask_gift_cards
   examples: |
-    - Do you sell gift cards?
-    - Can I purchase a gift card?
-    - Tell me about your gift card options.
-    - Tell me about your gift card offerings.
-    - Do you have gift cards?
-    - Do you sell gift cards?
-    - Do you offer gift cards?
-    - Do you have gift cards for sale?
-    - Do you have gift cards available?
-    - Do you have gift cards for purchase?
-    - Do you have gift cards for sale?
+    - do you sell gift cards?
+    - can I purchase a gift card?
+    - tell me about your gift card options.
+    - do you have gift cards for sale?
 
 - intent: faq/ask_bring_your_own
   examples: |
-    - Can I bring my own food?
-    - Are outside beverages allowed?
-    - Tell me about your policy on bringing outside items.
-    - Tell me about your policy on bringing outside food.
-    - Tell me about your policy on bringing outside beverages.
-    - Tell me about your policy on bringing outside drinks.
-    - Tell me about your policy on bringing outside alcohol.
+    - can I bring my own [food](food)?
+    - are outside beverages allowed?
+    - tell me about your policy on bringing outside items.
+    - tell me about your policy on bringing outside drinks.
 
 - intent: faq/ask_bring_celebration_cake
   examples: |
-    - Can I bring my own celebration cake?
-    - Is bringing a cake for celebrations allowed?
-    - Tell me about your policy on celebration cakes.
-    - Tell me about your policy on bringing celebration cakes.
-    - Tell me about your policy on bringing cakes for events.
+    - can I bring my own celebration cake?
+    - can I bring cake?
+    - can I bring my own cake?
+    - is bringing a cake for celebrations allowed?
+    - tell me about your policy on bringing cakes for [event](event).
 
 - intent: faq/ask_reservation_policy
   examples: |
-    - How far in advance can I make a reservation?
-    - Tell me about your reservation policy.
-    - Can I reserve a table in advance?
-    - Tell me about your reservation process.
+    - how far in advance can I make a reservation?
+    - tell me about your reservation policy.
+    - can I reserve a table in advance?
 
 - intent: faq/ask_children
   examples: |
-    - Are children welcome at your restaurant?
-    - Do you have a children's menu?
-    - Tell me about bringing kids to your establishment.
-    - Tell me about your policy on children.
-    - Tell me about your policy on kids.
-    - Tell me about your policy on bringing children.
+    - are children welcome at your restaurant?
+    - do you have a children's menu?
+    - tell me about your policy on bringing children.
 
 - intent: faq/ask_groups
   examples: |
-    - Can you accommodate large groups?
-    - Do you have options for group dining?
-    - Tell me about your services for large events.
-    - Tell me about your services for large groups.
+    - can you accommodate large groups?
+    - do you have options for group dining?
+    - tell me about your services for large groups.
 
 - intent: faq/ask_pets
   examples: |
-    - Can I bring my pet?
-    - Are pets allowed in your restaurant?
-    - Tell me about your pet policy.
-    - Tell me about your policy on pets.
-    - Tell me about your policy on bringing pets.
-    - Tell me about your policy on bringing animals.
+    - can I bring my pet?
+    - are pets allowed in your restaurant?
+    - tell me about your pet policy.
 
 - intent: faq/ask_reservation_change
   examples: |
-    - How can I change my reservation?
-    - Is it possible to modify a reservation?
-    - Tell me about changing reservation details.
-    - Tell me about changing a reservation.
+    - how can I change my reservation?
+    - is it possible to modify a reservation?
+    - tell me about changing a reservation.
 
 - intent: faq/ask_reservation_cancel
   examples: |
-    - Can I cancel my reservation?
-    - How do I go about canceling a reservation?
-    - Tell me about your reservation cancellation policy.
-    - Tell me about canceling a reservation.
+    - can I cancel my reservation?
+    - how do I go about canceling a reservation?
+    - tell me about canceling a reservation.
 
 - intent: faq/ask_feedback
   examples: |
-    - How can I provide feedback?
-    - Is there a way to share my experience?
-    - Tell me about your feedback process.
-    - Tell me about your feedback policy.
-    - Tell me about your feedback options.
-    - Tell me about your feedback channels.
-    - Tell me about your feedback methods.
-    - Tell me about your feedback mechanisms.
-    - Tell me about your feedback system.
-    - Tell me about your feedback procedure.
+    - how can I provide feedback?
+    - is there a way to share my experience?
+    - tell me about your feedback options.
 
 - intent: faq/ask_ambience
   examples: |
-    - What is the ambience like in your restaurant?
-    - Tell me about the atmosphere of your restaurant.
-    - Describe the atmosphere of your establishment.
-    - Describe the ambience of your establishment.
-    - Tell me about the seating options in your restaurant.
-    - Tell me about the seating arrangements in your restaurant.
-    - Tell me about the seating layout in your restaurant.
-    - Tell me about the seating options in your establishment.
-    - Tell me about the seating arrangements in your establishment.
-    - Tell me about the seating layout in your establishment.
+    - what is the ambience like in your restaurant?
+    - describe the atmosphere of your establishment.
+    - tell me about the seating options in your restaurant.
+    - tell me about the seating arrangements in your establishment.
+
