@@ -1,0 +1,27 @@
+version: "3.1"
+
+responses:
+
+  utter_whatspossible:
+  - text: "You can ask me about Table Reservation, Order Food, Menu Information, Specials & Promotions, Operating Hours & Location Details, Parking related Queries, FAQs & General Queries, Request for Immediate Human Assistance, Loyalty Programs & Membership Details and Provide Feedback"
+  
+  utter_ask_table_reservation_form_people_count:
+  - text: "How many people are you booking the table for?"
+
+  utter_ask_table_reservation_form_customer_email:
+  - text: "Please provide your email address"
+
+  utter_table_already_reserved:
+  - text: "Sorry, the table has already been reserved."
+
+  utter_reservation_housefull:
+  - text: "Sorry, we don't have any spots available at the moment. Please try again later."
+
+  utter_table_reservation_successful:
+  - text: "Your table has been reserved. You will receive a confirmation email shortly."
+
+  utter_table_reservation_unsuccessful:
+  - text: "Sorry, we are unable to reserve a table for you at the moment. Please try again later."
+    
+  utter_stop_table_reservation_form:
+  - text: "To stop the table reservation process, please type 'exit'"
