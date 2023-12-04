@@ -28,14 +28,16 @@ stories:
   - intent: react_negative
   - action: utter_react_negative
 
-- story: thanks
+- story: says thanks
   steps:
   - intent: thank
   - action: utter_noworries
   - action: utter_anything_else
 
-- story: exit
+- story: bye/exit
   steps:
-  - intent: exit
-  - action: utter_exit
-  - action: action_reset_slots
+  - or:
+    - intent: bye
+    - intent: exit
+  - action: utter_bye
+  - action: action_restart

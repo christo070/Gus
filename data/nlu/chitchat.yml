@@ -239,10 +239,21 @@ nlu:
 
 - intent: chitchat/ask_whoisit
   examples: |
-    - Who are you?
-    - What is your name?
-    - What are you?
-    - What is your name and where are you from?
+    - who are you?
+    - what is your name?
+    - what are you?
+    - what is your name and where are you from?
+    - tell me about yourself
+    - tell me about you
+    - introduce yourself
+    - bot's introduction
+    - brief about this bot
+    - display introduction
+    - display intro
+    - what's this bot about
+    - tell me about this bot
+    - bot intro
+    - about this bot
 
 - intent: chitchat/handleinsult
   examples: |

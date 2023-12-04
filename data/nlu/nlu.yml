@@ -46,19 +46,6 @@ nlu:
     - Restart session, please
     - Restart, please
 
-- intent: show_intro
-  examples: |
-    - show bot intro
-    - introduce yourself
-    - bot's introduction
-    - brief about this bot
-    - display introduction
-    - what's this bot about
-    - tell me about this bot
-    - bot intro
-    - about bot
-    - introduction
-
 - intent: affirm
   examples: |
     - Accept
@@ -83,7 +70,6 @@ nlu:
     - Alright
     - Amazing
     - Confirm
-    - Cool
     - Done
     - Fine
     - Go ahead
@@ -409,12 +395,13 @@ nlu:
     - i would like to know why
     - please elaborate
     - please explain
-    - why do you need that
-    - why is that necessary
+    - why do you need that?
+    - why is that necessary?
     - give me more details
     - why
-    - what do you mean
+    - what do you mean?
     - what does that mean
+    - why do you need it?
     - how come
 
 - intent: thank

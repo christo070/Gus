@@ -4,8 +4,11 @@ nlu:
 - intent: request_table_reservation
   examples: |
     - book a table
+    - book table
+    - book table for [2](number) people
     - reserve a table
-    - reserve a table for [2](number)
+    - reserve a table for [2](number) people
+    - reserve table for [2](number)
     - table reservation for [4](number)
     - reserve seating for [3](number)
     - make a reservation for [6](number) people
@@ -25,6 +28,10 @@ nlu:
     - Contact me at [jenny@emailprovider.com](email)
     - For the reservation, use [reservations@restaurant.com](email)
 
+- regex: email
+  examples: |
+    - [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
 - intent: inform_reservation_people_count
   examples: |
     - book a table for [5](number) people
@@ -33,3 +40,7 @@ nlu:
     - [2](number) people
     - [4](number)
     - about [8](number) people
+
+- regex: number
+  examples: |
+    - \d{1,}

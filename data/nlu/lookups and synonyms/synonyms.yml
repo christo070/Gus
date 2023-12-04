@@ -52,6 +52,7 @@ nlu:
     - meals
     - nourishment
     - drink
+    - wine
     - beverages
 
 - synonym: event

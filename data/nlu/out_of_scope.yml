@@ -47,46 +47,43 @@ nlu:
 
 - intent: out_of_scope/other
   examples: |
+    - Hey Google
+    - Hey Siri
+    - Hey Alexa
+    - Hey Cortana
+    - Hey Bixby
+    - Hey Rasa
     - I am asking you an out of scope question
     - 4 + 2 = ?
-    - After registration I see that I have an available balance of 0.00000000. What does this balance represent?
     - Are you ready?
     - But you're an English site :(
     - Can I ask you questions first?
     - Can you give me your datacenter's password?
-    - Can you make sandwiches?
     - Can you please send me an Uber?
     - Do I have to accept?
     - Do you know [Kevin Pelton](name)?
     - Have we met before?
-    - How long does it take to set up a Rasa bot?
     - I already told you! I'm a [profanity].
     - I am User
     - I am an opioid addict
-    - I am hungry
-    - I am trying to build one, and did some research before, but I have not done hands-on work yet
-    - I can barely see this white text on light gray background ...
+    - I can barely see this white text on light gray background
     - I changed my mind
     - I have installed it
     - I need a GP in 94301
     - I need a girlfriend!
-    - I need to eat cake
-    - I want to buy a plane
+    - will you be my girlfriend?
     - I wanna marry you
+    - I want to buy a plane
     - I want a new laptop
     - I want to book a hotel
-    - I want French cuisine
-    - I want pizza
     - I want to die
     - I want to order pizza
     - I want to use pipe
     - I will check
     - I'm a [profanity]
-    - Is Rasa really smart?
     - Is this Goal-Oriented Chatbot?
-    - Is today Saturday?
+    - Is today Saturday? 
     - Mail me the guide
-    - Make me a sandwich
     - NLW
     - Nice name
     - Now?
@@ -95,7 +92,6 @@ nlu:
     - SELL ME SOMETHING
     - The Try it out is not working
     - The weather is good
-    - Today
     - Try it out broken
     - What day is it today?
     - What did you eat yesterday?
@@ -111,13 +107,11 @@ nlu:
     - Who?
     - Who are your customers
     - Why don't you answer?
-    - Why is my TRUST score set to 50 after I completed the registration process?
     - Won't you ask me how I am?
     - You're blue.
     - [Kristin](name), I want to marry you
     - [german](language)?
     - A tamed mouse will arrive at your doorstep in the next couple of days
-    - ARE YOU SINGLE
     - Again?
     - Alexa, order 5 tons of natrium chloride
     - And make chicken noises into the phone

@@ -52,10 +52,11 @@ nlu:
 
 - intent: faq/ask_bring_your_own
   examples: |
-    - can I bring my own [food](food)?
+    - can I bring my own [wine](food)?
+    - am I allowed to bring my own [drinks](food)?
     - are outside beverages allowed?
     - tell me about your policy on bringing outside items.
-    - tell me about your policy on bringing outside drinks.
+    - tell me about your policy on bringing outside [food](food).
 
 - intent: faq/ask_bring_celebration_cake
   examples: |
@@ -114,3 +115,18 @@ nlu:
     - tell me about the seating options in your restaurant.
     - tell me about the seating arrangements in your establishment.
 
+- intent: faq/ask_privacy_policy
+  examples: |
+    - do you have a privacy policy?
+    - what is your privacy policy?
+    - tell me about your privacy policy.
+    - where can I find your privacy policy?
+    - what are your privacy practices?
+    - what is your privacy statement?
+    - what is your privacy commitment?
+    - what is your privacy pledge?
+    - what is your privacy guarantee?
+    - what is your privacy promise?
+    - what is your privacy assurance?
+    - what is your privacy standard?
+    - what is your privacy code?

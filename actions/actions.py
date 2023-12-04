@@ -18,18 +18,16 @@ class ActionCheckAvailability(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        available_tables = {} 
         with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
             json_object = json.load(f)
             tables = json_object["tables"]
-            for table_id in tables.keys():
-                if tables[table_id]["status"] == "available" and tables[table_id]["capacity"] >= int(tracker.get_slot("people_count")):
-                    available_tables[table_id] = tables[table_id]["capacity"]
+            people_count = int(tracker.get_slot("people_count"))
 
-        if len(available_tables) == 0:
-            return [SlotSet("table_availability", 'no')]
-        else:
-            return [SlotSet("table_availability", 'yes'), SlotSet("available_tables", available_tables)]
+            for table_id in tables.keys():
+                if (tables[table_id]["available"] == True) and (tables[table_id]["capacity"] >= people_count):
+                    return [SlotSet("is_table_available", True)]
+                    
+        return [SlotSet("is_table_available", False)]
     
 
 class ActionReserveTable(Action):
@@ -39,35 +37,46 @@ class ActionReserveTable(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        is_table_available = tracker.get_slot("is_table_available")
+        if is_table_available == False:
+            dispatcher.utter_message(response = "utter_reservation_housefull")
+            return []
 
-        # find the smallest possible table which can hold given number of people 
-        available_tables = tracker.get_slot("available_tables")
-        m = min(available_tables.values())
-        table = ""
-        for k,v in available_tables.items():
-            if v == m:
-                table = k
-                break
+        if tracker.get_slot("is_reserved") == True:
+            dispatcher.utter_message(response = "utter_table_already_reserved")
+            return []
 
-        # assign table to customer
-        if table != "":
-            with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
-                json_object = json.load(f)
-                json_object["details"].append(
-                    {
-                        "customer_email": tracker.get_slot("customer_email"),
-                        "table": table,
-                        "people_count": tracker.get_slot("people_count")
-                    }
-                )
-                json_object["tables"][table]["status"] = "unavailable"
-                with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'w') as f:
-                    json.dump(json_object, f)
+        with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'r') as f:
+            json_object = json.load(f)
+            tables = json_object["tables"]
+            
+            people_count = int(tracker.get_slot("people_count"))
+            modifyed = False
 
-            return[FollowupAction("utter_table_reservation_successful")]
-        else:
-            return [FollowupAction("utter_table_reservation_unsuccessful")]
+            for table_id in tables.keys():
+                if (tables[table_id]["available"] == True) and (tables[table_id]["capacity"] >= people_count):
+                    json_object["details"].append(
+                        {
+                            "customer_email": tracker.get_slot("customer_email"),
+                            "table": table_id,
+                            "people_count": people_count
+                        }
+                    )
+                    json_object["tables"][table_id]["available"] = False
+                    modifyed = True
+                    break
+            
+            if modifyed == False:
+                return [FollowupAction("utter_table_reservation_unsuccessful")]
+            
+            with open('/home/christos/Projects/Gus/data/info/table_reservation.json', 'w') as f:
+                json.dump(json_object, f)
 
+            dispatcher.utter_message(response = "utter_table_reservation_successful")
+
+            return[SlotSet("is_reserved", True)]
+        
     
 class ActionReset(Action):
      def name(self) -> Text:
