@@ -130,3 +130,57 @@ nlu:
     - what is your privacy assurance?
     - what is your privacy standard?
     - what is your privacy code?
+
+
+responses:
+
+  utter_faq/ask_opening_hours:
+  - text: "We are open from {opening_time} to {closing_time} on weekdays. Our weekend hours may vary, so please check our website or give us a call for the most up-to-date information"
+
+  utter_faq/ask_parking:
+  - text: "Yes, we provide parking facilities for our guests. Whether it's street parking or a dedicated parking lot, we aim to make your visit convenient."
+
+  utter_faq/ask_vegetarian_vegan:
+  - text: "Yes, we have a dedicated section on our menu for vegetarian and vegan options. You'll find a variety of delicious dishes crafted to suit different dietary preferences."
+
+  utter_faq/ask_dietary_accommodation:
+  - text: "Absolutely! Please inform us of any dietary restrictions or allergies when ordering or upon arrival. Our chefs will do their best to accommodate your needs."
+
+  utter_faq/ask_catering:
+  - text: "Yes, we offer catering services for events and special occasions. Contact our events team for more information on our catering menu and packages."
+
+  utter_faq/ask_gift_cards:
+  - text: "Yes, we offer gift cards of various denominations. They make perfect gifts for friends, family, or colleagues who appreciate a delightful dining experience."
+
+  utter_faq/ask_bring_your_own:
+  - text: "We do not allow outside food or beverages to be brought into the restaurant. However, we do offer a wide selection of food and drinks for you to enjoy."
+
+  utter_faq/ask_bring_celebration_cake:
+  - text: "Certainly! We allow guests to bring their own celebration cakes. Just let us know in advance, and our staff will be happy to assist during your visit."
+
+  utter_faq/ask_reservation_policy:
+  - text: "We accept reservations up to 30 days in advance. Please call us or visit our website to make a reservation. We look forward to serving you!"
+
+  utter_faq/ask_children:
+  - text: "Yes, we welcome children of all ages. We offer a children's menu for our younger guests. High chairs are also available upon request."
+
+  utter_faq/ask_groups:
+  - text: "Yes, we can accommodate large groups. Please contact our events team for more information on our group packages and private dining options."
+
+  utter_faq/ask_pets:
+  - text: "We do not allow pets on the premises. However, service animals are welcome. Please let us know in advance if you plan to bring a service animal."
+
+  utter_faq/ask_reservation_change:
+  - text: "Yes, we can change your reservation. Please call us or visit our website to make changes to your reservation. We look forward to serving you!"
+
+  utter_faq/ask_reservation_cancel:
+  - text: "Yes, we can cancel your reservation. Please call us or visit our website to cancel your reservation. We look forward to serving you!"
+
+  utter_faq/ask_feedback:
+  - text: "We value your feedback! You can share your thoughts with our staff during your visit, or you can fill out a feedback form on our website. We appreciate hearing about your experience to continually improve our services."
+
+  utter_faq/ask_ambience:
+  - text: "Our restaurant is designed to provide a relaxing and enjoyable dining experience. We have a variety of seating options to suit your needs, including booths, tables, and bar seating."
+
+  utter_faq/ask_privacy_policy:
+  - text: "By chatting to me you agree to our {privacy_policy_url}."

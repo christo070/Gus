@@ -10,26 +10,25 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-- affirm
-- deny
-- greet
-- bye
-- thank
-- canthelp
-- react_positive
-- react_negative
-- explain
-- human_handoff
-- restart
-- chitchat
-- out_of_scope
-- faq
-- nlu_fallback
-- exit
-# Customer Queries
-- request_table_reservation
-- inform_email
-- inform_reservation_people_count
+  - affirm
+  - deny
+  - greet
+  - bye
+  - thank
+  - canthelp
+  - react_positive
+  - react_negative
+  - explain
+  - human_handoff
+  - restart
+  - chitchat
+  - out_of_scope
+  - faq
+  - nlu_fallback
+  - exit
+  - request_table_reservation
+  - inform_email
+  - inform_reservation_people_count
 
 entities:
   # - date

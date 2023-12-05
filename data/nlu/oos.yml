@@ -332,3 +332,12 @@ nlu:
     - Sudo reboot
     - ASDFGASD
     - ASDFGASDAS
+
+
+responses:
+
+  utter_out_of_scope/non_english:
+  - text: "I only understand English, I'm sorry."
+
+  utter_out_of_scope/other:
+  - text: "I can't help you with that, I'm sorry."

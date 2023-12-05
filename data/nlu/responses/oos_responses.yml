@@ -1,9 +1,0 @@
-version: "3.1"
-
-responses:
-
-  utter_out_of_scope/non_english:
-  - text: "I only understand English, I'm sorry."
-
-  utter_out_of_scope/other:
-  - text: "I can't help you with that, I'm sorry."

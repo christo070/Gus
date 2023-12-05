@@ -14,7 +14,6 @@ pipeline:
 # See https://rasa.com/docs/rasa/tuning-your-model for more information.
 
 - name: WhitespaceTokenizer
-  token_pattern: (?u)\b\w+\b
 - name: RegexFeaturizer
   "case_sensitive": False
   "use_word_boundaries": False
@@ -46,7 +45,7 @@ pipeline:
   constrain_similarities: true
 - name: FallbackClassifier
   threshold: 0.7
-  ambiguity_threshold: 0.1
+  # ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
