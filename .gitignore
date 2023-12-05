@@ -2,4 +2,5 @@
 .rasa/
 .vscode/
 models/
+custom/
 actions/__pycache__/
