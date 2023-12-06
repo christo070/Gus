@@ -61,7 +61,7 @@ nlu:
     - Can you give me your datacenter's password?
     - Can you please send me an Uber?
     - Do I have to accept?
-    - Do you know [Kevin Pelton](name)?
+    - Do you know?
     - Have we met before?
     - I already told you! I'm a [profanity].
     - I am User
@@ -109,7 +109,7 @@ nlu:
     - Why don't you answer?
     - Won't you ask me how I am?
     - You're blue.
-    - [Kristin](name), I want to marry you
+    - I want to marry you
     - [german](language)?
     - A tamed mouse will arrive at your doorstep in the next couple of days
     - Again?
@@ -173,14 +173,14 @@ nlu:
     - Google?
     - Great, I'd like to buy a house
     - Hang on let me find it
-    - Have you ever seen [Keith Reilly](name)?
-    - Help with [Alma Abrams](name)
+    - Have you ever seen?
+    - Help with my life
     - Help with my life
     - Hey little mama let em whisper in your ear
     - Hey, I contacted you a couple of days ago but didn't get any response, any news?
     - How
     - How about NYC
-    - How are [Alicia Jackson](name)'s cats doing?
+    - How are cats doing?
     - How are the kids
     - How can I get them?
     - How can I test this

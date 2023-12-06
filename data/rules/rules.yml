@@ -30,3 +30,11 @@ rules:
   steps:
   - intent: faq
   - action: utter_faq
+
+- rule: bye
+  condition:
+  - active_loop: null
+  steps:
+  - intent: bye
+  - action: utter_bye
+  - action: action_restart

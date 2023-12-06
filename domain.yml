@@ -18,16 +18,19 @@ intents:
   - react_negative
   - explain
   - human_handoff
-  - chitchat
-  - out_of_scope
-  - faq
+  - chitchat:
+      use_entities: []
+  - out_of_scope:
+      use_entities: []
+  - faq:
+      use_entities: []
   - nlu_fallback
-  - exit
   - request_table_reservation
   - inform_email
   - inform_reservation_people_count
 
 entities:
+  - name
   - date
   - time
   - number
@@ -108,6 +111,8 @@ actions:
   - action_check_table_availability
   - action_reserve_table
   - action_reset_slots
+  - action_default_fallback
+  - action_human_handoff
   
 forms:
   table_reservation_form:

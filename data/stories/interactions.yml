@@ -7,7 +7,7 @@ stories:
   - intent: request_table_reservation
   - action: table_reservation_form
   - active_loop: table_reservation_form
-  - intent: exit
+  - intent: bye
   - action: utter_ask_continue
   - intent: deny
   - action: action_deactivate_loop
@@ -19,7 +19,7 @@ stories:
   - intent: request_table_reservation
   - action: table_reservation_form
   - active_loop: table_reservation_form
-  - intent: exit
+  - intent: bye
   - action: utter_ask_continue
   - intent: affirm
   - action: table_reservation_form

@@ -18,10 +18,22 @@ stories:
   - action: utter_noworries
   - action: utter_anything_else
 
-- story: bye/exit
+- story: can't help
   steps:
-  - or:
-    - intent: bye
-    - intent: exit
-  - action: utter_bye
-  - action: action_restart
+  - intent: canthelp
+  - action: utter_canthelp
+
+- story: human handoff
+  steps:
+  - intent: human_handoff
+  - action: action_human_handoff
+
+- story: positive reaction
+  steps:
+  - intent: react_positive
+  - action: utter_react_positive
+  
+- story: negative reaction
+  steps:
+  - intent: react_negative
+  - action: utter_react_negative

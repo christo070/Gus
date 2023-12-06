@@ -4,7 +4,7 @@ import json, os
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset
+from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset, ConversationPaused, UserUtteranceReverted
 
 dirname = os.path.dirname(__file__)
 table_reservation_file = os.path.join(dirname, "info\\table_reservation.json")
@@ -97,3 +97,42 @@ class ActionReset(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         return [AllSlotsReset()]
+
+
+from typing import Any, Dict, List, Text
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.executor import CollectingDispatcher
+
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        # https://rasa.com/docs/rasa/fallback-handoff/#4-defining-an-ultimate-fallback-action
+        # dispatcher.utter_message(text="I am passing you to a human...")
+        # call_customer_service(tracker)     
+        # return [ConversationPaused(), UserUtteranceReverted()]
+
+        dispatcher.utter_message(response="utter_default")
+        return [UserUtteranceReverted()]
+
+# Action Class with name 'action_human_handoff' for handoff to human
+class ActionHumanHandoff(Action):
+    def name(self):
+        return "action_human_handoff"
+
+    def run(self, dispatcher, tracker, domain):
+        # dispatcher.utter_message("I am passing you to a human...")
+        # call_customer_service(tracker)
+        # return [ConversationPaused(), UserUtteranceReverted()]
+
+        dispatcher.utter_message(response="utter_human_handoff")
+        return [UserUtteranceReverted()]

@@ -27,9 +27,6 @@ responses:
     - payload: /deny
       title: 👎
     text: Did that help?
-
-  utter_ask_goal:
-  - text: If you're new to this Restaurant Chatbot, I can help you get started!
   
   utter_ask_if_problem:
   - text: Did you encounter any problems?
@@ -56,9 +53,6 @@ responses:
 
   utter_default:
   - text: I'm sorry, I can't help you with that. 😕
-
-  utter_getstarted:
-  - text: To determine how I can help you best, I'm going to ask you a few questions.
 
   utter_great:
   - text: Great! 👍
@@ -154,3 +148,5 @@ responses:
   - text: "Until next time, may your WiFi be strong and your battery full!"
   - text: "Remember, I'm just a chat away. Farewell"
 
+  utter_human_handoff:
+  - text: "I will now connect you to a human agent. Please hold on for a second."
