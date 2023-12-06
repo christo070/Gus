@@ -25,3 +25,9 @@ responses:
     
   utter_stop_table_reservation_form:
   - text: "To stop the table reservation process, please type 'exit'"
+
+  utter_explain_customer_email:
+  - text: "Providing your email is essential for us to confirm and communicate details about your reservation. It helps us send you a confirmation receipt, notify you about any updates, and ensures a seamless dining experience for you."
+
+  utter_explain_people_count:
+  - text: "To ensure we provide you with the best dining experience, knowing the number of people helps us arrange the seating accordingly. This ensures that we have a table suitable for your group size and can offer you the best service possible."

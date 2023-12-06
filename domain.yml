@@ -1,5 +1,3 @@
-# https://rasa.com/docs/rasa/domain/
-
 version: "3.1"
 
 config:
@@ -20,7 +18,6 @@ intents:
   - react_negative
   - explain
   - human_handoff
-  - restart
   - chitchat
   - out_of_scope
   - faq
@@ -31,44 +28,25 @@ intents:
   - inform_reservation_people_count
 
 entities:
-  # - date
-  # - time
+  - date
+  - time
   - number
   - email
-  - weekday
-  - weekend
-  - event
+  - location
+  - language
 
 slots:
-  # date:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: date
-
-  # time:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: time
-
-  weekday:
-    type: text
+  date:
+    type: any
     mappings:
     - type: from_entity
-      entity: weekday
+      entity: date
 
-  weekend:
-    type: text
+  time:
+    type: any
     mappings:
     - type: from_entity
-      entity: weekend
-
-  event:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: event
+      entity: time
 
   privacy_policy_url:
     type: text
@@ -117,14 +95,14 @@ slots:
     mappings:
     - type: custom
 
-  # requested_slot:
-  #   type: categorical
-  #   influence_conversation: true
-  #   values:
-  #     - customer_email
-  #     - people_count
-  #   mappings:
-  #   - type: custom
+  requested_slot:
+    type: categorical
+    values:
+      - customer_email
+      - people_count
+    influence_conversation: true
+    mappings:
+    - type: custom
 
 actions:
   - action_check_table_availability

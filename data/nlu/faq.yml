@@ -11,16 +11,16 @@ nlu:
     - what are your hours of operation?
     - hours of operation
     - what time are you open until?
-    - what time are you open until on the [weekday](weekday)?
-    - what time are you open until on the [weekend](weekend)?
+    - what time are you open until on weekday?
+    - what time are you open until on weekend?
 
 - intent: faq/ask_parking
   examples: |
     - do you have parking?
     - is there parking available on site?
     - is there parking available on the premises?
-    - is there parking available on the [weekend](weekend)?
-    - is there parking available on the [weekday](weekday)?
+    - is there parking available on the weekend?
+    - is there parking available on the weekday?
 
 - intent: faq/ask_vegetarian_vegan
   examples: |
@@ -39,7 +39,7 @@ nlu:
 - intent: faq/ask_catering
   examples: |
     - do you offer catering services?
-    - can I get catering for [event](event)?
+    - can I get catering for event?
     - tell me about your catering options.
     - do you offer catering for private parties?
 
@@ -52,11 +52,11 @@ nlu:
 
 - intent: faq/ask_bring_your_own
   examples: |
-    - can I bring my own [wine](food)?
-    - am I allowed to bring my own [drinks](food)?
+    - can I bring my own wine?
+    - am I allowed to bring my own drinks?
     - are outside beverages allowed?
     - tell me about your policy on bringing outside items.
-    - tell me about your policy on bringing outside [food](food).
+    - tell me about your policy on bringing outside food.
 
 - intent: faq/ask_bring_celebration_cake
   examples: |
@@ -64,7 +64,7 @@ nlu:
     - can I bring cake?
     - can I bring my own cake?
     - is bringing a cake for celebrations allowed?
-    - tell me about your policy on bringing cakes for [event](event).
+    - tell me about your policy on bringing cakes for event.
 
 - intent: faq/ask_reservation_policy
   examples: |

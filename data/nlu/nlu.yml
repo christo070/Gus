@@ -33,19 +33,6 @@ nlu:
     - That's not helping, can I talk to a human?
     - Wrong, I want to speak to a human
 
-- intent: restart
-  examples: |
-    - Yes, you can restart
-    - Please restart this chat
-    - Okay, restart please
-    - Please restart the bot
-    - Restart this conversation
-    - I want to restart
-    - Why don't you restart?
-    - Hey, I said restart
-    - Restart session, please
-    - Restart, please
-
 - intent: affirm
   examples: |
     - Accept

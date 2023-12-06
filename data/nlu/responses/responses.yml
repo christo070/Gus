@@ -51,13 +51,11 @@ responses:
   utter_change_mind:
   - text: You can still change your mind below though.
 
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
   utter_default:
-  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
-  - text: I didn't understand, could you rephrase that?
-  - text: I'm sorry, but I didn't understand you. Could you please rephrase what you just said?
-  - text: I'm afraid I didn't get what you just said. Could you rephrase that?
-  - text: I didn't quite get that, could you rephrase your message?
-  - text: Could you rephrase your message? I didn't get it, I'm sorry.
+  - text: I'm sorry, I can't help you with that. 😕
 
   utter_getstarted:
   - text: To determine how I can help you best, I'm going to ask you a few questions.
@@ -113,13 +111,10 @@ responses:
   - text: 😍
 
   utter_restart:
-  - text: Resarting...🤖
-  
-  utter_restart_with_button:
-  - buttons:
-    - payload: /restart
-      title: Restart
-    text: Click the button below if you want to start over.
+  - text: Resarting...
+
+  utter_finish_restarting:
+  - text: Finished restarting! 🤖
 
   utter_thank_suggestion:
   - text: Thanks for your input!
@@ -132,9 +127,6 @@ responses:
   utter_what_help:
   - text: Ok, what can I help you with?
   - text: Thank you for reaching out. How may I assist you?
-
-  utter_ask_rephrase:
-  - text: Can you rephrase the question?
 
   utter_no_further_info:
   - text: Sorry, that's all the info I've got on that subject 😕

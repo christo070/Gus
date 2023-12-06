@@ -1,0 +1,86 @@
+version: "3.1"
+
+nlu:
+  - lookup: location
+    examples: |
+      - Amsterdam
+      - Athens
+      - Auckland
+      - Bangkok
+      - Barcelona
+      - Beijing
+      - Berlin
+      - Bogota
+      - Boston
+      - Brasilia
+      - Brisbane
+      - Brussels
+      - Bucharest
+      - Budapest
+      - Buenos Aires
+      - Cairo
+      - Cape Town
+      - Caracas
+      - Chicago
+      - Delhi
+      - Dhaka
+      - Doha
+      - Dubai
+      - Dublin
+      - Frankfurt
+      - Geneva
+      - Hamburg
+      - Helsinki
+      - Ho Chi Minh City
+      - Hong Kong
+      - Istanbul
+      - Jakarta
+      - Jeddah
+      - Johannesburg
+      - Karachi
+      - Kiev
+      - Kuala Lumpur
+      - Kuwait City
+      - Lima
+      - Lisbon
+      - London
+      - Los Angeles
+      - Luxembourg
+      - Lüneburg
+      - Madrid
+      - Manchester
+      - Manila
+      - Melbourne
+      - Mexico City
+      - Miami
+      - Milan
+      - Montreal
+      - Moscow
+      - Mumbai
+      - Munich
+      - Nairobi
+      - New York
+      - Oslo
+      - Paris
+      - Prague
+      - Rio de Janeiro
+      - Riyadh
+      - Rome
+      - San Francisco
+      - Santiago
+      - Sao Paulo
+      - Seoul
+      - Shanghai
+      - Singapore
+      - Sofia
+      - Stockholm
+      - Sydney
+      - Taipei
+      - Tel Aviv
+      - Tokyo
+      - Toronto
+      - Vancouver
+      - Vienna
+      - Warsaw
+      - Washington DC
+      - Zurich

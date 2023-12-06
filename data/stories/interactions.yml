@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: stop table reservation form + exit
+- story: stop table reservation form + stop + exit
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
@@ -14,7 +14,7 @@ stories:
   - active_loop: null
   - action: utter_table_reservation_unsuccessful
 
-- story: stop table reservation form + continue
+- story: table reservation form + stop + continue
   steps:
   - intent: request_table_reservation
   - action: table_reservation_form
@@ -24,6 +24,45 @@ stories:
   - intent: affirm
   - action: table_reservation_form
 
+- story: table reservation form + contextual interjection -> email
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - requested_slot: customer_email
+  - intent: explain
+  - action: utter_explain_customer_email
+  - action: table_reservation_form
+
+- story: table reservation form + contextual interjection -> people count
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - requested_slot: people_count
+  - intent: explain
+  - action: utter_explain_people_count
+  - action: table_reservation_form
+
+- story: table reservation form + faq generic interjection
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - intent: faq
+  - action: utter_faq
+  - action: table_reservation_form
+
+- story: table reservation form + out of scope generic interjection
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: table_reservation_form
 
 # - story: Show Menu
 #   steps:

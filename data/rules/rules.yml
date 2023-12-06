@@ -3,28 +3,30 @@ version: "3.1"
 rules:
 
 - rule: greet
+  condition:
+  - active_loop: null
   steps:
   - intent: greet
   - action: utter_greet
 
-- rule: restart
-  steps:
-  - intent: restart
-  - action: action_restart
-  - action: action_session_start
-
 - rule: respond to chitchat
+  condition:
+  - active_loop: null
   steps:
   - intent: chitchat
   - action: utter_chitchat
 
 - rule: respond to out of scope
+  condition:
+  - active_loop: null
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
   - action: utter_whatspossible
 
 - rule: respond to FAQs
+  condition:
+  - active_loop: null
   steps:
   - intent: faq
   - action: utter_faq

@@ -7,6 +7,7 @@ rules:
   - intent: request_table_reservation
   - action: table_reservation_form
   - active_loop: table_reservation_form
+  wait_for_user_input: false
 
 - rule: submit table reservation form
   condition:
@@ -18,3 +19,30 @@ rules:
     - requested_slot: null
   - action: action_check_table_availability
   - action: action_reserve_table
+
+- rule: table reservation form + chitchat
+  condition:
+  - active_loop: table_reservation_form
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: table_reservation_form
+  wait_for_user_input: false
+
+- rule: table reservation form + faq
+  condition:
+  - active_loop: table_reservation_form
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - action: table_reservation_form
+  wait_for_user_input: false
+
+- rule: table reservation form + out of scope
+  condition:
+  - active_loop: table_reservation_form
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: table_reservation_form
+  wait_for_user_input: false

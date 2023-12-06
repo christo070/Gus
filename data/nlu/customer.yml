@@ -3,10 +3,11 @@ version: "3.1"
 nlu:
 - intent: request_table_reservation
   examples: |
-    - book a table
-    - book table
+    - I want to book a table
+    - I want to reserve a table
+    - I would like to reserve table for [2](number) people
     - book table for [2](number) people
-    - reserve a table
+    - reserve table
     - reserve a table for [2](number) people
     - reserve table for [2](number)
     - table reservation for [4](number)

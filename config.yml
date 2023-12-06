@@ -1,32 +1,29 @@
-# The config recipe.
 # https://rasa.com/docs/rasa/model-configuration/
-recipe: default.v1
-
-# The assistant project unique identifier
-# This default value must be replaced with a unique assistant name within your deployment
-assistant_id: 20230905-233039-tomato-bounce
-
-# Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
+# https://rasa.com/docs/rasa/tuning-your-model
+# https://rasa.com/docs/rasa/core/policies/
+# https://rasa.com/docs/rasa/policies
+
+recipe: default.v1
+assistant_id: restaurant_bot
 language: en
 
 pipeline:
-# See https://rasa.com/docs/rasa/tuning-your-model for more information.
-
 - name: WhitespaceTokenizer
+  token_pattern: (?u)\b\w+\b
 - name: RegexFeaturizer
-  "case_sensitive": False
-  "use_word_boundaries": False
+  case_sensitive: False
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
+  OOV_token: oov
 - name: CountVectorsFeaturizer
   analyzer: char_wb
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 100
-  ranking_length: 5
   constrain_similarities: true
+  epochs: 200
+  ranking_length: 5
 - name: EntitySynonymMapper
 - name: ResponseSelector
   retrieval_intent: out_of_scope
@@ -45,23 +42,18 @@ pipeline:
   constrain_similarities: true
 - name: FallbackClassifier
   threshold: 0.7
-  # ambiguity_threshold: 0.1
+  ambiguity_threshold: 0.1
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
 policies:
-# See https://rasa.com/docs/rasa/policies for more information.
-
 - name: RulePolicy
-  core_fallback_threshold: 0.3
-  core_fallback_action_name: "action_default_fallback"
+  core_fallback_threshold: 0.4
+  core_fallback_action_name: action_default_fallback
   enable_fallback_prediction: true
-- max_history: 6
-  name: AugmentedMemoizationPolicy
+  check_for_contradictions: true
+  max_history: 6
+- name: AugmentedMemoizationPolicy
+  max_history: 6
 - name: TEDPolicy
   constrain_similarities: true
-  max_history: 10
-  epochs: 20
-  batch_size:
-  - 32
-  - 64
+  max_history: 6
+  epochs: 100
