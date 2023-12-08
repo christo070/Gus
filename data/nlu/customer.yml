@@ -3,9 +3,9 @@ version: "3.1"
 nlu:
 - intent: request_table_reservation
   examples: |
-    - I want to book a table
-    - I want to reserve a table
-    - I would like to reserve table for [2](number) people
+    - i want to book a table
+    - i want to reserve a table
+    - i would like to reserve table for [2](number) people
     - book table for [2](number) people
     - reserve table
     - reserve a table for [2](number) people
@@ -20,27 +20,45 @@ nlu:
 
 - intent: inform_email
   examples: |
-    - My email is [user@example.com](email)
-    - Contact me at [jane.doe@email.com](email)
-    - Reach me at [john.doe@email.com](email)
-    - Email [info@domain.com](email)
+    - my email is [user@example.com](email)
+    - contact me at [jane.doe@email.com](email)
+    - reach me at [john.doe@email.com](email)
+    - email [info@domain.com](email)
     - [james.doe@hotmail.com](email)
-    - Here's my email address [customer@example.org](email)
-    - Contact me at [jenny@emailprovider.com](email)
-    - For the reservation, use [reservations@restaurant.com](email)
+    - here's my email address [customer@example.org](email)
+    - contact me at [jenny@emailprovider.com](email)
+    - for the reservation, use [reservations@restaurant.com](email)
 
 - regex: email
   examples: |
     - [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
 
-- intent: inform_reservation_people_count
+- intent: inform_people_count
   examples: |
     - book a table for [5](number) people
     - reservation for [12](number) people
     - planning for [3](number) people
     - [2](number) people
-    - [4](number)
     - about [8](number) people
+    - [4](number) persons
+    - [6](number) guests
+    - [10](number) men
+    - [2](number) women
+    - [3](number) children
+    - [4](number) adults
+    - [5](number) kids
+    - [6](number) seniors
+    - [7](number) youngsters
+    - [8](number) teenagers
+    - just [1](number) person
+
+- intent: inform_number
+  examples: |
+    - [2](number)
+    - [3](number)
+    - [4](number)
+    - [5](number)
+    - [6](number)
 
 - regex: number
   examples: |

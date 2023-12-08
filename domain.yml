@@ -27,7 +27,8 @@ intents:
   - nlu_fallback
   - request_table_reservation
   - inform_email
-  - inform_reservation_people_count
+  - inform_people_count
+  - inform_number
 
 entities:
   - name
@@ -50,6 +51,13 @@ slots:
     mappings:
     - type: from_entity
       entity: time
+
+  just_number:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: number
+      intent: inform_number
 
   privacy_policy_url:
     type: text
@@ -83,7 +91,7 @@ slots:
     mappings:
     - type: from_entity
       entity: number
-      intent: [inform_reservation_people_count, request_table_reservation]
+      intent: [inform_people_count, request_table_reservation]
 
   is_table_available:
     type: bool

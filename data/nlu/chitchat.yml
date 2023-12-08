@@ -4,285 +4,284 @@ nlu:
 
 - intent: chitchat/ask_howdoing
   examples: |
-    - How are you?
-    - How are you doing?
-    - How's it going?
-    - How's your day?
-    - How are things?
-    - How's life treating you?
-    - What's up?
-    - What's new?
-    - How have you been?
-    - How's it hanging?
-    - Are you okay?
-    - Are you having a good day?
-    - Are you happy?
-    - Hi Gus, what are you up to?
-    - Hey Gus! How are you?
-    - How's everything?
-    - How are you feeling today?
-    - Is everything okay?
-    - What's going on?
-    - How's your day going?
-    - What's good?
-    - How's life been treating you?
-    - What are you up to?
-    - Whatcha doing?
-    - How's it going today?
-    - Wassup?
-    - How are things with you?
-    - How's your evening?
-    - How's your day been?
-    - How's it going this morning?
-    - What about your day?
-    - How are you, my friend?
-    - How is your day unfolding?
-    - How are you doing today, Gus?
-    - How's life, Gus?
-    - How's everything going?
-    - How's your day shaping up?
-    - How's everything on your end?
-    - How's your day progressing?
-    - How are you doing this morning?
-    - How is it going with you?
-    - What's the latest?
-    - How's your day progressing, Gus?
-    - How are you doing, Gus?
-    - Are you doing well?
-    - How's everything on your side?
-    - How's it going on your end?
-    - What's up, Gus?
-    - How are you today?
-    - Are you doing alright?
-    - How is your day treating you?
-    - What's up with you, Gus?
-    - How's everything with you?
-    - How are things going for you?
-    - How's it going today, my sweet friend?
-    - How are you doing today, my friend?
-    - How's it going, my friend?
-    - How's life treating you today?
-    - How's your day been so far?
-    - How's your day unfolding, Gus?
-    - How's everything going today?
-    - How's it going on your side?
-    - How's your day shaping up, Gus?
-    - How's everything with you, Gus?
-    - How's your day progressing, my friend?
-    - How are you today, Gus?
-    - Are you doing well today?
-    - How's everything on your side, Gus?
-    - How's your day treating you, Gus?
+    - are you doing alright?
+    - are you doing well today?
+    - are you doing well?
+    - are you happy?
+    - are you having a good day?
+    - are you okay?
+    - hey gus! how are you?
+    - hi gus, what are you up to?
+    - how are things going for you?
+    - how are things with you?
+    - how are things?
+    - how are you doing this morning?
+    - how are you doing today, gus?
+    - how are you doing today, my friend?
+    - how are you doing, gus?
+    - how are you doing?
+    - how are you feeling today?
+    - how are you today, gus?
+    - how are you today?
+    - how are you, my friend?
+    - how are you?
+    - how have you been?
+    - how is it going with you?
+    - how is your day treating you?
+    - how is your day unfolding?
+    - how's everything going today?
+    - how's everything going?
+    - how's everything on your end?
+    - how's everything on your side, gus?
+    - how's everything on your side?
+    - how's everything with you, gus?
+    - how's everything with you?
+    - how's everything?
+    - how's it going on your end?
+    - how's it going on your side?
+    - how's it going this morning?
+    - how's it going today, my sweet friend?
+    - how's it going today?
+    - how's it going, my friend?
+    - how's it going?
+    - how's it hanging?
+    - how's life been treating you?
+    - how's life treating you today?
+    - how's life treating you?
+    - how's life, gus?
+    - how's your day been so far?
+    - how's your day been?
+    - how's your day going?
+    - how's your day progressing, gus?
+    - how's your day progressing, my friend?
+    - how's your day progressing?
+    - how's your day shaping up, gus?
+    - how's your day shaping up?
+    - how's your day treating you, gus?
+    - how's your day unfolding, gus?
+    - how's your day?
+    - how's your evening?
+    - is everything okay?
+    - wassup?
+    - what about your day?
+    - what are you up to?
+    - what's going on?
+    - what's good?
+    - what's new?
+    - what's the latest?
+    - what's up with you, gus?
+    - what's up, gus?
+    - what's up?
+    - whatcha doing?
 
 - intent: chitchat/ask_howold
   examples: |
-    - How old are you?
-    - What's your age?
-    - Tell me your age.
-    - When were you born?
-    - Can you share your birthdate?
-    - How many years have you lived?
-    - What year were you born?
-    - How old were you on your last birthday?
-    - What age are you?
-    - What's your birth year?
-    - When do you celebrate your day of birth?
-    - How many candles were on your last birthday cake?
+    - can you share your birthdate?
+    - how many candles were on your last birthday cake?
+    - how many years have you lived?
+    - how old are you?
+    - how old were you on your last birthday?
+    - tell me your age.
+    - what age are you?
+    - what year were you born?
+    - what's your age?
+    - what's your birth year?
+    - when do you celebrate your day of birth?
+    - when were you born?
 
 - intent: chitchat/ask_isbot
   examples: |
-    - Are you a bot?
-    - Are you a chatbot?
-    - Are you real or a bot?
-    - Are you the bot?
-    - Are you AI?
-    - Are you a robot?
-    - Tell me, are you a bot?
-    - Cuz you are a bot.
-    - Oh, are you a chatbot?
-    - What are you, a bot?
-    - Are you really a bot?
-    - Are you a Skynet?
+    - are you a bot?
+    - are you a chatbot?
+    - are you a robot?
+    - are you a skynet?
+    - are you ai?
+    - are you real or a bot?
+    - are you really a bot?
+    - are you the bot?
+    - cuz you are a bot.
+    - oh, are you a chatbot?
+    - tell me, are you a bot?
+    - what are you, a bot?
 
 - intent: chitchat/ask_ishuman
   examples: |
-    - Are you human?
-    - Are you a real person?
-    - Are you a human being?
-    - Are you a human or bot?
-    - Are you a robot or human?
-    - Are you a real human?
-    - Are you a human?
-    - Are you a real person or a chatbot?
-    - You sound like a real human.
-    - Wow, you sound like a real human.
-    - Are you a real person or chatbot?
-    - What are you, a bot?
+    - are you a human being?
+    - are you a human or bot?
+    - are you a human?
+    - are you a real human?
+    - are you a real person or a chatbot?
+    - are you a real person or chatbot?
+    - are you a real person?
+    - are you a robot or human?
+    - are you human?
+    - what are you, a bot?
+    - wow, you sound like a real human.
+    - you sound like a real human.
 
 - intent: chitchat/ask_languagesbot
   examples: |
-    - Can you speak more than one language?
-    - Do you know any other languages?
-    - What languages can you speak?
-    - How many languages are you fluent in?
-    - Do you speak [German](language)?
-    - What foreign languages do you know?
-    - Are you bilingual or multilingual?
-    - Speak any other languages?
-    - Can we converse in [French](language)?
-    - What languages are you familiar with?
-    - Do you speak [Italian](language)?
-    - How many languages do you know?
-    - Are you comfortable speaking [Spanish](language)?
-    - What languages are you good at speaking?
-    - What languages do you prefer speaking?
-    - Are you familiar with [Chinese](language)?
-    - Can you speak binary?
-    - Do you understand [Dutch](language)?
+    - are you bilingual or multilingual?
+    - are you comfortable speaking [spanish](language)?
+    - are you familiar with [chinese](language)?
+    - can we converse in [french](language)?
+    - can you speak binary?
+    - can you speak more than one language?
+    - do you know any other languages?
+    - do you speak [german](language)?
+    - do you speak [italian](language)?
+    - do you understand [dutch](language)?
+    - how many languages are you fluent in?
+    - how many languages do you know?
+    - speak any other languages?
+    - what foreign languages do you know?
+    - what languages are you familiar with?
+    - what languages are you good at speaking?
+    - what languages can you speak?
+    - what languages do you prefer speaking?
 
 - intent: chitchat/ask_time
   examples: |
-    - What time is it?
-    - Tell me the time.
-    - What's the current time?
-    - Can you give me the time?
-    - What is the time now?
-    - Do you have the time?
-    - What time is it in [Berlin](location)?
-    - What's the time in [Sydney](location)?
-    - Could you tell me what time it is?
-    - What is the exact time?
-    - What might the time be?
-    - What time do you have?
-    - What time is it right now?
-    - Do you know the current time?
+    - can you give me the time?
+    - could you tell me what time it is?
+    - do you have the time?
+    - do you know the current time?
+    - tell me the time.
+    - what is the exact time?
+    - what is the time now?
+    - what might the time be?
+    - what time do you have?
+    - what time is it in [berlin](location)?
+    - what time is it right now?
+    - what time is it?
+    - what's the current time?
+    - what's the time in [sydney](location)?
 
 - intent: chitchat/ask_weather
   examples: |
-    - How is the weather today?
-    - What is the weather like?
-    - Can you tell me about the weather?
-    - Is it hot or cold?
-    - What is the weather in [Berlin](location)?
-    - How's the weather in [Sydney](location)?
-    - What is the temperature today?
-    - Do you know the weather?
-    - Will I require my raincoat today?
-    - Is it sunny?
-    - What's the weather forecast?
-    - How is the weather in [Lüneburg](location)?
-    - Do you speak [Italian](language)?
-    - What is the weather like where you are?
-    - Do you understand [Chinese](language)?
-    - Do you speak binary?
+    - can you tell me about the weather?
+    - do you know the weather?
+    - do you speak [italian](language)?
+    - do you speak binary?
+    - do you understand [chinese](language)?
+    - how is the weather in [lüneburg](location)?
+    - how is the weather today?
+    - how's the weather in [sydney](location)?
+    - is it hot or cold?
+    - is it sunny?
+    - what is the temperature today?
+    - what is the weather in [berlin](location)?
+    - what is the weather like where you are?
+    - what is the weather like?
+    - what's the weather forecast?
+    - will i require my raincoat today?
 
 - intent: chitchat/ask_whatismyname
   examples: |
-    - Can you tell me my name?
-    - What am I called?
-    - What is my name?
-    - What do people call me?
-    - Do you know my name?
-    - Tell me my name.
-    - What is my full name?
-    - Can you tell me what I am called?
-    - What could be my name?
-    - What is the name I was given?
-    - What name should I recognize for myself?
-    - What is my first name?
+    - can you tell me my name?
+    - can you tell me what i am called?
+    - do you know my name?
+    - tell me my name.
+    - what am i called?
+    - what could be my name?
+    - what do people call me?
+    - what is my first name?
+    - what is my full name?
+    - what is my name?
+    - what is the name i was given?
+    - what name should i recognize for myself?
 
 - intent: chitchat/ask_whatspossible
   examples: |
-    - What can you do for me?
-    - How can you help me?
-    - What are my options?
-    - Can you help me?
-    - What else can you do?
-    - What can I ask you?
-    - What is your skill?
-    - What can you tell me?
-    - Show me what's possible.
-    - What else can you help with?
-    - What are you good at?
-    - What can you offer me?
-    - What do you do?
-    - What can you teach me?
-    - What else can I do here?
-    - What is this bot for?
+    - can you help me?
+    - how can you help me?
+    - show me what's possible.
+    - what are my options?
+    - what are you good at?
+    - what can i ask you?
+    - what can you do for me?
+    - what can you offer me?
+    - what can you teach me?
+    - what can you tell me?
+    - what do you do?
+    - what else can i do here?
+    - what else can you do?
+    - what else can you help with?
+    - what is this bot for?
+    - what is your skill?
 
 - intent: chitchat/ask_wherefrom
   examples: |
-    - Are you from around here?
-    - Do you know where you come from?
-    - Where were you born?
-    - What country are you from?
-    - What is your origin?
-    - Where do you live?
-    - Where are your roots?
-    - You were conceived in what location?
-    - Where did you come from?
-    - Where did you grow up?
-    - Where do you consider home?
-    - Where are you located?
-    - You live around here?
+    - are you from around here?
+    - do you know where you come from?
+    - what country are you from?
+    - what is your origin?
+    - where are you located?
+    - where are your roots?
+    - where did you come from?
+    - where did you grow up?
+    - where do you consider home?
+    - where do you live?
+    - where were you born?
+    - you live around here?
+    - you were conceived in what location?
 
 - intent: chitchat/ask_whoami
   examples: |
-    - Can you tell me who I am?
-    - Do you know who I am?
-    - How can I determine who I am?
-    - Tell me who I am.
-    - Who am I?
-    - Can you tell me what I am?
-    - Tell me what my identity is?
-    - Who am I?
+    - can you tell me what i am?
+    - can you tell me who i am?
+    - do you know who i am?
+    - how can i determine who i am?
+    - tell me what my identity is?
+    - tell me who i am.
+    - who am i?
 
 - intent: chitchat/ask_whoisit
   examples: |
-    - who are you?
-    - what is your name?
-    - what are you?
-    - what is your name and where are you from?
-    - tell me about yourself
-    - tell me about you
-    - introduce yourself
+    - about this bot
+    - bot intro
     - bot's introduction
     - brief about this bot
-    - display introduction
     - display intro
-    - what's this bot about
+    - display introduction
+    - introduce yourself
     - tell me about this bot
-    - bot intro
-    - about this bot
+    - tell me about you
+    - tell me about yourself
+    - what are you?
+    - what is your name and where are you from?
+    - what is your name?
+    - what's this bot about
+    - who are you?
 
 - intent: chitchat/handleinsult
   examples: |
-    - You are useless
-    - What a waste of time
-    - This is the worst service ever
-    - Stupid bot
-    - I can't believe how dumb you are
-    - Is this a joke?
-    - What a joke
-    - You're the worst assistant ever
-    - Pathetic response
-    - Do you even know anything?
+    - do you even know anything?
+    - i can't believe how dumb you are
+    - is this a joke?
+    - pathetic response
+    - stupid bot
+    - this is the worst service ever
+    - what a joke
+    - what a waste of time
+    - you are useless
+    - you're the worst assistant ever
 
 - intent: chitchat/nicetomeetyou
   examples: |
-    - Nice to meet you
-    - It's a pleasure to meet you
-    - Glad to meet you
-    - Happy to meet you
+    - glad to meet you
+    - happy to meet you
+    - it's a pleasure to meet you
+    - nice to meet you
 
 - intent: chitchat/telljoke
   examples: |
-    - Tell me a joke
-    - Do you know any jokes?
-    - Make me laugh
-    - Can you tell a joke?
-    - Share a joke with me
-    - Got any jokes up your sleeve?
+    - can you tell a joke?
+    - do you know any jokes?
+    - got any jokes up your sleeve?
+    - make me laugh
+    - share a joke with me
+    - tell me a joke
 
 
 responses:

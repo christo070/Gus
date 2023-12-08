@@ -7,7 +7,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset, ConversationPaused, UserUtteranceReverted
 
 dirname = os.path.dirname(__file__)
-table_reservation_file = os.path.join(dirname, "info\\table_reservation.json")
+table_reservation_file = os.path.join(dirname, "..\\info\\table_reservation.json")
 
 
 class ActionCheckAvailability(Action):
@@ -23,7 +23,7 @@ class ActionCheckAvailability(Action):
         with open(table_reservation_file, "r") as f:
             json_object = json.load(f)
             tables = json_object["tables"]
-            people_count = int(tracker.get_slot("people_count"))
+            people_count = int(tracker.get_slot("people_count") or 0)
 
             for table_id in tables.keys():
                 if (tables[table_id]["available"] == True) and (
@@ -57,7 +57,7 @@ class ActionReserveTable(Action):
             json_object = json.load(f)
             tables = json_object["tables"]
 
-            people_count = int(tracker.get_slot("people_count"))
+            people_count = int(tracker.get_slot("people_count") or 0)
             modifyed = False
 
             for table_id in tables.keys():

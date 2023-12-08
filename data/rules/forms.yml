@@ -46,3 +46,12 @@ rules:
   - action: utter_out_of_scope
   - action: table_reservation_form
   wait_for_user_input: false
+
+- rule: table reservation form + typing just number
+  condition:
+  - active_loop: table_reservation_form
+  steps:
+  - intent: inform_number
+  - action: utter_number
+  - action: table_reservation_form
+  wait_for_user_input: false

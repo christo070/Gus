@@ -37,3 +37,8 @@ stories:
   steps:
   - intent: react_negative
   - action: utter_react_negative
+
+- story: just number entered
+  steps:
+  - intent: inform_number
+  - action: utter_number

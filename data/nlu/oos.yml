@@ -3,341 +3,338 @@ version: "3.1"
 nlu:
 - intent: out_of_scope/non_english
   examples: |
-    - Wie fange ich mit Rasa an?
-    - hilf mir beim start
-    - tschüssikowski
-    - ¿Qué pasa?
+    - ¿qué pasa?
     - ça va ?
-    - como te llamas
-    - wer bist Du?
-    - como inicio en rasa
+    - chào
     - come stai?
     - como estas
+    - como inicio en rasa
+    - como te llamas
     - de donde eres
     - de que lugar eres?
+    - dumme sara
     - epdi iruka
     - eres humana
+    - hilf mir beim start
+    - i'm speaking a non-english language.
     - kalhmera sara ti kaneis
     - kannst du auch deutsch?
     - kannst du dies auch auf deutsch?
+    - kannst du mir helfen
+    - kya hindi me bat kar sakate ho
     - oui je besoine de l'aide
     - que puedes hacer?
+    - rasa codigo abierto
+    - tschüssikowski
+    - tu kaisi he
+    - tu pagal
     - tu parles francais?
     - tudo bom
-    - tu pagal
-    - kannst du mir helfen
-    - tu kaisi he
-    - こにちは
-    - 日本語分かる？
-    - chào
-    - 你好
-    - I'm speaking a non-english language.
-    - 呵呵
-    - 我该如何使用
-    - 你懂中文吗？
-    - 您好
-    - 你叫什么名字
-    - 你是谁
-    - 中文
-    - kya hindi me bat kar sakate ho
-    - Dumme sara
+    - wer bist du?
+    - wie fange ich mit rasa an?
     - αστεία λές
-    - rasa codigo abierto
+    - こにちは
+    - 中文
+    - 你叫什么名字
+    - 你好
+    - 你懂中文吗？
+    - 你是谁
     - 卧槽
+    - 呵呵
+    - 您好
+    - 我该如何使用
+    - 日本語分かる？
 
 - intent: out_of_scope/other
   examples: |
-    - Hey Google
-    - Hey Siri
-    - Hey Alexa
-    - Hey Cortana
-    - Hey Bixby
-    - Hey Rasa
-    - I am asking you an out of scope question
-    - 4 + 2 = ?
-    - Are you ready?
-    - But you're an English site :(
-    - Can I ask you questions first?
-    - Can you give me your datacenter's password?
-    - Can you please send me an Uber?
-    - Do I have to accept?
-    - Do you know?
-    - Have we met before?
-    - I already told you! I'm a [profanity].
-    - I am User
-    - I am an opioid addict
-    - I can barely see this white text on light gray background
-    - I changed my mind
-    - I have installed it
-    - I need a GP in 94301
-    - I need a girlfriend!
-    - will you be my girlfriend?
-    - I wanna marry you
-    - I want to buy a plane
-    - I want a new laptop
-    - I want to book a hotel
-    - I want to die
-    - I want to order pizza
-    - I want to use pipe
-    - I will check
-    - I'm a [profanity]
-    - Is this Goal-Oriented Chatbot?
-    - Is today Saturday? 
-    - Mail me the guide
-    - NLW
-    - Nice name
-    - Now?
-    - Pizza bot
-    - Recharge
-    - SELL ME SOMETHING
-    - The Try it out is not working
-    - The weather is good
-    - Try it out broken
-    - What day is it today?
-    - What did you eat yesterday?
-    - What do you prefer?
-    - What is today's date
-    - What is your hobby?
-    - What makes you better than a human?
-    - What's 1 + 1?
-    - What's do YouTube do
-    - What's your backend system?
-    - Where am I right now?
-    - Where am I?
-    - Who?
-    - Who are your customers
-    - Why don't you answer?
-    - Won't you ask me how I am?
-    - You're blue.
-    - I want to marry you
     - [german](language)?
-    - A tamed mouse will arrive at your doorstep in the next couple of days
-    - Again?
-    - Alexa, order 5 tons of natrium chloride
-    - And make chicken noises into the phone
-    - Are the newsletter worth the subscription?
-    - Are u Facebook
-    - Are u, Facebook?
-    - Are you single?
-    - Are you dev?
-    - Are you Russian?
-    - Are you sick
-    - Are you vegan
-    - Better than you
-    - Book a ticket
-    - But I just told you that :(
-    - But if Rasa is open source why do you have a sales team
-    - Buy one please
-    - Buy groceries
-    - Call me father
-    - Can we keep chatting?
-    - Can you book dinner
-    - Can you cheer me up
-    - Can you cook dinner
-    - Can you give me a cup of coffee
-    - Can you help me with the docs?
-    - Can you help me with your docs
-    - Can you help me with your docs?
-    - Can you learn from our conversation?
-    - Can you speak about politics?
-    - Can you understand?
-    - Cannot see
-    - Chgfhgh
-    - Chinese ok?
-    - Colder
-    - Common, just try
-    - Connect to Alexa
-    - CR
-    - Custom service
-    - Did I break you
-    - Dinner
-    - Do you believe in God?
-    - Do you have a phone number?
-    - Do you have your photo?
-    - Do you know me
-    - Do you know Rasa
-    - Do you like cheese?
-    - Do you like football
-    - Do you like movies
-    - Do you sell vacuum robots?
-    - Do you want to marry me?
-    - Docs
-    - Doctor
-    - Everything
-    - Example of a chatbot
-    - Genocide
-    - Get me a club mate
-    - Give me a girlfriend
-    - Give me food
-    - Go back
-    - Google?
-    - Great, I'd like to buy a house
-    - Hang on let me find it
-    - Have you ever seen?
-    - Help with my life
-    - Help with my life
-    - Hey little mama let em whisper in your ear
-    - Hey, I contacted you a couple of days ago but didn't get any response, any news?
-    - How
-    - How about NYC
-    - How are cats doing?
-    - How are the kids
-    - How can I get them?
-    - How can I test this
-    - How come you say ok?
-    - How do you learn
-    - How good is Rasa
-    - How it compares to Alexa
-    - How long have you been online?
-    - How long will the next version launch?
-    - How many lines of codes
-    - How much is 10 + 89?
-    - How much is 10 + 89
-    - How to get Rasa studio
-    - How to go to New York?
-    - I am hungry
-    - I am hungry, what should I do?
-    - I am not a developer but need this for business
-    - I am qq
-    - I can't deal with _your_ request
-    - I do not care how are you
-    - I hope you will be better
-    - I immediately need help with implementing the coolest bot you can imagine
-    - I m looking for job
-    - I told you already
-    - I wanna party
-    - I want a non-dripping ice cream
-    - I want caffe
-    - I want food
-    - I want good flycam
-    - I want more of you in my life!
-    - I want pizza
-    - I want pizza!!
-    - I want to book a hotel
-    - I want to buy a Roomba for my grandson
-    - I want to eat
-    - I want to find new friends
-    - I want to find out what you can build with Rasa
-    - I want to fly
-    - I want to grab lunch
-    - I want to know the current situation in Pakistan
-    - I want to order a pizza
-    - I want to see your happy customers
-    - I will tame a mouse for you
-    - Is [John Lewis](name) still married to you
-    - Is it a wasteland full of broken robot parts?
-    - Is it allowed to
-    - Is Rasa a studio?
-    - Is Rasa any good
-    - Is that any of your business
-    - Isn't the newsletter just spam?
-    - It's a pity
-    - I'm hungry
-    - License
-    - Ljljl
-    - Lunch
-    - Lunch??
-    - Machine learning
-    - Mail me the steps
-    - Mascot means?
-    - More
-    - Mountain
-    - My name k
-    - No wait go back I want a dripping ice cream but a cone that catches it so you can drink the ice cream later
-    - Offer me lunch
-    - Oh my god, not again!
-    - Ok one then
-    - On which NLP-based system are you built?
-    - Only that?
-    - Order good
-    - Order pizza
-    - Personal or work?
-    - Pizza
-    - Please help with my ice cream it's dripping
-    - Please have lunch
-    - Please hurry, I have a deadline in two weeks to deliver the bot, it is for a very big company
-    - Please play music
-    - Rasa topics
-    - Really? You're so touchy?
-    - Refresh
-    - Region with no. of records
-    - Remember my name
-    - Search Wikipedia
-    - [Profanity]
-    - Show me a picture of a chicken
-    - Silly bot
-    - Sing me a song
-    - So, I'm helping right now to train you?
-    - Some thing else
-    - Someone call the police I think the bot died
-    - Sorry, I cannot rephrase
-    - Sudo make me a sandwich
-    - Tell me about yourself
-    - Tell me more about next best action
-    - That doesn't sound like a joke
-    - That link doesn't work!
-    - The one that is better than you
-    - Tricked ya
-    - Turn off my stove
-    - Umm
-    - Wait a bit I am still reading
-    - What about weather
-    - What are contextual AI assistants and how different are they from chatbots?
-    - What are you doing now?
-    - What are your uses for universities
-    - What did you eat for lunch?
-    - What do you think about Siri?
-    - What do you think of Alexa
-    - What does your soul feel, my friend
-    - What doing
-    - What else?
-    - What films do you like
-    - What I do after cd starter-pack-rasa-stack?
-    - What is a discourse?
-    - What is a mascot
-    - What is AdLingo
-    - What is the difference between bot and mascot?
-    - What is evolution?
-    - What is Google RCS
-    - What is machine learning
-    - What is nice?
-    - What is the capital of Delhi
-    - What is the capital of India
-    - What is the current petrol price
-    - What is the day?
-    - What is the real use case where we can use this one
-    - What is your address?
-    - What is your purpose
-    - What LNU mean?
-    - What the latest news?
-    - What you ate today?
-    - What's 5 + 5
-    - What's a newsletter?
-    - What's ginger ale
-    - What's your wife doing this weekend
-    - What?
-    - Whats that
-    - Whats the sign
-    - When is the next train coming?
-    - Where do I get install files for Mac?
-    - Where to type in commands
-    - Kiss me
-    - You have to
-    - What type of bot?
-    - SFASD
-    - ASKDJASDHJKASD
-    - J BHBHJ
-    - ESHDTJFJFYK
-    - DRHDTJFJFYJ
-    - Sudo reboot
-    - ASDFGASD
-    - ASDFGASDAS
+    - [profanity]
+    - 4 + 2 = ?
+    - a tamed mouse will arrive at your doorstep in the next couple of days
+    - again?
+    - alexa, order 5 tons of natrium chloride
+    - and make chicken noises into the phone
+    - are the newsletter worth the subscription?
+    - are u facebook
+    - are u, facebook?
+    - are you dev?
+    - are you ready?
+    - are you russian?
+    - are you sick
+    - are you single?
+    - are you vegan
+    - asdfgasd
+    - asdfgasdas
+    - askdjasdhjkasd
+    - better than you
+    - book a ticket
+    - but i just told you that :(
+    - but if rasa is open source why do you have a sales team
+    - but you're an english site :(
+    - buy groceries
+    - buy one please
+    - call me father
+    - can i ask you questions first?
+    - can we keep chatting?
+    - can you book dinner
+    - can you cheer me up
+    - can you cook dinner
+    - can you give me a cup of coffee
+    - can you give me your datacenter's password?
+    - can you help me with the docs?
+    - can you help me with your docs
+    - can you help me with your docs?
+    - can you learn from our conversation?
+    - can you please send me an uber?
+    - can you speak about politics?
+    - can you understand?
+    - cannot see
+    - chgfhgh
+    - chinese ok?
+    - colder
+    - common, just try
+    - connect to alexa
+    - cr
+    - custom service
+    - did i break you
+    - dinner
+    - do i have to accept?
+    - do you believe in god?
+    - do you have a phone number?
+    - do you have your photo?
+    - do you know me
+    - do you know rasa
+    - do you know?
+    - do you like cheese?
+    - do you like football
+    - do you like movies
+    - do you sell vacuum robots?
+    - do you want to marry me?
+    - docs
+    - doctor
+    - drhdtjfjfyj
+    - eshdtjfjfyk
+    - everything
+    - example of a chatbot
+    - genocide
+    - get me a club mate
+    - give me a girlfriend
+    - give me food
+    - go back
+    - google?
+    - great, i'd like to buy a house
+    - hang on let me find it
+    - have we met before?
+    - have you ever seen?
+    - help with my life
+    - hey alexa
+    - hey bixby
+    - hey cortana
+    - hey google
+    - hey little mama let em whisper in your ear
+    - hey rasa
+    - hey siri
+    - hey, i contacted you a couple of days ago but didn't get any response, any news?
+    - how
+    - how about nyc
+    - how are cats doing?
+    - how are the kids
+    - how can i get them?
+    - how can i test this
+    - how come you say ok?
+    - how do you learn
+    - how good is rasa
+    - how it compares to alexa
+    - how long have you been online?
+    - how long will the next version launch?
+    - how many lines of codes
+    - how much is 10 + 89
+    - how much is 10 + 89?
+    - how to get rasa studio
+    - how to go to new york?
+    - i already told you! i'm a [profanity].
+    - i am an opioid addict
+    - i am asking you an out of scope question
+    - i am hungry
+    - i am hungry, what should i do?
+    - i am not a developer but need this for business
+    - i am qq
+    - i am user
+    - i can barely see this white text on light gray background
+    - i can't deal with _your_ request
+    - i changed my mind
+    - i do not care how are you
+    - i have installed it
+    - i hope you will be better
+    - i immediately need help with implementing the coolest bot you can imagine
+    - i m looking for job
+    - i need a girlfriend!
+    - i need a gp in 94301
+    - i told you already
+    - i wanna marry you
+    - i wanna party
+    - i want a new laptop
+    - i want a non-dripping ice cream
+    - i want caffe
+    - i want food
+    - i want good flycam
+    - i want more of you in my life!
+    - i want pizza
+    - i want pizza!!
+    - i want to book a hotel
+    - i want to buy a plane
+    - i want to buy a roomba for my grandson
+    - i want to die
+    - i want to eat
+    - i want to find new friends
+    - i want to find out what you can build with rasa
+    - i want to fly
+    - i want to grab lunch
+    - i want to know the current situation in pakistan
+    - i want to marry you
+    - i want to order a pizza
+    - i want to order pizza
+    - i want to see your happy customers
+    - i want to use pipe
+    - i will check
+    - i will tame a mouse for you
+    - i'm a [profanity]
+    - i'm hungry
+    - is [john lewis](name) still married to you
+    - is it a wasteland full of broken robot parts?
+    - is it allowed to
+    - is rasa a studio?
+    - is rasa any good
+    - is that any of your business
+    - is this goal-oriented chatbot?
+    - is today saturday? 
+    - isn't the newsletter just spam?
+    - it's a pity
+    - j bhbhj
+    - kiss me
+    - license
+    - ljljl
+    - lunch
+    - lunch??
+    - machine learning
+    - mail me the guide
+    - mail me the steps
+    - mascot means?
+    - more
+    - mountain
+    - my name k
+    - nice name
+    - nlw
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - now?
+    - offer me lunch
+    - oh my god, not again!
+    - ok one then
+    - on which nlp-based system are you built?
+    - only that?
+    - order good
+    - order pizza
+    - personal or work?
+    - pizza
+    - pizza bot
+    - please have lunch
+    - please help with my ice cream it's dripping
+    - please hurry, i have a deadline in two weeks to deliver the bot, it is for a very big company
+    - please play music
+    - rasa topics
+    - really? you're so touchy?
+    - recharge
+    - refresh
+    - region with no. of records
+    - remember my name
+    - search wikipedia
+    - sell me something
+    - sfasd
+    - show me a picture of a chicken
+    - silly bot
+    - sing me a song
+    - so, i'm helping right now to train you?
+    - some thing else
+    - someone call the police i think the bot died
+    - sorry, i cannot rephrase
+    - sudo make me a sandwich
+    - sudo reboot
+    - tell me more about next best action
+    - that doesn't sound like a joke
+    - that link doesn't work!
+    - the one that is better than you
+    - the try it out is not working
+    - the weather is good
+    - tricked ya
+    - try it out broken
+    - turn off my stove
+    - umm
+    - wait a bit i am still reading
+    - what about weather
+    - what are contextual ai assistants and how different are they from chatbots?
+    - what are you doing now?
+    - what are your uses for universities
+    - what day is it today?
+    - what did you eat for lunch?
+    - what did you eat yesterday?
+    - what do you prefer?
+    - what do you think about siri?
+    - what do you think of alexa
+    - what does your soul feel, my friend
+    - what doing
+    - what else?
+    - what films do you like
+    - what i do after cd starter-pack-rasa-stack?
+    - what is a discourse?
+    - what is a mascot
+    - what is adlingo
+    - what is evolution?
+    - what is google rcs
+    - what is machine learning
+    - what is nice?
+    - what is the capital of delhi
+    - what is the capital of india
+    - what is the current petrol price
+    - what is the day?
+    - what is the difference between bot and mascot?
+    - what is the real use case where we can use this one
+    - what is today's date
+    - what is your address?
+    - what is your hobby?
+    - what is your purpose
+    - what lnu mean?
+    - what makes you better than a human?
+    - what the latest news?
+    - what type of bot?
+    - what you ate today?
+    - what?
+    - what's 1 + 1?
+    - what's 5 + 5
+    - what's a newsletter?
+    - what's do youtube do
+    - what's ginger ale
+    - what's your backend system?
+    - what's your wife doing this weekend
+    - whats that
+    - whats the sign
+    - when is the next train coming?
+    - where am i right now?
+    - where am i?
+    - where do i get install files for mac?
+    - where to type in commands
+    - who are your customers
+    - who?
+    - why don't you answer?
+    - will you be my girlfriend?
+    - won't you ask me how i am?
+    - you have to
+    - you're blue.
 
 
 responses:
 
   utter_out_of_scope/non_english:
-  - text: "I only understand English, I'm sorry."
+  - text: "I only understand english, I'm sorry."
 
   utter_out_of_scope/other:
   - text: "I can't help you with that, I'm sorry."

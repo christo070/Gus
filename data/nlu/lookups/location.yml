@@ -3,84 +3,84 @@ version: "3.1"
 nlu:
   - lookup: location
     examples: |
-      - Amsterdam
-      - Athens
-      - Auckland
-      - Bangkok
-      - Barcelona
-      - Beijing
-      - Berlin
-      - Bogota
-      - Boston
-      - Brasilia
-      - Brisbane
-      - Brussels
-      - Bucharest
-      - Budapest
-      - Buenos Aires
-      - Cairo
-      - Cape Town
-      - Caracas
-      - Chicago
-      - Delhi
-      - Dhaka
-      - Doha
-      - Dubai
-      - Dublin
-      - Frankfurt
-      - Geneva
-      - Hamburg
-      - Helsinki
-      - Ho Chi Minh City
-      - Hong Kong
-      - Istanbul
-      - Jakarta
-      - Jeddah
-      - Johannesburg
-      - Karachi
-      - Kiev
-      - Kuala Lumpur
-      - Kuwait City
-      - Lima
-      - Lisbon
-      - London
-      - Los Angeles
-      - Luxembourg
-      - Lüneburg
-      - Madrid
-      - Manchester
-      - Manila
-      - Melbourne
-      - Mexico City
-      - Miami
-      - Milan
-      - Montreal
-      - Moscow
-      - Mumbai
-      - Munich
-      - Nairobi
-      - New York
-      - Oslo
-      - Paris
-      - Prague
-      - Rio de Janeiro
-      - Riyadh
-      - Rome
-      - San Francisco
-      - Santiago
-      - Sao Paulo
-      - Seoul
-      - Shanghai
-      - Singapore
-      - Sofia
-      - Stockholm
-      - Sydney
-      - Taipei
-      - Tel Aviv
-      - Tokyo
-      - Toronto
-      - Vancouver
-      - Vienna
-      - Warsaw
-      - Washington DC
-      - Zurich
+      - amsterdam
+      - athens
+      - auckland
+      - bangkok
+      - barcelona
+      - beijing
+      - berlin
+      - bogota
+      - boston
+      - brasilia
+      - brisbane
+      - brussels
+      - bucharest
+      - budapest
+      - buenos aires
+      - cairo
+      - cape town
+      - caracas
+      - chicago
+      - delhi
+      - dhaka
+      - doha
+      - dubai
+      - dublin
+      - frankfurt
+      - geneva
+      - hamburg
+      - helsinki
+      - ho chi minh city
+      - hong kong
+      - istanbul
+      - jakarta
+      - jeddah
+      - johannesburg
+      - karachi
+      - kiev
+      - kuala lumpur
+      - kuwait city
+      - lima
+      - lisbon
+      - london
+      - los angeles
+      - luxembourg
+      - lüneburg
+      - madrid
+      - manchester
+      - manila
+      - melbourne
+      - mexico city
+      - miami
+      - milan
+      - montreal
+      - moscow
+      - mumbai
+      - munich
+      - nairobi
+      - new york
+      - oslo
+      - paris
+      - prague
+      - rio de janeiro
+      - riyadh
+      - rome
+      - san francisco
+      - santiago
+      - sao paulo
+      - seoul
+      - shanghai
+      - singapore
+      - sofia
+      - stockholm
+      - sydney
+      - taipei
+      - tel aviv
+      - tokyo
+      - toronto
+      - vancouver
+      - vienna
+      - warsaw
+      - washington dc
+      - zurich

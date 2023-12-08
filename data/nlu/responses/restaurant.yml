@@ -31,3 +31,6 @@ responses:
 
   utter_explain_people_count:
   - text: "To ensure we provide you with the best dining experience, knowing the number of people helps us arrange the seating accordingly. This ensures that we have a table suitable for your group size and can offer you the best service possible."
+
+  utter_number:
+  - text: "{just_number} What?"
