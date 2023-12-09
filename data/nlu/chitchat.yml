@@ -261,10 +261,16 @@ nlu:
     - is this a joke?
     - pathetic response
     - stupid bot
+    - stupid
     - this is the worst service ever
     - what a joke
     - what a waste of time
     - you are useless
+    - you are the worst
+    - are you dumb
+    - are you stupid
+    - idiot bot
+    - idiot
     - you're the worst assistant ever
 
 - intent: chitchat/nicetomeetyou

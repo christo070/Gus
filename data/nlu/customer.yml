@@ -50,6 +50,8 @@ nlu:
     - [6](number) seniors
     - [7](number) youngsters
     - [8](number) teenagers
+    - [1](number) man
+    - [1](number) woman
     - just [1](number) person
 
 - intent: inform_number
@@ -62,4 +64,4 @@ nlu:
 
 - regex: number
   examples: |
-    - \d{1,}
+    - \b\d{1,}\b

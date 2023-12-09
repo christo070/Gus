@@ -150,3 +150,9 @@ responses:
 
   utter_human_handoff:
   - text: "I will now connect you to a human agent. Please hold on for a second."
+
+  utter_affirm:
+  - text: "Great to hear! If you have any questions or if there's anything specific you'd like assistance with, feel free to let me know."
+
+  utter_deny:
+  - text: "I see. If there's something specific you're not comfortable with or if you have any questions, please let me know. I'm here to help!"

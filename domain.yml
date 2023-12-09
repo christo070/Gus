@@ -119,7 +119,6 @@ actions:
   - action_check_table_availability
   - action_reserve_table
   - action_reset_slots
-  - action_default_fallback
   - action_human_handoff
   
 forms:

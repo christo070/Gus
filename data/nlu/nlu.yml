@@ -6,7 +6,6 @@ nlu:
   examples: |
     - are there also humans working for your company?
     - can i please speak to a human?
-    - can i speak to a human
     - can i speak to a human?
     - can i speak to a person?
     - can i speak to anyone who can really help me?
@@ -16,7 +15,6 @@ nlu:
     - can i talk to a human instead
     - can i talk to a human?
     - can i talk to a real person?
-    - can i talk to human
     - can i talk to human
     - can i talk to human?
     - can i took with a real person
@@ -44,8 +42,6 @@ nlu:
     - i want to speak to customer service
     - i want to speak to human
     - i want to talk to a human
-    - i want to talk to a human
-    - i want to talk to a human \
     - i want to talk to a person
     - i want to talk to a real person
     - i want to talk to human
@@ -87,7 +83,6 @@ nlu:
     - amayzing
     - amazing!
     - awesome
-    - awesome!
     - confirm
     - considering
     - cool story bro
@@ -102,7 +97,6 @@ nlu:
     - go for it
     - going super well
     - good
-    - good.
     - great
     - great lets do that
     - great!
@@ -111,7 +105,6 @@ nlu:
     - hm, i'd like that
     - how nice!
     - i accept
-    - i accept.
     - i agree
     - i am using it
     - i am!
@@ -122,7 +115,6 @@ nlu:
     - i have used it in the past
     - i want that
     - i will
-    - i will!
     - i'd absolutely love that
     - i'm sure i will!
     - i'm using it
@@ -158,12 +150,10 @@ nlu:
     - ok i accept
     - ok let's start
     - ok sara
+    - ok, bot
     - ok, i behave now
     - ok, i understood
-    - ok, sara
     - ok.
-    - ok..
-    - ok...
     - okay
     - okay cool
     - okay sure
@@ -260,10 +250,7 @@ nlu:
     - yes.
     - yes'
     - yesh
-    - yess
     - yessoo
-    - yesss
-    - yesssss
     - yesyestyes
     - yesyesyes
     - yez
@@ -274,6 +261,14 @@ nlu:
     - ys
     - yup
     - yyeeeh
+
+- regex: affirm
+  examples: |
+    - \byes+\b
+    - \bok+\b
+    - \byeah+\b
+    - \byep+\b
+    - \bya+\b
 
 - intent: deny
   examples: |
@@ -350,8 +345,6 @@ nlu:
     - no. u r idiot
     - non
     - none of them
-    - noooooooooo
-    - noooooooooooooooooooooooooooooooooooooooo
     - nop
     - nope
     - nope!
@@ -367,6 +360,13 @@ nlu:
     - thanks but no thanks
     - this sucks
     - very bad
+
+- regex: deny
+  examples: |
+    - \bno+\b
+    - \bnever+\b
+    - \bnope+\b
+    - \bnot+\b
 
 - intent: greet
   examples: |
@@ -436,10 +436,10 @@ nlu:
     - heyo
     - hhola
     - hi
-    - hi !
+    - hi!
     - hi again
     - hi bot
-    - hi can you speak ?
+    - hi can you speak?
     - hi folks
     - hi friend
     - hi friends
@@ -516,7 +516,7 @@ nlu:
     - exit now
     - farewell
     - good bye
-    - good bye rasa bot!
+    - good bye bot!
     - good night
     - goodbye
     - goodbye.
@@ -593,6 +593,7 @@ nlu:
     - lol thats funny
     - looks nice
     - love you
+    - nice one
     - okay chatbot, you're cool
     - rasa is awesome
     - such a great demo

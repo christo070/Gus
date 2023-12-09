@@ -12,7 +12,6 @@ pipeline:
 - name: addons.CustomComponents.CaseInsensitiveProcessor
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
-  case_sensitive: False
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
@@ -20,17 +19,22 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 100
+  constrain_similarities: true
+  epochs: 200
+  ranking_length: 5
 - name: EntitySynonymMapper
 - name: ResponseSelector
+  constrain_similarities: true
   retrieval_intent: out_of_scope
   scale_loss: false
   epochs: 100
 - name: ResponseSelector
+  constrain_similarities: true
   retrieval_intent: faq
   scale_loss: false
   epochs: 100
 - name: ResponseSelector
+  constrain_similarities: true
   retrieval_intent: chitchat
   scale_loss: false
   epochs: 100
@@ -44,12 +48,7 @@ policies:
   core_fallback_action_name: action_default_fallback
   enable_fallback_prediction: true
   check_for_contradictions: true
-  max_history: 6
 - name: AugmentedMemoizationPolicy
 - name: TEDPolicy
   constrain_similarities: true
-  max_history: 10
-  epochs: 20
-  batch_size:
-  - 32
-  - 64
+  epochs: 100
