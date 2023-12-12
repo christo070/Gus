@@ -8,23 +8,24 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-  - affirm
-  - deny
   - greet
   - bye
-  - thank
-  - canthelp
+  - affirm
   - react_positive
+  - deny
   - react_negative
+  - thank
   - explain
+  - ask_help
+  - canthelp
   - human_handoff
+  - nlu_fallback
   - chitchat:
       use_entities: []
   - out_of_scope:
       use_entities: []
   - faq:
       use_entities: []
-  - nlu_fallback
   - request_table_reservation
   - inform_email
   - inform_people_count
@@ -40,6 +41,36 @@ entities:
   - language
 
 slots:
+  privacy_policy_link:
+    type: text
+    initial_value: "https://rasa.com/privacy-policy/"
+    mappings:
+    - type: custom
+
+  opening_time:
+    type: text
+    initial_value: "09:00 AM"
+    mappings:
+    - type: custom
+
+  closing_time:
+    type: text
+    initial_value: "10:00 PM"
+    mappings:
+    - type: custom
+
+  contact_email:
+    type: text
+    initial_value: "hi@restaurant.com"
+    mappings:
+    - type: custom
+
+  website:
+    type: text
+    initial_value: "https://restaurant.com"
+    mappings:
+    - type: custom
+
   date:
     type: any
     mappings:
@@ -59,23 +90,6 @@ slots:
       entity: number
       intent: inform_number
 
-  privacy_policy_url:
-    type: text
-    initial_value: "https://rasa.com/privacy-policy/"
-    mappings:
-    - type: custom
-
-  opening_time:
-    type: text
-    initial_value: "09:00 AM"
-    mappings:
-    - type: custom
-
-  closing_time:
-    type: text
-    initial_value: "10:00 PM"
-    mappings:
-    - type: custom
 
   customer_email:
     type: text
@@ -126,3 +140,118 @@ forms:
     required_slots:
       - customer_email
       - people_count
+
+
+
+responses:
+
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  - text: How can I be of assistance?
+
+  utter_anything_else:
+  - text: Is there anything else I can help you with?
+
+  utter_ask_continue:
+  - text: "Do you want to continue?"
+
+  utter_help:
+  - text: Can you describe the problem you're having?
+  - text: Ok, what can I help you with?
+  - text: Thank you for reaching out. How may I assist you?
+
+  utter_did_that_help:
+  - buttons:
+    - payload: /affirm
+      title: 👍
+    - payload: /deny
+      title: 👎
+    text: Did that help?
+  
+  utter_ask_if_problem:
+  - text: Did you encounter any problems?
+
+  utter_awesome:
+  - text: Awesome, thanks! 👍
+  - text: Sweet, thank you! 😄
+  - text: Thanks! 👌
+  - text: Cool, thank you!
+
+  utter_can_do:
+  - text: Sure thing!
+  - text: Can do!
+  - text: You got it. 👍
+  
+  utter_change_mind:
+  - text: You can still change your mind below though.
+
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  - text: Hmm, not sure what you mean... Could you rephrase?
+  - text: I'm sorry, I didn't quite get that. Could you rephrase?
+
+  utter_default:
+  - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our {website}, otherwise contact us at {contact_email} for anything else.
+
+  utter_great:
+  - text: Great! 👍
+  - text: That's great! 🙌
+  - text: Awesome! 🎉
+  - text: Cool, let's do it 🚀
+
+  utter_greet:
+  - text: Hi 👋
+  - text: Hello 👋
+  - text: Hey there 👋
+
+  utter_bye:
+  - text: Goodbye!
+  - text: Bye!
+  - text: Bye, was nice talking to you!
+  - text: Bye bye!
+  - text: "You're heading out? Don't worry, I'm not going anywhere... literally!"
+  - text: "Until next time, may your WiFi be strong and your battery full!"
+  - text: "Remember, I'm just a chat away. Farewell"
+
+  utter_no_speak:
+  - text: I'm afraid we can't chat then 😢
+
+  utter_noworries:
+  - text: No worries!
+  - text: You're welcome!
+  - text: I'm happy to help.
+
+  utter_react_negative:
+  - text: 😕
+  - text: 😞
+  - text: 😥
+  - text: 😢
+
+  utter_react_positive:
+  - text: 😄
+  - text: 😊
+  - text: 👏
+  - text: 😍
+
+  utter_restart:
+  - text: Resarting...
+
+  utter_thank_suggestion:
+  - text: Thanks for your input!
+
+  utter_thumbsup:
+  - text: 👍
+  - text: Okay.
+  - text: Got it.
+
+  utter_ask_more_details:
+  - text: Could you be more specific?  
+
+  utter_human_handoff:
+  - text: "I will now connect you to a human agent. Please hold on for a second."
+
+  utter_affirm:
+  - text: "Great to hear! If you have any questions or if there's anything specific you'd like assistance with, feel free to let me know."
+
+  utter_deny:
+  - text: "I see. If there's something specific you're not comfortable with or if you have any questions, please let me know. I'm here to help!"

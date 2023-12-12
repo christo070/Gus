@@ -1,267 +1,172 @@
-{
-    "menu": {
-        "starters": [
-            {
-                "name": "French Onion Soup",
-                "description": "Caramelized onions in a rich beef broth with croutons and melted cheese.",
-                "price": "$8",
-                "ingredients": [
-                    "Caramelized onions",
-                    "Beef broth",
-                    "Bread croutons",
-                    "Melted cheese (typically Gruyère or Swiss)"
-                ]
-            },
-            {
-                "name": "Vietnamese Spring Rolls",
-                "description": "Fresh rolls with shrimp, lettuce, mint, and vermicelli. Served with peanut sauce.",
-                "price": "$10",
-                "ingredients": [
-                    "Rice paper wrappers",
-                    "Cooked shrimp",
-                    "Lettuce",
-                    "Fresh mint",
-                    "Vermicelli noodles",
-                    "Peanut sauce (for dipping: peanuts, soy sauce, garlic, and other seasonings)"
-                ]
-            },
-            {
-                "name": "Mexican Guacamole & Chips",
-                "description": "Creamy avocado, tomatoes, onions, and cilantro. Served with tortilla chips.",
-                "price": "$7",
-                "ingredients": [
-                    "Avocado",
-                    "Tomatoes",
-                    "Onions",
-                    "Cilantro",
-                    "Lime juice",
-                    "Salt",
-                    "Tortilla chips"
-                ]
-            },
-            {
-                "name": "Greek Tzatziki with Pita",
-                "description": "Yogurt, cucumber, and garlic dip. Served with warm pita bread.",
-                "price": "$8",
-                "ingredients": [
-                    "Yogurt",
-                    "Cucumber",
-                    "Garlic",
-                    "Olive oil",
-                    "Lemon juice",
-                    "Dill or mint",
-                    "Pita bread"
-                ]
-            },
-            {
-                "name": "Chinese Dim Sum Assortment",
-                "description": "Variety of steamed dumplings including shrimp, pork, and vegetables. Served with soy sauce.",
-                "price": "$12",
-                "ingredients": [
-                    "Flour wrappers",
-                    "Fillings: shrimp, pork, vegetables, seasonings",
-                    "Soy sauce (for dipping)"
-                ]
-            }
-        ],
-        "mains": [
-            {
-                "name": "Italian Margherita Pizza",
-                "description": "Tomatoes, mozzarella cheese, basil, and olive oil.",
-                "price": "$15",
-                "ingredients": [
-                    "Pizza dough",
-                    "Tomatoes or tomato sauce",
-                    "Mozzarella cheese",
-                    "Fresh basil",
-                    "Olive oil",
-                    "Salt"
-                ]
-            },
-            {
-                "name": "Indian Chicken Curry",
-                "description": "Chicken in a spicy gravy. Served with steamed basmati rice.",
-                "price": "$18",
-                "ingredients": [
-                    "Chicken pieces",
-                    "Onions",
-                    "Tomatoes",
-                    "Garlic",
-                    "Ginger",
-                    "Spices: turmeric, cumin, coriander, garam masala",
-                    "Yogurt or cream",
-                    "Cilantro"
-                ]
-            },
-            {
-                "name": "Japanese Sushi Platter",
-                "description": "Assortment of fresh sushi. Served with wasabi, ginger, and soy sauce.",
-                "price": "$22",
-                "ingredients": [
-                    "Sushi rice (short-grain rice, rice vinegar, sugar, salt)",
-                    "Nori (seaweed sheets)",
-                    "Fillings: salmon, tuna, vegetables (like cucumber or avocado)",
-                    "Wasabi, pickled ginger, and soy sauce (for serving)"
-                ]
-            },
-            {
-                "name": "American Cheeseburger",
-                "description": "Beef patty with lettuce, tomato, cheese, and pickles. Served with fries.",
-                "price": "$14",
-                "ingredients": [
-                    "Beef patty",
-                    "Burger bun",
-                    "Lettuce",
-                    "Tomato slices",
-                    "Cheese slice",
-                    "Pickles",
-                    "Condiments: mustard, ketchup, mayonnaise",
-                    "French fries"
-                ]
-            },
-            {
-                "name": "Spanish Paella",
-                "description": "Rice dish with chicken, rabbit, and vegetables, cooked with saffron.",
-                "price": "$20",
-                "ingredients": [
-                    "Arborio rice",
-                    "Chicken pieces",
-                    "Rabbit pieces (traditional, but can be omitted)",
-                    "Vegetables: bell peppers, peas, tomatoes",
-                    "Saffron",
-                    "Olive oil",
-                    "Chicken or vegetable stock"
-                ]
-            },
-            {
-                "name": "Thai Green Curry",
-                "description": "Spicy green curry with vegetables and choice of protein. Served with jasmine rice.",
-                "price": "$17",
-                "ingredients": [
-                    "Green curry paste",
-                    "Coconut milk",
-                    "Vegetables: bell peppers, bamboo shoots, eggplant",
-                    "Protein choice: chicken, beef, tofu",
-                    "Fish sauce or soy sauce",
-                    "Basil",
-                    "Lime leaves"
-                ]
-            }
-        ],
-        "desserts": [
-            {
-                "name": "British Sticky Toffee Pudding",
-                "description": "Sponge cake with toffee sauce. Served with vanilla ice cream.",
-                "price": "$9",
-                "ingredients": [
-                    "Dates",
-                    "Brown sugar",
-                    "Eggs",
-                    "Flour",
-                    "Baking powder",
-                    "Toffee sauce (brown sugar, butter, cream)",
-                    "Vanilla ice cream (for serving)"
-                ]
-            },
-            {
-                "name": "Turkish Baklava",
-                "description": "Sweet pastry with chopped nuts and honey.",
-                "price": "$8",
-                "ingredients": [
-                    "Phyllo pastry sheets",
-                    "Mixed nuts (like pistachios, walnuts)",
-                    "Butter",
-                    "Sugar syrup or honey"
-                ]
-            },
-            {
-                "name": "Peruvian Tres Leches Cake",
-                "description": "Sponge cake soaked in three kinds of milk.",
-                "price": "$10",
-                "ingredients": [
-                    "Flour",
-                    "Sugar",
-                    "Eggs",
-                    "Three kinds of milk: evaporated milk, condensed milk, and heavy cream",
-                    "Vanilla extract"
-                ]
-            },
-            {
-                "name": "Belgian Chocolate Mousse",
-                "description": "Rich and creamy chocolate dessert.",
-                "price": "$11",
-                "ingredients": [
-                    "Dark chocolate",
-                    "Eggs",
-                    "Sugar",
-                    "Heavy cream"
-                ]
-            },
-            {
-                "name": "Italian Tiramisu",
-                "description": "Coffee-flavored dessert with layers of mascarpone cheese and cocoa.",
-                "price": "$10",
-                "ingredients": [
-                    "Ladyfingers biscuits",
-                    "Coffee",
-                    "Mascarpone cheese",
-                    "Eggs",
-                    "Sugar",
-                    "Cocoa powder"
-                ]
-            }
-        ],
-        "beverages": [
-            {
-                "name": "Spanish Sangria",
-                "description": "Wine punch with chopped fruit.",
-                "price": "$12/glass",
-                "ingredients": [
-                    "Red wine",
-                    "Chopped fruits (like apples, oranges)",
-                    "Brandy or rum",
-                    "Sugar or syrup",
-                    "Carbonated water or lemon-lime soda"
-                ]
-            },
-            {
-                "name": "Moroccan Mint Tea",
-                "description": "Green tea with mint leaves.",
-                "price": "$5",
-                "ingredients": [
-                    "Green tea leaves",
-                    "Fresh mint leaves",
-                    "Sugar"
-                ]
-            },
-            {
-                "name": "Brazilian Caipirinha",
-                "description": "Cocktail made with cachaça, sugar, and lime.",
-                "price": "$10",
-                "ingredients": [
-                    "Cachaça",
-                    "Lime",
-                    "Sugar"
-                ]
-            },
-            {
-                "name": "Australian Flat White Coffee",
-                "description": "Espresso with steamed milk.",
-                "price": "$6",
-                "ingredients": [
-                    "Espresso",
-                    "Steamed milk"
-                ]
-            },
-            {
-                "name": "Egyptian Hibiscus Tea",
-                "description": "Refreshing cold tea made from hibiscus petals.",
-                "price": "$5",
-                "ingredients": [
-                    "Dried hibiscus petals",
-                    "Sugar or honey"
-                ]
-            }
+[
+    {
+        "id": "fa001",
+        "name": "Bruschetta",
+        "category": "Appetizers",
+        "description": "Bruschetta is a classic Italian appetizer that typically consists of grilled bread rubbed with garlic and topped with various fresh ingredients.",
+        "diet": ["Vegetarian", "Vegan", "Gluten Free", "Dairy Free", "Low Carb", "Low Fat", "Low Sodium", "Low Sugar", "Paleo", "Keto"],
+        "cuisine": "Italian",
+        "price": 12,
+        "ingredients": [
+            "Baguette or Italian bread",
+            "Ripe tomatoes (2-3, depending on size)",
+            "Fresh basil leaves",
+            "Garlic cloves (2-3)",
+            "Extra-virgin olive oil",
+            "Balsamic vinegar",
+            "Salt and pepper to taste"
+        ]
+    },
+    {
+        "id": "fa002",
+        "name": "Stuffed Mushrooms",
+        "category": "Appetizers",
+        "description": "Mushrooms stuffed with a savory mixture of breadcrumbs, herbs, and cheese, baked to perfection.",
+        "diet": ["Vegetarian", "Gluten Free", "Dairy Free"],
+        "cuisine": "International",
+        "price": 10,
+        "ingredients": [
+            "Mushrooms",
+            "Breadcrumbs",
+            "Herbs",
+            "Cheese",
+            "Seasonings"
+        ]
+    },
+    {
+        "id": "fa003",
+        "name": "Spinach Artichoke Dip",
+        "category": "Appetizers",
+        "description": "Creamy dip with spinach, artichokes, and melted cheese, served with crispy tortilla chips.",
+        "diet": ["Vegetarian", "Gluten Free", "Dairy Free"],
+        "cuisine": "American",
+        "price": 14,
+        "ingredients": [
+            "Spinach",
+            "Artichokes",
+            "Cheese",
+            "Tortilla chips"
+        ]
+    },
+    {
+        "id": "fm001",
+        "name": "Pasta Bolognese",
+        "category": "Main Course",
+        "description": "Spaghetti pasta topped with a rich and savory meat sauce, sprinkled with Parmesan cheese.",
+        "diet": ["Non-Vegetarian"],
+        "cuisine": "Italian",
+        "price": 16,
+        "ingredients": [
+            "Spaghetti pasta",
+            "Meat sauce",
+            "Parmesan cheese"
+        ]
+    },
+    {
+        "id": "fm002",
+        "name": "Grilled Salmon",
+        "category": "Main Course",
+        "description": "Fresh salmon fillet grilled to perfection, served with a lemon herb sauce.",
+        "diet": ["Non-Vegetarian", "Gluten Free", "Dairy Free"],
+        "cuisine": "Seafood",
+        "price": 18,
+        "ingredients": [
+            "Salmon fillet",
+            "Lemon herb sauce"
+        ]
+    },
+    {
+        "id": "fm003",
+        "name": "Chicken Alfredo",
+        "category": "Main Course",
+        "description": "Creamy Alfredo sauce tossed with fettuccine pasta and grilled chicken strips.",
+        "diet": ["Non-Vegetarian"],
+        "cuisine": "Italian",
+        "price": 15,
+        "ingredients": [
+            "Fettuccine pasta",
+            "Alfredo sauce",
+            "Grilled chicken strips"
+        ]
+    },
+    {
+        "id": "fd001",
+        "name": "Chocolate Fondue",
+        "category": "Desserts",
+        "description": "Melted chocolate served with a variety of dipping options like strawberries, marshmallows, and banana slices.",
+        "diet": ["Vegetarian", "Vegan", "Gluten Free", "Dairy Free"],
+        "cuisine": "International",
+        "price": 20,
+        "ingredients": [
+            "Chocolate",
+            "Strawberries",
+            "Marshmallows",
+            "Banana slices"
+        ]
+    },
+    {
+        "id": "fd002",
+        "name": "Tiramisu",
+        "category": "Desserts",
+        "description": "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+        "diet": ["Vegetarian"],
+        "cuisine": "Italian",
+        "price": 22,
+        "ingredients": [
+            "Ladyfingers",
+            "Coffee",
+            "Mascarpone cheese"
+        ]
+    },
+    {
+        "id": "fd003",
+        "name": "Cheesecake Sampler",
+        "category": "Desserts",
+        "description": "Assortment of mini cheesecakes with different toppings, perfect for sharing.",
+        "diet": ["Vegetarian", "Gluten Free"],
+        "cuisine": "International",
+        "price": 18,
+        "ingredients": [
+            "Cheesecake",
+            "Assorted toppings"
+        ]
+    },
+    {
+        "id": "fb001",
+        "name": "Mocktail Medley",
+        "category": "Beverages",
+        "description": "Virgin versions of popular cocktails, including a refreshing Mojito and a fruity Virgin Pina Colada.",
+        "diet": ["Vegetarian", "Vegan"],
+        "cuisine": "International",
+        "price": 8,
+        "ingredients": [
+            "Assorted mocktail ingredients"
+        ]
+    },
+    {
+        "id": "fb002",
+        "name": "Hot Herbal Infusion",
+        "category": "Beverages",
+        "description": "A selection of herbal teas, perfect for winding down after a meal.",
+        "diet": ["Vegetarian", "Vegan", "Gluten Free", "Dairy Free"],
+        "cuisine": "International",
+        "price": 6,
+        "ingredients": [
+            "Herbal tea blends"
+        ]
+    },
+    {
+        "id": "fb003",
+        "name": "Fresh Fruit Smoothies",
+        "category": "Beverages",
+        "description": "Blended mix of fresh fruits, yogurt, and ice, available in various flavors.",
+        "diet": ["Vegetarian"],
+        "cuisine": "International",
+        "price": 10,
+        "ingredients": [
+            "Fresh fruits",
+            "Yogurt",
+            "Ice"
         ]
     }
-}
+]

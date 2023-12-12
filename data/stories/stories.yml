@@ -28,16 +28,6 @@ stories:
   - intent: human_handoff
   - action: action_human_handoff
 
-- story: positive reaction
-  steps:
-  - intent: react_positive
-  - action: utter_react_positive
-  
-- story: negative reaction
-  steps:
-  - intent: react_negative
-  - action: utter_react_negative
-
 - story: just number entered
   steps:
   - intent: inform_number
@@ -53,9 +43,65 @@ stories:
   - intent: deny
   - action: utter_deny
 
-- story: Fallback
+- story: fallback
   steps:
     - intent: nlu_fallback
     - action: utter_ask_rephrase
     - intent: nlu_fallback
+    - action: utter_ask_more_details
+    - intent: nlu_fallback
     - action: utter_default
+
+- story: help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- story: stop table reservation form + stop + exit
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - intent: bye
+  - action: utter_ask_continue
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_table_reservation_unsuccessful
+
+- story: table reservation form + stop + continue
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - intent: bye
+  - action: utter_ask_continue
+  - or:
+    - intent: affirm
+    - intent: react_positive
+  - action: table_reservation_form
+
+- story: table reservation form + contextual interjection -> email
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - requested_slot: customer_email
+  - intent: explain
+  - action: utter_explain_customer_email
+  - action: table_reservation_form
+
+- story: table reservation form + contextual interjection -> people count
+  steps:
+  - intent: request_table_reservation
+  - action: table_reservation_form
+  - active_loop: table_reservation_form
+  - slot_was_set:
+    - requested_slot: people_count
+  - intent: explain
+  - action: utter_explain_people_count
+  - action: table_reservation_form
+

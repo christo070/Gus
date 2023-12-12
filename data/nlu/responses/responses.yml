@@ -2,157 +2,37 @@ version: "3.1"
 
 responses:
 
-  utter_ask_howcanhelp:
-  - text: How can I help you?
-  - text: How can I be of assistance?
-  - text: What can I do for you?
-  - text: What can I help you with?
-  - text: What can I do for you today?
-  - text: What can I do for you now?
-  - text: What can I help you with today?
-
-  utter_anything_else:
-  - text: Is there anything else I can help you with?
-
-  utter_ask_continue:
-  - text: "Do you want to continue?"
-
-  utter_ask_problem_description:
-  - text: Can you describe the problem you're having?
-
-  utter_did_that_help:
-  - buttons:
-    - payload: /affirm
-      title: 👍
-    - payload: /deny
-      title: 👎
-    text: Did that help?
+  utter_whatspossible:
+  - text: "You can ask me about Table Reservation, Order Food, Menu Information, Specials & Promotions, Operating Hours & Location Details, Parking related Queries, FAQs & General Queries, Request for Immediate Human Assistance, Loyalty Programs & Membership Details and Provide Feedback"
   
-  utter_ask_if_problem:
-  - text: Did you encounter any problems?
+  utter_ask_table_reservation_form_people_count:
+  - text: "How many people are you booking the table for?"
 
-  utter_awesome:
-  - text: Awesome, thanks! 👍
-  - text: Sweet, thank you! 😄
-  - text: Thanks! 👌
-  - text: Cool, thank you!
+  utter_ask_table_reservation_form_customer_email:
+  - text: "Please provide your email address"
 
-  utter_can_do:
-  - text: Sure thing!
-  - text: Can do!
-  - text: You got it. 👍
-  
-  utter_canthelp:
-  - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our [website](https://restaurant.com/), otherwise contact us at [hi@restaurant.com](mailto:hi@restaurant.com) for anything else.
-  
-  utter_change_mind:
-  - text: You can still change your mind below though.
+  utter_table_already_reserved:
+  - text: "Sorry, the table has already been reserved."
 
-  utter_ask_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_reservation_housefull:
+  - text: "Sorry, we don't have any spots available at the moment. Please try again later."
 
-  utter_default:
-  - text: I'm sorry, I can't help you with that. 😕
+  utter_table_reservation_successful:
+  - text: "Your table has been reserved. You will receive a confirmation email shortly."
 
-  utter_great:
-  - text: Great! 👍
-  - text: That's great! 🙌
-  - text: Awesome! 🎉
-  - text: Cool, let's do it 🚀
+  utter_table_reservation_unsuccessful:
+  - text: "Sorry, we are unable to reserve a table for you at the moment. Please try again later."
+    
+  utter_stop_table_reservation_form:
+  - text: "To stop the table reservation process, please type 'exit'"
 
-  utter_greet:
-  - text: Hey there
-  - text: Hi!
-  - text: Hello
-  - text: Hey
-  - text: Hi there!
-  - text: Hello there!
-  - text: Hi 👋
-  - text: Hello 👋
-  - text: Hey there 👋
+  utter_explain_customer_email:
+  - text: "Providing your email is essential for us to confirm and communicate details about your reservation. It helps us send you a confirmation receipt, notify you about any updates, and ensures a seamless dining experience for you."
 
-  utter_bye:
-  - text: Goodbye!
-  - text: Bye!
-  - text: Ciao!
-  - text: Bye, was nice talking to you!
-  - text: Bye bye!
+  utter_explain_people_count:
+  - text: "To ensure we provide you with the best dining experience, knowing the number of people helps us arrange the seating accordingly. This ensures that we have a table suitable for your group size and can offer you the best service possible."
 
-  utter_no_speak:
-  - text: I'm afraid we can't chat then 😢
+  utter_number:
+  - text: "{just_number} What?"
 
-  utter_nohelp:
-  - text: For now that's all I can do, so feel free to try it out. If you have any suggestions for what I should learn, let me know!
 
-  utter_not_sure:
-  - text: Hmm, not sure what you mean...
-
-  utter_noworries:
-  - text: No worries!
-  - text: You're welcome!
-  - text: I'm happy to help.
-
-  utter_react_negative:
-  - text: 😕
-  - text: 😞
-  - text: 😥
-  - text: 😢
-
-  utter_react_positive:
-  - text: 😄
-  - text: 😊
-  - text: 👏
-  - text: 😍
-
-  utter_restart:
-  - text: Resarting...
-
-  utter_finish_restarting:
-  - text: Finished restarting! 🤖
-
-  utter_thank_suggestion:
-  - text: Thanks for your input!
-
-  utter_thumbsup:
-  - text: 👍
-  - text: Okay.
-  - text: Got it.
-
-  utter_what_help:
-  - text: Ok, what can I help you with?
-  - text: Thank you for reaching out. How may I assist you?
-
-  utter_no_further_info:
-  - text: Sorry, that's all the info I've got on that subject 😕
-
-  utter_ask_more:
-  - text: Would you like to learn more?
-
-  utter_ask_more_details:
-  - text: Could you be more specific?
-  - text: Can you tell me more?
-  
-  utter_ask_feedback_message:
-  - text: I'm sorry I couldn't help you. Please let me know if you have any suggestions for how I can improve.
-
-  utter_ask_feedback:
-  - buttons:
-    - payload: '/feedback{{"feedback_value": "positive"}}'
-      title: 👍
-    - payload: '/feedback{{"feedback_value": "negative"}}'
-      title: 👎
-    text: How is this conversation going?
-  
-  utter_exit:
-  - text: "You're heading out? Don't worry, I'm not going anywhere... literally!"
-  - text: "Until next time, may your WiFi be strong and your battery full!"
-  - text: "Remember, I'm just a chat away. Farewell"
-
-  utter_human_handoff:
-  - text: "I will now connect you to a human agent. Please hold on for a second."
-
-  utter_affirm:
-  - text: "Great to hear! If you have any questions or if there's anything specific you'd like assistance with, feel free to let me know."
-
-  utter_deny:
-  - text: "I see. If there's something specific you're not comfortable with or if you have any questions, please let me know. I'm here to help!"

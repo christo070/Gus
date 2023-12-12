@@ -20,7 +20,7 @@ rules:
   - action: action_check_table_availability
   - action: action_reserve_table
 
-- rule: table reservation form + chitchat
+- rule: table reservation form + chitchat + generic interjection
   condition:
   - active_loop: table_reservation_form
   steps:
@@ -29,7 +29,7 @@ rules:
   - action: table_reservation_form
   wait_for_user_input: false
 
-- rule: table reservation form + faq
+- rule: table reservation form + faq + generic interjection
   condition:
   - active_loop: table_reservation_form
   steps:
@@ -38,7 +38,7 @@ rules:
   - action: table_reservation_form
   wait_for_user_input: false
 
-- rule: table reservation form + out of scope
+- rule: table reservation form + out of scope + generic interjection
   condition:
   - active_loop: table_reservation_form
   steps:
@@ -47,7 +47,7 @@ rules:
   - action: table_reservation_form
   wait_for_user_input: false
 
-- rule: table reservation form + typing just number
+- rule: table reservation form + typing just number + generic interjection
   condition:
   - active_loop: table_reservation_form
   steps:
