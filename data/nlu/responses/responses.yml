@@ -33,6 +33,19 @@ responses:
   - text: "To ensure we provide you with the best dining experience, knowing the number of people helps us arrange the seating accordingly. This ensures that we have a table suitable for your group size and can offer you the best service possible."
 
   utter_number:
-  - text: "{just_number} What?"
+  - text: "{just_number} What? Please be more specific."
 
+  utter_ask_more_food_item:
+  - text: "Would you like to order more food items?"
 
+  utter_ask_confirm_food_order:
+  - text: "Would you like to confirm your order?"
+
+  utter_explain_food_category:
+  - text: "We have a wide variety of food categories to choose from. You can choose from {food_categories}."
+
+  utter_explain_food_item:
+  - text: "We have a wide variety of food items to choose from each category."
+
+  utter_explain_food_quantity:
+  - text: "You can order as many food items as you want. Please specify the quantity of each food item you want to order."

@@ -8,7 +8,7 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-# General Intents
+  # General Intents
   - greet
   - bye
   - affirm
@@ -27,12 +27,12 @@ intents:
       use_entities: []
   - faq:
       use_entities: []
-# Table Reservation Intents
+  # Table Reservation Intents
   - request_table_reservation
   - inform_email
   - inform_people_count
   - inform_number
-# Order Intents
+  # Order Intents
   - request_order
   - inform_food_category
   - inform_food_item
@@ -48,46 +48,52 @@ entities:
   - food_item
 
 slots:
-# Data Filling in Utterences
+  # Data Filling in Utterences
   privacy_policy_link:
     type: text
     initial_value: "https://rasa.com/privacy-policy/"
     mappings:
-    - type: custom
+      - type: custom
 
   opening_time:
     type: text
     initial_value: "09:00 AM"
     mappings:
-    - type: custom
+      - type: custom
 
   closing_time:
     type: text
     initial_value: "10:00 PM"
     mappings:
-    - type: custom
+      - type: custom
 
   contact_email:
     type: text
     initial_value: "hi@restaurant.com"
     mappings:
-    - type: custom
+      - type: custom
 
   website:
     type: text
     initial_value: "https://restaurant.com"
     mappings:
-    - type: custom
+      - type: custom
 
-# Handling Ambigous Entity
+  food_categories:
+    type: text
+    initial_value: "Appetizers, Main Course, Desserts and Beverages"
+    mappings:
+      - type: custom
+
+  # Handling Ambigous Entity
   just_number:
     type: any
     mappings:
-    - type: from_entity
-      entity: number
-      intent: inform_number
+      - type: from_entity
+        entity: number
+        intent: inform_number
 
-# Requested Slot for Handling Contextual Interjection
+  # Requested Slot for Handling Contextual Interjection
   requested_slot:
     type: categorical
     values:
@@ -98,207 +104,220 @@ slots:
       - quantity
     influence_conversation: true
     mappings:
-    - type: custom
+      - type: custom
 
   customer_email:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: email
-      intent: inform_email
+      - type: from_entity
+        entity: email
+        intent: inform_email
 
-# Slots for required for Table Reservation Form
+  # Slots for required for Table Reservation Form
   people_count:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: number
-      intent: [inform_people_count, request_table_reservation]
+      - type: from_entity
+        entity: number
+        intent: [inform_people_count, request_table_reservation]
 
   is_table_available:
     type: bool
     influence_conversation: true
     mappings:
-    - type: custom
+      - type: custom
 
   is_reserved:
     type: bool
     initial_value: false
     influence_conversation: false
     mappings:
-    - type: custom
+      - type: custom
 
-# Slots for Order Form
+  # Slots for Order Form
   selected_items:
     type: any
     influence_conversation: false
     mappings:
-    - type: custom
+      - type: custom
 
   food_category:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: food_category
-      intent: inform_food_category
-      condition:
-      - slot_was_set:
-        - requested_slot: food_category 
-      - active_loop: order_form
+      - type: from_entity
+        entity: food_category
+        intent: inform_food_category
+        condition:
+          - slot_was_set:
+              - requested_slot: food_category
+          - active_loop: food_order_form
 
   food_item:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: food_item
-      intent: inform_food_item
-      condition:
-      - slot_was_set:
-        - requested_slot: food_item
-      - active_loop: order_form
+      - type: from_entity
+        entity: food_item
+        intent: inform_food_item
+        condition:
+          - slot_was_set:
+              - requested_slot: food_item
+          - active_loop: food_order_form
 
   food_quantity:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_entity
-      entity: number
-      intent: inform_food_quantity
-      condition:
-      - slot_was_set:
-        - requested_slot: food_quantity 
-      - active_loop: order_form
+      - type: from_entity
+        entity: number
+        intent: inform_food_quantity
+        condition:
+          - slot_was_set:
+              - requested_slot: food_quantity
+          - active_loop: food_order_form
 
 actions:
   - action_human_handoff
+  # Table Reservation Actions
   - action_check_table_availability
   - action_reserve_table
-  
+  # Food Order Actions
+  - action_show_selected_food_items
+  - action_send_food_order
+  - action_cancel_food_order
+  - action_add_to_selected_food_items
+  - action_reset_food_order_form_slots
+
+
 
 forms:
   table_reservation_form:
     required_slots:
       - customer_email
       - people_count
-  
-  order_form:
+    ignored_intents:
+      - request_order
+      - inform_food_category
+      - inform_food_item
+      - inform_food_quantity
+
+  food_order_form:
     required_slots:
       - food_category
       - food_item
       - food_quantity
-
-
+    ignored_intents:
+      - request_table_reservation
+      - inform_people_count
 
 responses:
-
   utter_ask_howcanhelp:
-  - text: How can I help you?
-  - text: How can I be of assistance?
+    - text: How can I help you?
+    - text: How can I be of assistance?
 
   utter_anything_else:
-  - text: Is there anything else I can help you with?
+    - text: Is there anything else I can help you with?
 
   utter_ask_continue:
-  - text: "Do you want to continue?"
+    - text: "Do you want to continue?"
 
   utter_help:
-  - text: Can you describe the problem you're having?
-  - text: Ok, what can I help you with?
-  - text: Thank you for reaching out. How may I assist you?
+    - text: Can you describe the problem you're having?
+    - text: Ok, what can I help you with?
+    - text: Thank you for reaching out. How may I assist you?
 
   utter_did_that_help:
-  - buttons:
-    - payload: /affirm
-      title: 👍
-    - payload: /deny
-      title: 👎
-    text: Did that help?
-  
+    - buttons:
+        - payload: /affirm
+          title: 👍
+        - payload: /deny
+          title: 👎
+      text: Did that help?
+
   utter_ask_if_problem:
-  - text: Did you encounter any problems?
+    - text: Did you encounter any problems?
 
   utter_awesome:
-  - text: Awesome, thanks! 👍
-  - text: Sweet, thank you! 😄
-  - text: Thanks! 👌
-  - text: Cool, thank you!
+    - text: Awesome, thanks! 👍
+    - text: Sweet, thank you! 😄
+    - text: Thanks! 👌
+    - text: Cool, thank you!
 
   utter_can_do:
-  - text: Sure thing!
-  - text: Can do!
-  - text: You got it. 👍
-  
+    - text: Sure thing!
+    - text: Can do!
+    - text: You got it. 👍
+
   utter_change_mind:
-  - text: You can still change your mind below though.
+    - text: You can still change your mind below though.
 
   utter_ask_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  - text: Hmm, not sure what you mean... Could you rephrase?
-  - text: I'm sorry, I didn't quite get that. Could you rephrase?
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    - text: Hmm, not sure what you mean... Could you rephrase?
+    - text: I'm sorry, I didn't quite get that. Could you rephrase?
 
   utter_default:
-  - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our {website}, otherwise contact us at {contact_email} for anything else.
+    - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our {website}, otherwise contact us at {contact_email} for anything else.
 
   utter_out_of_context:
-  - text: I'm sorry, I didn't quite understand your query within the current context. If there's anything specific you'd like assistance with, feel free to let me know.
+    - text: I'm sorry, I didn't quite understand your query within the current context. If there's anything specific you'd like assistance with, feel free to let me know.
 
   utter_great:
-  - text: Great! 👍
-  - text: That's great! 🙌
-  - text: Awesome! 🎉
-  - text: Cool, let's do it 🚀
+    - text: Great! 👍
+    - text: That's great! 🙌
+    - text: Awesome! 🎉
+    - text: Cool, let's do it 🚀
 
   utter_greet:
-  - text: Hi 👋
-  - text: Hello 👋
-  - text: Hey there 👋
+    - text: Hi 👋
+    - text: Hello 👋
+    - text: Hey there 👋
 
   utter_bye:
-  - text: Goodbye!
-  - text: Bye!
-  - text: Bye, was nice talking to you!
-  - text: Bye bye!
-  - text: "You're heading out? Don't worry, I'm not going anywhere... literally!"
-  - text: "Until next time, may your WiFi be strong and your battery full!"
-  - text: "Remember, I'm just a chat away. Farewell"
+    - text: Goodbye!
+    - text: Bye!
+    - text: Bye, was nice talking to you!
+    - text: Bye bye!
+    - text: "You're heading out? Don't worry, I'm not going anywhere... literally!"
+    - text: "Until next time, may your WiFi be strong and your battery full!"
+    - text: "Remember, I'm just a chat away. Farewell"
 
   utter_no_speak:
-  - text: I'm afraid we can't chat then 😢
+    - text: I'm afraid we can't chat then 😢
 
   utter_noworries:
-  - text: No worries!
-  - text: You're welcome!
-  - text: I'm happy to help.
+    - text: No worries!
+    - text: You're welcome!
+    - text: I'm happy to help.
 
   utter_react_negative:
-  - text: 😕
-  - text: 😞
-  - text: 😥
-  - text: 😢
+    - text: 😕
+    - text: 😞
+    - text: 😥
+    - text: 😢
 
   utter_react_positive:
-  - text: 😄
-  - text: 😊
-  - text: 👏
-  - text: 😍
+    - text: 😄
+    - text: 😊
+    - text: 👏
+    - text: 😍
 
   utter_restart:
-  - text: Resarting...
+    - text: Resarting...
 
   utter_thank_suggestion:
-  - text: Thanks for your input!
+    - text: Thanks for your input!
 
   utter_thumbsup:
-  - text: 👍
-  - text: Okay.
-  - text: Got it.
+    - text: 👍
+    - text: Okay.
+    - text: Got it.
 
   utter_ask_more_details:
-  - text: Could you be more specific?  
+    - text: Could you be more specific?
 
   utter_human_handoff:
-  - text: "I will now connect you to a human agent. Please hold on for a second."
+    - text: "I will now connect you to a human agent. Please hold on for a second."

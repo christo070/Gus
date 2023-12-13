@@ -1,166 +1,196 @@
 version: "3.1"
 
 stories:
+  # General Stories
+  - story: handle positive reaction
+    steps:
+      - intent: react_positive
+      - action: utter_react_positive
 
-# General Stories
-- story: handle positive reaction
-  steps:
-  - intent: react_positive
-  - action: utter_react_positive
+  - story: handle negative reaction
+    steps:
+      - intent: react_negative
+      - action: utter_react_negative
 
-- story: handle negative reaction
-  steps:
-  - intent: react_negative
-  - action: utter_react_negative
+  - story: says thanks
+    steps:
+      - intent: thank
+      - action: utter_noworries
+      - action: utter_anything_else
 
-- story: says thanks
-  steps:
-  - intent: thank
-  - action: utter_noworries
-  - action: utter_anything_else
+  - story: can't help
+    steps:
+      - intent: canthelp
+      - action: utter_default
 
-- story: can't help
-  steps:
-  - intent: canthelp
-  - action: utter_default
+  - story: human handoff
+    steps:
+      - intent: human_handoff
+      - action: action_human_handoff
 
-- story: human handoff
-  steps:
-  - intent: human_handoff
-  - action: action_human_handoff
+  - story: just number entered
+    steps:
+      - intent: inform_number
+      - action: utter_number
 
-- story: just number entered
-  steps:
-  - intent: inform_number
-  - action: utter_number
+  - story: handle out of context - affirm/deny/explain
+    steps:
+      - or:
+          - intent: affirm
+          - intent: deny
+          - intent: explain
+      - action: utter_out_of_context
 
-- story: handle out of context - affirm/deny/explain
-  steps:
-  - or:
-    - intent: affirm
-    - intent: deny
-    - intent: explain
-  - action: utter_out_of_context
+  - story: help
+    steps:
+      - intent: ask_help
+      - action: utter_help
 
-- story: help
-  steps:
-  - intent: ask_help
-  - action: utter_help
+  # Fallback stories
+  - story: fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_ask_rephrase
+      - intent: nlu_fallback
+      - action: utter_ask_more_details
+      - intent: nlu_fallback
+      - action: utter_default
 
-# Fallback stories
-- story: fallback
-  steps:
-    - intent: nlu_fallback
-    - action: utter_ask_rephrase
-    - intent: nlu_fallback
-    - action: utter_ask_more_details
-    - intent: nlu_fallback
-    - action: utter_default
+  # Table Reservation Stories
+  - story: stop table reservation form + stop + exit
+    steps:
+      - intent: request_table_reservation
+      - action: table_reservation_form
+      - active_loop: table_reservation_form
+      - intent: bye
+      - action: utter_ask_continue
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_table_reservation_unsuccessful
 
+  - story: table reservation form + stop + continue
+    steps:
+      - intent: request_table_reservation
+      - action: table_reservation_form
+      - active_loop: table_reservation_form
+      - intent: bye
+      - action: utter_ask_continue
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: table_reservation_form
 
-# Table Reservation Stories
-- story: stop table reservation form + stop + exit
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
-  - intent: bye
-  - action: utter_ask_continue
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_deactivate_loop
-  - active_loop: null
-  - action: utter_table_reservation_unsuccessful
+  - story: table reservation form + contextual interjection -> email
+    steps:
+      - intent: request_table_reservation
+      - action: table_reservation_form
+      - active_loop: table_reservation_form
+      - slot_was_set:
+          - requested_slot: customer_email
+      - intent: explain
+      - action: utter_explain_customer_email
+      - action: table_reservation_form
 
-- story: table reservation form + stop + continue
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
-  - intent: bye
-  - action: utter_ask_continue
-  - or:
-    - intent: affirm
-    - intent: react_positive
-  - action: table_reservation_form
+  - story: table reservation form + contextual interjection -> people count
+    steps:
+      - intent: request_table_reservation
+      - action: table_reservation_form
+      - active_loop: table_reservation_form
+      - slot_was_set:
+          - requested_slot: people_count
+      - intent: explain
+      - action: utter_explain_people_count
+      - action: table_reservation_form
 
-- story: table reservation form + contextual interjection -> email
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
-  - slot_was_set:
-    - requested_slot: customer_email
-  - intent: explain
-  - action: utter_explain_customer_email
-  - action: table_reservation_form
+  # Order Form
+  - story: order form + go back/stop + order more items
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - or:
+          - intent: go_back
+          - intent: bye
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: food_order_form
 
-- story: table reservation form + contextual interjection -> people count
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
-  - slot_was_set:
-    - requested_slot: people_count
-  - intent: explain
-  - action: utter_explain_people_count
-  - action: table_reservation_form
+  - story: order form + go back/stop + confirm order
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - or:
+          - intent: go_back
+          - intent: bye
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: action_send_food_order
 
+  - story: order form + go back/stop + deny selected order
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - or:
+          - intent: go_back
+          - intent: bye
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_cancel_food_order
 
-# Order Form
-- rule: order form + go back/stop + order more items
-  steps:
-  - intent: request_order
-  - active_loop: order_form
-  - active_loop: order_form
-  - or:
-    - intent: go_back
-    - intent: bye
-  - action: utter_ask_more_item
-  - or:
-    - intent: affirm
-    - intent: react_positive
-  - action: order_form
+  - story: order form + contextual interjection -> food category
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+            - requested_slot: food_category
+      - intent: explain
+      - action: utter_explain_food_category
+      - action: food_order_form
 
-- rule: order form + go back/stop + confirm order
-  steps:
-  - intent: request_order
-  - active_loop: order_form
-  - active_loop: order_form
-  - or:
-    - intent: go_back
-    - intent: bye
-  - action: utter_ask_more_item
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_deactivate_loop
-  - active_loop: null
-  - action: action_show_selected
-  - action: utter_ask_confirm_order
-  - or:
-    - intent: affirm
-    - intent: react_positive
-  - action: action_send_order
+  - story: order form + contextual interjection -> food item
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+            - requested_slot: food_item
+      - intent: explain
+      - action: utter_explain_food_item
+      - action: food_order_form
 
-- rule: order form + go back/stop + deny selected order
-  steps:
-  - intent: request_order
-  - active_loop: order_form
-  - active_loop: order_form
-  - or:
-    - intent: go_back
-    - intent: bye
-  - action: utter_ask_more_item
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_deactivate_loop
-  - active_loop: null
-  - action: action_show_selected
-  - action: utter_ask_confirm_order
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_cancel_order
+  - story: order form + contextual interjection -> food quatfood_quantity
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+            - requested_slot: food_quantity
+      - intent: explain
+      - action: utter_explain_food_quantity
+      - action: food_order_form

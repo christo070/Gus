@@ -1,126 +1,123 @@
 version: "3.1"
 
 rules:
+  # Table Reservation Form
+  - rule: activate table reservation form
+    steps:
+      - intent: request_table_reservation
+      - action: table_reservation_form
+      - active_loop: table_reservation_form
+    wait_for_user_input: false
 
-# Table Reservation Form
-- rule: activate table reservation form
-  steps:
-  - intent: request_table_reservation
-  - action: table_reservation_form
-  - active_loop: table_reservation_form
-  wait_for_user_input: false
+  - rule: submit table reservation form
+    condition:
+      - active_loop: table_reservation_form
+    steps:
+      - action: table_reservation_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_check_table_availability
+      - action: action_reserve_table
 
-- rule: submit table reservation form
-  condition:
-  - active_loop: table_reservation_form
-  steps:
-  - action: table_reservation_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_check_table_availability
-  - action: action_reserve_table
+  - rule: table reservation form + chitchat + generic interjection
+    condition:
+      - active_loop: table_reservation_form
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
+      - action: table_reservation_form
+    wait_for_user_input: false
 
-- rule: table reservation form + chitchat + generic interjection
-  condition:
-  - active_loop: table_reservation_form
-  steps:
-  - intent: chitchat
-  - action: utter_chitchat
-  - action: table_reservation_form
-  wait_for_user_input: false
+  - rule: table reservation form + faq + generic interjection
+    condition:
+      - active_loop: table_reservation_form
+    steps:
+      - intent: faq
+      - action: utter_faq
+      - action: table_reservation_form
+    wait_for_user_input: false
 
-- rule: table reservation form + faq + generic interjection
-  condition:
-  - active_loop: table_reservation_form
-  steps:
-  - intent: faq
-  - action: utter_faq
-  - action: table_reservation_form
-  wait_for_user_input: false
+  - rule: table reservation form + out of scope + generic interjection
+    condition:
+      - active_loop: table_reservation_form
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+      - action: table_reservation_form
+    wait_for_user_input: false
 
-- rule: table reservation form + out of scope + generic interjection
-  condition:
-  - active_loop: table_reservation_form
-  steps:
-  - intent: out_of_scope
-  - action: utter_out_of_scope
-  - action: table_reservation_form
-  wait_for_user_input: false
+  - rule: table reservation form + typing just number + generic interjection
+    condition:
+      - active_loop: table_reservation_form
+    steps:
+      - intent: inform_number
+      - action: utter_number
+      - action: table_reservation_form
+    wait_for_user_input: false
 
-- rule: table reservation form + typing just number + generic interjection
-  condition:
-  - active_loop: table_reservation_form
-  steps:
-  - intent: inform_number
-  - action: utter_number
-  - action: table_reservation_form
-  wait_for_user_input: false
+  # Order Form
+  - rule: activate order form
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+    wait_for_user_input: false
 
+  - rule: submit order form + more item + activate order form again
+    condition:
+      - active_loop: food_order_form
+    steps:
+      - action: food_order_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: action_reset_food_order_form_slots
+      - action: food_order_form
+      - active_loop: food_order_form
+    wait_for_user_input: false
 
-# Order Form
-- rule: activate order form
-  steps:
-  - intent: request_order
-  - action: order_form
-  - active_loop: order_form
-  wait_for_user_input: false
+  - rule: submit order form + end order + confirm order
+    condition:
+      - active_loop: food_order_form
+    steps:
+      - action: food_order_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: action_send_order
 
-- rule: submit order form + more item + activate order form again
-  condition:
-  - active_loop: order_form
-  steps:
-  - action: order_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_add_to_selected_list
-  - action: utter_ask_more_item
-  - or:
-    - intent: affirm
-    - intent: react_positive
-  - action: reset_order_form_slots
-  - action: order_form
-  - active_loop: order_form
-  wait_for_user_input: false
-
-- rule: submit order form + end order + confirm order
-  condition:
-  - active_loop: order_form
-  steps:
-  - action: order_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_add_to_selected_list
-  - action: utter_ask_more_item
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_show_selected
-  - action: utter_ask_confirm_order
-  - or:
-    - intent: affirm
-    - intent: react_positive
-  - action: action_send_order
-
-- rule: submit order form + end order + deny confirmation
-  condition:
-  - active_loop: order_form
-  steps:
-  - action: order_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_add_to_selected_list
-  - action: utter_ask_more_item
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_show_selected
-  - action: utter_ask_confirm_order
-  - or:
-    - intent: deny
-    - intent: react_negative
-  - action: action_cancel_order
-
+  - rule: submit order form + end order + deny confirmation
+    condition:
+      - active_loop: food_order_form
+    steps:
+      - action: food_order_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_cancel_food_order
