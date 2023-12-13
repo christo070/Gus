@@ -2,6 +2,7 @@ version: "3.1"
 
 rules:
 
+# Table Reservation Form
 - rule: activate table reservation form
   steps:
   - intent: request_table_reservation
@@ -55,3 +56,71 @@ rules:
   - action: utter_number
   - action: table_reservation_form
   wait_for_user_input: false
+
+
+# Order Form
+- rule: activate order form
+  steps:
+  - intent: request_order
+  - action: order_form
+  - active_loop: order_form
+  wait_for_user_input: false
+
+- rule: submit order form + more item + activate order form again
+  condition:
+  - active_loop: order_form
+  steps:
+  - action: order_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_add_to_selected_list
+  - action: utter_ask_more_item
+  - or:
+    - intent: affirm
+    - intent: react_positive
+  - action: reset_order_form_slots
+  - action: order_form
+  - active_loop: order_form
+  wait_for_user_input: false
+
+- rule: submit order form + end order + confirm order
+  condition:
+  - active_loop: order_form
+  steps:
+  - action: order_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_add_to_selected_list
+  - action: utter_ask_more_item
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_show_selected
+  - action: utter_ask_confirm_order
+  - or:
+    - intent: affirm
+    - intent: react_positive
+  - action: action_send_order
+
+- rule: submit order form + end order + deny confirmation
+  condition:
+  - active_loop: order_form
+  steps:
+  - action: order_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_add_to_selected_list
+  - action: utter_ask_more_item
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_show_selected
+  - action: utter_ask_confirm_order
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_cancel_order
+

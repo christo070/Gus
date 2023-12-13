@@ -728,7 +728,6 @@ nlu:
     - thx
     - yes thanks
 
-
 - intent: ask_help
   examples: |
     - any chance you could help me out here?

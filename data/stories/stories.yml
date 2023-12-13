@@ -2,12 +2,13 @@ version: "3.1"
 
 stories:
 
-- story: positive reaction
+# General Stories
+- story: handle positive reaction
   steps:
   - intent: react_positive
   - action: utter_react_positive
 
-- story: negative reaction
+- story: handle negative reaction
   steps:
   - intent: react_negative
   - action: utter_react_negative
@@ -21,7 +22,7 @@ stories:
 - story: can't help
   steps:
   - intent: canthelp
-  - action: utter_canthelp
+  - action: utter_default
 
 - story: human handoff
   steps:
@@ -33,16 +34,20 @@ stories:
   - intent: inform_number
   - action: utter_number
 
-- story: affirm + out of context
+- story: handle out of context - affirm/deny/explain
   steps:
-  - intent: affirm
-  - action: utter_affirm
+  - or:
+    - intent: affirm
+    - intent: deny
+    - intent: explain
+  - action: utter_out_of_context
 
-- story: deny + out of context
+- story: help
   steps:
-  - intent: deny
-  - action: utter_deny
+  - intent: ask_help
+  - action: utter_help
 
+# Fallback stories
 - story: fallback
   steps:
     - intent: nlu_fallback
@@ -52,11 +57,8 @@ stories:
     - intent: nlu_fallback
     - action: utter_default
 
-- story: help
-  steps:
-  - intent: ask_help
-  - action: utter_help
 
+# Table Reservation Stories
 - story: stop table reservation form + stop + exit
   steps:
   - intent: request_table_reservation
@@ -105,3 +107,60 @@ stories:
   - action: utter_explain_people_count
   - action: table_reservation_form
 
+
+# Order Form
+- rule: order form + go back/stop + order more items
+  steps:
+  - intent: request_order
+  - active_loop: order_form
+  - active_loop: order_form
+  - or:
+    - intent: go_back
+    - intent: bye
+  - action: utter_ask_more_item
+  - or:
+    - intent: affirm
+    - intent: react_positive
+  - action: order_form
+
+- rule: order form + go back/stop + confirm order
+  steps:
+  - intent: request_order
+  - active_loop: order_form
+  - active_loop: order_form
+  - or:
+    - intent: go_back
+    - intent: bye
+  - action: utter_ask_more_item
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_show_selected
+  - action: utter_ask_confirm_order
+  - or:
+    - intent: affirm
+    - intent: react_positive
+  - action: action_send_order
+
+- rule: order form + go back/stop + deny selected order
+  steps:
+  - intent: request_order
+  - active_loop: order_form
+  - active_loop: order_form
+  - or:
+    - intent: go_back
+    - intent: bye
+  - action: utter_ask_more_item
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_show_selected
+  - action: utter_ask_confirm_order
+  - or:
+    - intent: deny
+    - intent: react_negative
+  - action: action_cancel_order

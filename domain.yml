@@ -8,6 +8,7 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
+# General Intents
   - greet
   - bye
   - affirm
@@ -26,21 +27,28 @@ intents:
       use_entities: []
   - faq:
       use_entities: []
+# Table Reservation Intents
   - request_table_reservation
   - inform_email
   - inform_people_count
   - inform_number
+# Order Intents
+  - request_order
+  - inform_food_category
+  - inform_food_item
+  - inform_food_quantity
 
 entities:
   - name
-  - date
-  - time
   - number
   - email
   - location
   - language
+  - food_category
+  - food_item
 
 slots:
+# Data Filling in Utterences
   privacy_policy_link:
     type: text
     initial_value: "https://rasa.com/privacy-policy/"
@@ -71,18 +79,7 @@ slots:
     mappings:
     - type: custom
 
-  date:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: date
-
-  time:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: time
-
+# Handling Ambigous Entity
   just_number:
     type: any
     mappings:
@@ -90,6 +87,18 @@ slots:
       entity: number
       intent: inform_number
 
+# Requested Slot for Handling Contextual Interjection
+  requested_slot:
+    type: categorical
+    values:
+      - customer_email
+      - people_count
+      - category
+      - item
+      - quantity
+    influence_conversation: true
+    mappings:
+    - type: custom
 
   customer_email:
     type: text
@@ -99,6 +108,7 @@ slots:
       entity: email
       intent: inform_email
 
+# Slots for required for Table Reservation Form
   people_count:
     type: text
     influence_conversation: false
@@ -120,26 +130,66 @@ slots:
     mappings:
     - type: custom
 
-  requested_slot:
-    type: categorical
-    values:
-      - customer_email
-      - people_count
-    influence_conversation: true
+# Slots for Order Form
+  selected_items:
+    type: any
+    influence_conversation: false
     mappings:
     - type: custom
 
+  food_category:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: food_category
+      intent: inform_food_category
+      condition:
+      - slot_was_set:
+        - requested_slot: food_category 
+      - active_loop: order_form
+
+  food_item:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: food_item
+      intent: inform_food_item
+      condition:
+      - slot_was_set:
+        - requested_slot: food_item
+      - active_loop: order_form
+
+  food_quantity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: number
+      intent: inform_food_quantity
+      condition:
+      - slot_was_set:
+        - requested_slot: food_quantity 
+      - active_loop: order_form
+
 actions:
+  - action_human_handoff
   - action_check_table_availability
   - action_reserve_table
-  - action_reset_slots
-  - action_human_handoff
   
+
 forms:
   table_reservation_form:
     required_slots:
       - customer_email
       - people_count
+  
+  order_form:
+    required_slots:
+      - food_category
+      - food_item
+      - food_quantity
 
 
 
@@ -192,6 +242,9 @@ responses:
 
   utter_default:
   - text: I'm sorry I couldn't help you. If you have general questions about Restaurant, please head to our {website}, otherwise contact us at {contact_email} for anything else.
+
+  utter_out_of_context:
+  - text: I'm sorry, I didn't quite understand your query within the current context. If there's anything specific you'd like assistance with, feel free to let me know.
 
   utter_great:
   - text: Great! 👍
@@ -249,9 +302,3 @@ responses:
 
   utter_human_handoff:
   - text: "I will now connect you to a human agent. Please hold on for a second."
-
-  utter_affirm:
-  - text: "Great to hear! If you have any questions or if there's anything specific you'd like assistance with, feel free to let me know."
-
-  utter_deny:
-  - text: "I see. If there's something specific you're not comfortable with or if you have any questions, please let me know. I'm here to help!"

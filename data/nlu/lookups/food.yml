@@ -1,0 +1,26 @@
+version:  "3.1"
+
+nlu:
+
+# define lookup for food categories
+- lookup: category
+  examples: |
+    - appetizers
+    - main course
+    - desserts
+    - beverages
+
+- lookup: item
+  examples: |
+    - bruschetta
+    - stuffed mushrooms
+    - spinach artichoke dip
+    - pasta bolognese
+    - grilled salmon
+    - chicken alfredo
+    - chocolate fondue
+    - tiramisu
+    - cheesecake sampler
+    - mocktail medley
+    - hot herbal infusion
+    - fresh fruit smoothies

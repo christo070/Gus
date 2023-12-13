@@ -1,6 +1,8 @@
 # Ignore directories
+story_graph.dot
 .rasa/
 .vscode/
 models/
 custom/
 actions/__pycache__/
+addons/__pycache__/

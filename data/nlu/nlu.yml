@@ -66,3 +66,36 @@ nlu:
   examples: |
     - \b\d{1,}\b
 
+
+- intent: request_order
+  examples: |
+    - i want to order food
+    - i want to order
+    - i would like to order
+    - get me food
+    - i would like to order food
+    - what can i eat here?
+
+- intent: inform_food_category
+  examples: |
+    - select category [appetizers](category)
+
+- intent: inform_food_item
+  examples: |
+    - select item [chicken wings](item)
+
+- intent: inform_food_quantity
+  examples: |
+    - set quantity as [2](number)
+
+- intent: go_back
+  examples: |
+    - go back
+    - back
+    - earlier step
+    - previous
+    - previous step
+    - previous step please
+    - i want to go back
+    - i want to go to previous step
+    - i want to go to previous step please
