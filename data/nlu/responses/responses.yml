@@ -49,3 +49,9 @@ responses:
 
   utter_explain_food_quantity:
   - text: "You can order as many food items as you want. Please specify the quantity of each food item you want to order."
+
+  utter_order_cancelled:
+  - text: "Your order has been cancelled."
+
+  utter_order_confirmed:
+  - text: "Your order has been confirmed. It will be delivered to your table shortly."

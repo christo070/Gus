@@ -85,6 +85,12 @@ slots:
     mappings:
       - type: custom
 
+  table:
+    type: text
+    initial_value: "t01"
+    mappings:
+      - type: custom
+
   # Handling Ambigous Entity
   just_number:
     type: any
@@ -138,7 +144,7 @@ slots:
 
   # Slots for Order Form
   selected_items:
-    type: any
+    type: list
     influence_conversation: false
     mappings:
       - type: custom
