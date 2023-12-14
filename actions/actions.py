@@ -20,6 +20,7 @@ class ActionCheckAvailability(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
+        
         with open(table_reservation_file, "r") as f:
             json_object = json.load(f)
             tables = json_object["tables"]
@@ -45,6 +46,7 @@ class ActionReserveTable(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         is_table_available = tracker.get_slot("is_table_available")
+
         if is_table_available == False:
             dispatcher.utter_message(response="utter_reservation_housefull")
             return []
@@ -85,20 +87,9 @@ class ActionReserveTable(Action):
 
             return [SlotSet("is_reserved", True)]
 
+        return [FollowupAction("utter_table_reservation_unsuccessful")]
 
-class ActionReset(Action):
-    def name(self) -> Text:
-        return "action_reset_slots"
 
-    def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-        return [AllSlotsReset()]
-
-# Action Class with name 'action_human_handoff' for handoff to human
 class ActionHumanHandoff(Action):
     def name(self):
         return "action_human_handoff"
@@ -109,4 +100,7 @@ class ActionHumanHandoff(Action):
         # return [ConversationPaused(), UserUtteranceReverted()]
 
         dispatcher.utter_message(response="utter_human_handoff")
-        return [UserUtteranceReverted()]
+        return []
+    
+
+
