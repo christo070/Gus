@@ -36,10 +36,13 @@ stories:
   - story: handle out of context - affirm/deny/explain
     steps:
       - or:
-          - intent: affirm
-          - intent: deny
-          - intent: explain
+        - intent: affirm
+        - intent: deny
+        - intent: explain
       - action: utter_out_of_context
+      - or:
+        - intent: affirm
+      - action: utter_anything_else
 
   - story: help
     steps:
@@ -65,8 +68,8 @@ stories:
       - intent: bye
       - action: utter_ask_continue
       - or:
-          - intent: deny
-          - intent: react_negative
+        - intent: deny
+        - intent: react_negative
       - action: action_deactivate_loop
       - active_loop: null
       - action: utter_table_reservation_unsuccessful
@@ -79,8 +82,8 @@ stories:
       - intent: bye
       - action: utter_ask_continue
       - or:
-          - intent: affirm
-          - intent: react_positive
+        - intent: affirm
+        - intent: react_positive
       - action: table_reservation_form
 
   - story: table reservation form + contextual interjection -> email
@@ -89,7 +92,7 @@ stories:
       - action: table_reservation_form
       - active_loop: table_reservation_form
       - slot_was_set:
-          - requested_slot: customer_email
+        - requested_slot: customer_email
       - intent: explain
       - action: utter_explain_customer_email
       - action: table_reservation_form
@@ -100,24 +103,65 @@ stories:
       - action: table_reservation_form
       - active_loop: table_reservation_form
       - slot_was_set:
-          - requested_slot: people_count
+        - requested_slot: people_count
       - intent: explain
       - action: utter_explain_people_count
       - action: table_reservation_form
 
   # Order Form
+  - story: submit order form + end order + confirm order
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny                                                                                                          
+          - intent: react_negative
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: affirm
+          - intent: react_positive
+      - action: action_send_food_order
+
+  - story: submit order form + end order + deny confirmation
+    steps:
+      - intent: request_order
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_show_selected_food_items
+      - action: utter_ask_confirm_food_order
+      - or:
+          - intent: deny
+          - intent: react_negative
+      - action: action_cancel_food_order
+
+
   - story: order form + go back/stop + order more items
     steps:
       - intent: request_order
       - action: food_order_form
       - active_loop: food_order_form
       - or:
-          - intent: go_back
-          - intent: bye
+        - intent: go_back
+        - intent: bye
       - action: utter_ask_more_food_item
       - or:
-          - intent: affirm
-          - intent: react_positive
+        - intent: affirm
+        - intent: react_positive
       - action: food_order_form
 
   - story: order form + go back/stop + confirm order
@@ -126,19 +170,19 @@ stories:
       - action: food_order_form
       - active_loop: food_order_form
       - or:
-          - intent: go_back
-          - intent: bye
+        - intent: go_back
+        - intent: bye
       - action: utter_ask_more_food_item
       - or:
-          - intent: deny
-          - intent: react_negative
+        - intent: deny
+        - intent: react_negative
       - action: action_deactivate_loop
       - active_loop: null
       - action: action_show_selected_food_items
       - action: utter_ask_confirm_food_order
       - or:
-          - intent: affirm
-          - intent: react_positive
+        - intent: affirm
+        - intent: react_positive
       - action: action_send_food_order
 
   - story: order form + go back/stop + deny selected order
@@ -147,19 +191,19 @@ stories:
       - action: food_order_form
       - active_loop: food_order_form
       - or:
-          - intent: go_back
-          - intent: bye
+        - intent: go_back
+        - intent: bye
       - action: utter_ask_more_food_item
       - or:
-          - intent: deny
-          - intent: react_negative
+        - intent: deny
+        - intent: react_negative
       - action: action_deactivate_loop
       - active_loop: null
       - action: action_show_selected_food_items
       - action: utter_ask_confirm_food_order
       - or:
-          - intent: deny
-          - intent: react_negative
+        - intent: deny
+        - intent: react_negative
       - action: action_cancel_food_order
 
   - story: order form + contextual interjection -> food category
@@ -168,7 +212,7 @@ stories:
       - action: food_order_form
       - active_loop: food_order_form
       - slot_was_set:
-            - requested_slot: food_category
+        - requested_slot: food_category
       - intent: explain
       - action: utter_explain_food_category
       - action: food_order_form
@@ -179,7 +223,7 @@ stories:
       - action: food_order_form
       - active_loop: food_order_form
       - slot_was_set:
-            - requested_slot: food_item
+        - requested_slot: food_item
       - intent: explain
       - action: utter_explain_food_item
       - action: food_order_form
@@ -190,7 +234,7 @@ stories:
       - action: food_order_form
       - active_loop: food_order_form
       - slot_was_set:
-            - requested_slot: food_quantity
+        - requested_slot: food_quantity
       - intent: explain
       - action: utter_explain_food_quantity
       - action: food_order_form

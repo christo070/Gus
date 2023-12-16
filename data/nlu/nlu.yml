@@ -69,24 +69,37 @@ nlu:
 
 - intent: request_order
   examples: |
-    - i want to order food
-    - i want to order
-    - i would like to order
     - get me food
+    - i want to order
+    - i want to order food
+    - i want to order food please
+    - i want to order something
+    - i would like to order
     - i would like to order food
+    - i would like to order food please
+    - i would like to order something
+    - is there anything to eat?
     - what can i eat here?
+    - what can i order here?
+    - what do you have on the menu for today?
+    - what do you have on the menu today?
+    - what do you have on the menu?
+    - what do you have?
 
 - intent: inform_food_category
   examples: |
-    - select category [appetizers](category)
+    - select category [appetizers](food_category)
+    - choose category [desserts](food_category)
 
 - intent: inform_food_item
   examples: |
-    - select item [chicken wings](item)
+    - select item [chicken wings](food_item)
+    - choose item [chicken wings](food_item)
 
 - intent: inform_food_quantity
   examples: |
     - set quantity as [2](number)
+    - choose quantity as [3](number)
 
 - intent: go_back
   examples: |

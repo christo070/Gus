@@ -7,9 +7,10 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset, ConversationPaused, UserUtteranceReverted
 
 dirname = os.path.dirname(__file__)
-table_reservation_file = os.path.join(dirname, "../info/table_reservation.json")
-menu = os.path.join(dirname, "../info/menu.json")
-order = os.path.join(dirname, "../info/order.json")
+
+RESERVATION_FILE = os.path.join(dirname, "../info/table_reservation.json")
+MENU_FILE = os.path.join(dirname, "../info/menu.json")
+ORDER_FILE = os.path.join(dirname, "../info/order.json")
 
 
 
@@ -47,7 +48,7 @@ class ActionCheckAvailability(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         
-        with open(table_reservation_file, "r") as f:
+        with open(RESERVATION_FILE, "r") as f:
             json_object = json.load(f)
             tables = json_object["tables"]
             people_count = int(tracker.get_slot("people_count") or 0)
@@ -81,7 +82,7 @@ class ActionReserveTable(Action):
             dispatcher.utter_message(response="utter_table_already_reserved")
             return []
 
-        with open(table_reservation_file, "r") as fr:
+        with open(RESERVATION_FILE, "r") as fr:
             json_object = json.load(fr)
             tables = json_object["tables"]
 
@@ -106,7 +107,7 @@ class ActionReserveTable(Action):
             if modifyed == False:
                 return [FollowupAction("utter_table_reservation_unsuccessful")]
 
-            with open(table_reservation_file, "w") as fw:
+            with open(RESERVATION_FILE, "w") as fw:
                 json.dump(json_object, fw)
 
             dispatcher.utter_message(response="utter_table_reservation_successful")
@@ -119,6 +120,10 @@ class ActionReserveTable(Action):
 # --------------------------------------
 # Actions involved in taking Food Order 
 # --------------------------------------
+
+
+
+
 
 class ActionShowSelectedItems(Action):
     def name(self):
@@ -147,9 +152,9 @@ class ActionSendOrder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        with open(order, "r") as fr:
+        with open(ORDER_FILE, "r") as fr:
             json_object = json.load(fr)
-            with open(order, "w") as fw:
+            with open(ORDER_FILE, "w") as fw:
                 d = {}
                 d[tracker.get_slot("table")] = tracker.get_slot("selected_items")
                 json_object.append(d)

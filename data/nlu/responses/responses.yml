@@ -2,6 +2,8 @@ version: "3.1"
 
 responses:
 
+# Table Reservation Responses
+
   utter_whatspossible:
   - text: "You can ask me about Table Reservation, Order Food, Menu Information, Specials & Promotions, Operating Hours & Location Details, Parking related Queries, FAQs & General Queries, Request for Immediate Human Assistance, Loyalty Programs & Membership Details and Provide Feedback"
   
@@ -34,6 +36,11 @@ responses:
 
   utter_number:
   - text: "{just_number} What? Please be more specific."
+
+# Food Order Responses
+
+  utter_ask_food_order_form_food_category:
+  - text: "What food category would you like to order from?"
 
   utter_ask_more_food_item:
   - text: "Would you like to order more food items?"

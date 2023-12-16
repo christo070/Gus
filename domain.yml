@@ -37,6 +37,7 @@ intents:
   - inform_food_category
   - inform_food_item
   - inform_food_quantity
+  - go_back
 
 entities:
   - name
@@ -105,9 +106,9 @@ slots:
     values:
       - customer_email
       - people_count
-      - category
-      - item
-      - quantity
+      - food_category
+      - food_item
+      - food_quantity
     influence_conversation: true
     mappings:
       - type: custom
@@ -191,6 +192,9 @@ actions:
   - action_check_table_availability
   - action_reserve_table
   # Food Order Actions
+  - action_ask_food_order_form_food_category
+  - action_ask_food_order_form_food_item
+  - action_ask_food_order_form_food_quantity
   - action_show_selected_food_items
   - action_send_food_order
   - action_cancel_food_order
@@ -217,7 +221,7 @@ forms:
       - food_quantity
     ignored_intents:
       - request_table_reservation
-      - inform_people_count
+      - inform_people_count 
 
 responses:
   utter_ask_howcanhelp:

@@ -3,8 +3,8 @@
 import json, os
 
 dirname = os.path.dirname(__file__)
-table_reservation_file = os.path.join(dirname, "..\\info\\table_reservation.json")
-menu = os.path.join(dirname, "..\\info\\menu.json")
+table_reservation_file = os.path.join(dirname, "../info/table_reservation.json")
+menu = os.path.join(dirname, "../info/menu.json")
 
 
 def table_reservation_reset():
@@ -29,4 +29,4 @@ def readmenu():
             print((item["name"]).lower())
 
 # table_reservation_reset()
-readmenu()
+# readmenu()
