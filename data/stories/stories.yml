@@ -109,7 +109,19 @@ stories:
       - action: table_reservation_form
 
   # Order Form
-  - story: submit order form + end order + confirm order
+
+  - story: next food order
+    steps:
+      - action: food_order_form
+      - active_loop: food_order_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_add_to_selected_food_items
+      - action: utter_ask_more_food_item
+      - checkpoint: check_submit_order_form
+
+  - story: submit order form
     steps:
       - intent: request_order
       - action: food_order_form
@@ -119,6 +131,19 @@ stories:
       - active_loop: null
       - action: action_add_to_selected_food_items
       - action: utter_ask_more_food_item
+      - checkpoint: check_submit_order_form
+
+  - story: order more food
+    steps:
+      - checkpoint: check_submit_order_form
+      - or:
+        - intent: affirm
+        - intent: react_positive
+      - action: action_reset_food_order_form_slots
+
+  - story: no further food order + confirm order
+    steps:
+      - checkpoint: check_submit_order_form
       - or:
           - intent: deny                                                                                                          
           - intent: react_negative
@@ -129,16 +154,9 @@ stories:
           - intent: react_positive
       - action: action_send_food_order
 
-  - story: submit order form + end order + deny confirmation
+  - story: no further food order + cancel order
     steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: action_add_to_selected_food_items
-      - action: utter_ask_more_food_item
+      - checkpoint: check_submit_order_form
       - or:
           - intent: deny
           - intent: react_negative
@@ -150,91 +168,158 @@ stories:
       - action: action_cancel_food_order
 
 
-  - story: order form + go back/stop + order more items
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - or:
-        - intent: go_back
-        - intent: bye
-      - action: utter_ask_more_food_item
-      - or:
-        - intent: affirm
-        - intent: react_positive
-      - action: food_order_form
 
-  - story: order form + go back/stop + confirm order
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - or:
-        - intent: go_back
-        - intent: bye
-      - action: utter_ask_more_food_item
-      - or:
-        - intent: deny
-        - intent: react_negative
-      - action: action_deactivate_loop
-      - active_loop: null
-      - action: action_show_selected_food_items
-      - action: utter_ask_confirm_food_order
-      - or:
-        - intent: affirm
-        - intent: react_positive
-      - action: action_send_food_order
 
-  - story: order form + go back/stop + deny selected order
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - or:
-        - intent: go_back
-        - intent: bye
-      - action: utter_ask_more_food_item
-      - or:
-        - intent: deny
-        - intent: react_negative
-      - action: action_deactivate_loop
-      - active_loop: null
-      - action: action_show_selected_food_items
-      - action: utter_ask_confirm_food_order
-      - or:
-        - intent: deny
-        - intent: react_negative
-      - action: action_cancel_food_order
 
-  - story: order form + contextual interjection -> food category
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - slot_was_set:
-        - requested_slot: food_category
-      - intent: explain
-      - action: utter_explain_food_category
-      - action: food_order_form
 
-  - story: order form + contextual interjection -> food item
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - slot_was_set:
-        - requested_slot: food_item
-      - intent: explain
-      - action: utter_explain_food_item
-      - action: food_order_form
 
-  - story: order form + contextual interjection -> food quatfood_quantity
-    steps:
-      - intent: request_order
-      - action: food_order_form
-      - active_loop: food_order_form
-      - slot_was_set:
-        - requested_slot: food_quantity
-      - intent: explain
-      - action: utter_explain_food_quantity
-      - action: food_order_form
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # - story: submit order form + end order + confirm order
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: action_add_to_selected_food_items
+  #     - action: utter_ask_more_food_item
+  #     - or:
+  #         - intent: deny                                                                                                          
+  #         - intent: react_negative
+  #     - action: action_show_selected_food_items
+  #     - action: utter_ask_confirm_food_order
+  #     - or:
+  #         - intent: affirm
+  #         - intent: react_positive
+  #     - action: action_send_food_order
+
+  # - story: submit order form + end order + deny confirmation
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: action_add_to_selected_food_items
+  #     - action: utter_ask_more_food_item
+  #     - or:
+  #         - intent: deny
+  #         - intent: react_negative
+  #     - action: action_show_selected_food_items
+  #     - action: utter_ask_confirm_food_order
+  #     - or:
+  #         - intent: deny
+  #         - intent: react_negative
+  #     - action: action_cancel_food_order
+
+
+
+
+
+
+  # - story: order form + go back/stop + order more items
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - or:
+  #       - intent: go_back
+  #       - intent: bye
+  #     - action: utter_ask_more_food_item
+  #     - or:
+  #       - intent: affirm
+  #       - intent: react_positive
+  #     - action: food_order_form
+
+  # - story: order form + go back/stop + confirm order
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - or:
+  #       - intent: go_back
+  #       - intent: bye
+  #     - action: utter_ask_more_food_item
+  #     - or:
+  #       - intent: deny
+  #       - intent: react_negative
+  #     - action: action_deactivate_loop
+  #     - active_loop: null
+  #     - action: action_show_selected_food_items
+  #     - action: utter_ask_confirm_food_order
+  #     - or:
+  #       - intent: affirm
+  #       - intent: react_positive
+  #     - action: action_send_food_order
+
+  # - story: order form + go back/stop + deny selected order
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - or:
+  #       - intent: go_back
+  #       - intent: bye
+  #     - action: utter_ask_more_food_item
+  #     - or:
+  #       - intent: deny
+  #       - intent: react_negative
+  #     - action: action_deactivate_loop
+  #     - active_loop: null
+  #     - action: action_show_selected_food_items
+  #     - action: utter_ask_confirm_food_order
+  #     - or:
+  #       - intent: deny
+  #       - intent: react_negative
+  #     - action: action_cancel_food_order
+
+  # - story: order form + contextual interjection -> food category
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - slot_was_set:
+  #       - requested_slot: food_category
+  #     - intent: explain
+  #     - action: utter_explain_food_category
+  #     - action: food_order_form
+
+  # - story: order form + contextual interjection -> food item
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - slot_was_set:
+  #       - requested_slot: food_item
+  #     - intent: explain
+  #     - action: utter_explain_food_item
+  #     - action: food_order_form
+
+  # - story: order form + contextual interjection -> food quatfood_quantity
+  #   steps:
+  #     - intent: request_order
+  #     - action: food_order_form
+  #     - active_loop: food_order_form
+  #     - slot_was_set:
+  #       - requested_slot: food_quantity
+  #     - intent: explain
+  #     - action: utter_explain_food_quantity
+  #     - action: food_order_form

@@ -1,0 +1,10 @@
+i want to order food
+
+select appetizers category for my order
+add bruschetta to my selected food items
+set the quantity of food items to 1
+
+select beverages category for my order
+add fresh fruit smoothies to my selected food items
+set the quantity of food items to 2
+

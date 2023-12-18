@@ -194,7 +194,6 @@ actions:
   # Food Order Actions
   - action_ask_food_order_form_food_category
   - action_ask_food_order_form_food_item
-  - action_ask_food_order_form_food_quantity
   - action_show_selected_food_items
   - action_send_food_order
   - action_cancel_food_order

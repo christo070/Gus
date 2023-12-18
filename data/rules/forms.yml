@@ -64,22 +64,6 @@ rules:
       - active_loop: food_order_form
     wait_for_user_input: false
 
-  - rule: submit order form + more item + activate order form again
-    condition:
-      - active_loop: food_order_form
-    steps:
-      - action: food_order_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: action_add_to_selected_food_items
-      - action: utter_ask_more_food_item
-      - or:
-          - intent: affirm
-          - intent: react_positive
-      - action: action_reset_food_order_form_slots
-      - action: food_order_form
-      - active_loop: food_order_form
-    wait_for_user_input: false
+
 
 

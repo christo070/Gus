@@ -39,8 +39,8 @@ responses:
 
 # Food Order Responses
 
-  utter_ask_food_order_form_food_category:
-  - text: "What food category would you like to order from?"
+  utter_ask_food_order_form_food_quantity:
+  - text: "What quantity of {food_item} would you like to order?"
 
   utter_ask_more_food_item:
   - text: "Would you like to order more food items?"

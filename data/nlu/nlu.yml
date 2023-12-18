@@ -88,18 +88,36 @@ nlu:
 
 - intent: inform_food_category
   examples: |
-    - select category [appetizers](food_category)
-    - choose category [desserts](food_category)
+    - select [appetizers](food_category) category for my order
+    - select [main course](food_category) category for my order
+    - select [desserts](food_category) category for my order
+    - select [beverages](food_category) category for my order
+    - select [wine]{"entity": "food_category", "value": "beverages"} category for my order
 
 - intent: inform_food_item
   examples: |
-    - select item [chicken wings](food_item)
-    - choose item [chicken wings](food_item)
+    - add [bruschetta](food_item) to my selected food items
+    - add [stuffed mushrooms](food_item) to my selected food items
+    - add [spinach artichoke dip](food_item) to my selected food items
+    - add [pasta bolognese](food_item) to my selected food items
+    - add [grilled salmon](food_item) to my selected food items
+    - add [chicken alfredo](food_item) to my selected food items
+    - add [chocolate fondue](food_item) to my selected food items
+    - add [tiramisu](food_item) to my selected food items
+    - add [cheesecake sampler](food_item) to my selected food items
+    - add [mocktail medley](food_item) to my selected food items
+    - add [hot herbal infusion](food_item) to my selected food items
+    - add [fresh fruit smoothies](food_item) to my selected food items
 
 - intent: inform_food_quantity
   examples: |
-    - set quantity as [2](number)
-    - choose quantity as [3](number)
+    - set the quantity of food items to [1](number)
+    - set the quantity of food items to [2](number)
+    - set the quantity of food items to [3](number)
+    - set the quantity of food items to [4](number)
+    - set the quantity of food items to [5](number)
+    - set the quantity of food items to [6](number)
+    - set the quantity of food items to [7](number)
 
 - intent: go_back
   examples: |

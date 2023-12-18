@@ -4,15 +4,19 @@ import json, os
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset, ConversationPaused, UserUtteranceReverted
+from rasa_sdk.events import SlotSet, FollowupAction, AllSlotsReset, ConversationPaused, UserUtteranceReverted, ActiveLoop
 
 dirname = os.path.dirname(__file__)
 
-RESERVATION_FILE = os.path.join(dirname, "../info/table_reservation.json")
+RESERVATION_FILE = os.path.join(dirname, "../info/reservation.json")
 MENU_FILE = os.path.join(dirname, "../info/menu.json")
 ORDER_FILE = os.path.join(dirname, "../info/order.json")
 
+FOOD_CATEGORY = ["Appetizers", "Main Course", "Desserts", "Beverages"]
 
+# ---------------
+# General Actions
+# ---------------
 
 class ActionHumanHandoff(Action):
     def name(self):
@@ -30,9 +34,9 @@ class ActionHumanHandoff(Action):
         # return [ConversationPaused(), UserUtteranceReverted()]
 
         dispatcher.utter_message(response="utter_human_handoff")
-        return []
+        return []   
     
-    
+
 # -------------------------------------
 # Action involved in Table Reservation
 # -------------------------------------
@@ -121,9 +125,43 @@ class ActionReserveTable(Action):
 # Actions involved in taking Food Order 
 # --------------------------------------
 
+class ActionFoodOrderAskCategory(Action):
+    def name(self):
+        return "action_ask_food_order_form_food_category"
 
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        message = "Please select the category of food you want to order:"
+        for i, category in enumerate(FOOD_CATEGORY):
+            message += f"\n{i+1}. {category}"
+        dispatcher.utter_message(message)
+        return []
+    
+class ActionFoodOrderAskItem(Action):
+    def name(self):
+        return "action_ask_food_order_form_food_item"
 
-
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:        
+        category = tracker.get_slot("food_category")
+        message = f"Please select the item you want to order from {category}:"
+        i = 1
+        with open(MENU_FILE, "r") as f:
+            json_object = json.load(f)
+            for item in json_object:
+                if item["category"].lower() == category:
+                    message += f"\n{i}. {item['name']}"
+                    i += 1
+        dispatcher.utter_message(message)
+        return []
 
 class ActionShowSelectedItems(Action):
     def name(self):
@@ -209,4 +247,4 @@ class ActionResetOrderForm(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        return [SlotSet("food_item", None), SlotSet("food_category", None), SlotSet("food_quantity", None)]
+        return [SlotSet("food_item", None), SlotSet("food_category", None), SlotSet("food_quantity", None), FollowupAction("food_order_form"), ActiveLoop("food_order_form")]

@@ -3,14 +3,35 @@ version:  "3.1"
 nlu:
 
 # define lookup for food categories
-- lookup: category
+- lookup: food_category
   examples: |
     - appetizers
     - main course
     - desserts
     - beverages
 
-- lookup: item
+- synonym: appetizers
+  examples: |
+    - starters
+    - snacks
+
+- synonym: main course
+  examples: |
+    - entrees
+
+- synonym: desserts
+  examples: |
+    - sweets
+    - cakes
+    - pastries
+
+- synonym: beverages
+  examples: |
+    - drinks
+    - wine
+    - drinks and beverages
+
+- lookup: food_item
   examples: |
     - bruschetta
     - stuffed mushrooms
