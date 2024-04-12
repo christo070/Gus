@@ -1,6 +1,6 @@
 # Introduction
 Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding Menu, Specials & Promotions, Operating Hours & Location Details, Dietery & Allergen Information, FAQs.
-
+<!---
 ### Features to Implement
 ![User Expectation Table](image.png)
 
@@ -8,7 +8,7 @@ Gus is an Restaurant Chatbot. It can handle General Queries, enqueries regarding
 ```bash
 pip install rasa --upgrade
 ```
-
+-->
 # References
 
 - [Sara - Rasa Demo Bot](https://github.com/RasaHQ/rasa-demo/)
